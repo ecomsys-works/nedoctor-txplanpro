@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+
+    <!-- MOBILE VIEWPORT -->
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+
+    <!-- ОСНОВНОЙ SEO -->
+    <title>Заголовок</title>
+    <meta name="description" content="Описание" />
+    <meta name="keywords" content="Ключевые слова" />
+    <meta name="author" content="Автор" />
+    <meta name="robots" content="index, follow" />
+    
+
+    <!-- THEME COLOR -->
+    <meta name="theme-color" content="#EEEEEE" />
+    <meta name="msapplication-navbutton-color" content="#EEEEEE" />
+
+    <!-- iOS PWA -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="заголовок" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+    <meta name="apple-touch-fullscreen" content="yes" />
+
+    <!-- Android PWA -->
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="full-screen" content="yes" />
+    <meta name="screen-orientation" content="portrait" />
+
+    <!-- OPEN GRAPH (Discord / Telegram / VK / WhatsApp) -->
+    <meta property="og:title" content="заголовок" />
+    <meta property="og:description" content="описание" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://example.com" />
+    <!-- <meta property="og:image" content="https://example.com/preview.png" /> -->
+    <meta property="og:site_name" content="название сайта" />
+
+    <!-- TWITTER PREVIEW -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="заголовок" />
+    <meta name="twitter:description" content="описание" />
+    <!-- <meta name="twitter:image" content="https://example.com/preview.png" /> -->
+
+    <!-- CANONICAL -->
+    <link rel="canonical" href="https://example.com" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+
+    <!-- PWA manifest (если захочешь как приложение) -->
+    <!-- <link rel="manifest" href="/manifest.json" /> -->
+
+    <!-- PRELOAD (ускорение шрифтов/логотипа если есть) -->
+    <!--
+    <link rel="preload" href="/fonts/main.woff2" as="font" type="font/woff2" crossorigin>
+    -->
+  </head>
+
+  <body style="background-color: #eeeeee">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
