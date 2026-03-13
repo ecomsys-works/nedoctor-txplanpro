@@ -19,7 +19,7 @@ export default function FeatureGrid() {
   }) as FeatureCard[];
 
   return (
-    <section className="container py-10">      
+    <section className="my-container py-10">      
         <div className="bg-black p-[10px] rounded-[60px] grid grid-cols-2 gap-[10px]">
           {cards.map((card, index) => {
             switch (card.type) {

@@ -24,6 +24,58 @@ body {
     }
 }
 
+/* reviews swiper  */
+.reviews-swiper .swiper-wrapper {
+    align-items: stretch;
+    user-select: none;
+}
+
+.reviews-swiper .swiper-slide {
+    height: auto;
+    display: flex;
+}
+
+/* gettingstarted-swiper */
+.gettingstarted-swiper {
+    user-select: none;
+}
+
+.swiper-button-disabled {
+    color: #A0A0A0 !important;
+}
+
+/* только для мобилки */
+@media (max-width: 639px) {
+
+  .accordion-group {
+    position: relative;
+  }
+
+  .accordion-group::after {
+    content: "";
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+
+    height: 0px;
+    background: white;
+/* 
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px; */
+
+    z-index: 0;
+  }
+
+  .accordion-group:last-child::after {
+    display: none;
+  }
+
+}
+/* .accordion .accordion-group:last-child .accordion-mobile{
+    @apply pb-[25px];
+} */
+
 @layer components {
 
     /* Пример кастомного блока */
@@ -83,10 +135,18 @@ body {
             padding-inline: 150px;
         }
 
+        .my-container.my-container--reviews {
+            padding-inline: 0;
+        }
+
     }
 
     @media (min-width: 1880px) {
         .my-container {
+            padding-inline: 160px;
+        }
+
+        .my-container.my-container--reviews {
             padding-inline: 160px;
         }
 

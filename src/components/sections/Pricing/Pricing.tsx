@@ -45,171 +45,213 @@ export default function Pricing() {
     };
 
     return (
-        <section className="my-container mb-[70px] sm:mb-25 2xl:mb-50 cover-gradient overflow-visible text-white rounded-[20px] sm:rounded-[30px] 3xl:rounded-[60px] pt-[5px] pb-[50px]">
+        <section className="my-container mb-[70px] sm:mb-25 2xl:mb-50 cover-gradient overflow-visible text-white rounded-[20px] sm:rounded-[30px] 2xl:rounded-[60px] pt-[5px] pb-[50px]">
 
-            <h2 className="leading-[1] uppercase text-[40px] sm:text-[78px] 3xl:text-[120px] font-semibold text-white pt-10 pb-9 text-center">{title}</h2>
+            <h2 className="leading-[1] uppercase text-[40px] sm:text-[78px] 2xl:text-[120px] font-semibold text-white pt-10 3xl:pt-[70px] pb-9 3xl:pb-[45px] text-center">{title}</h2>
 
             {/* DESKTOP: Верхние 3 вертикальные карточки */}
-            <div className="hidden 2xl:grid grid-cols-3 gap-x-5 mb-15">
-                {cards.slice(0, 3).map((card, i) => {
+            <div className="hidden 3xl:grid grid-cols-3 gap-x-5 mb-15">
+                {cards.slice(1, 4).map((card, i) => {
                     const { left, right } = splitIncluded(card);
                     return (
-                        <div key={i} className="border border-solid border-white/15 bg-[rgba(85, 85, 85, 0.1)] rounded-[18px] p-[10px] flex flex-col relative h-full">
+                        <div key={i} className="border border-solid border-white/15 bg-[rgba(85, 85, 85, 0.1)] rounded-[28px] p-[10px] flex flex-col relative h-full">
                             {/* Верхний блок */}
-                            <div className="bg-white rounded-[30px] p-6 relative">
-                                <div className="flex justify-between items-start">
-                                    <div>
-                                        <h3 className="text-[24px] font-bold">{card.title}</h3>
-                                        <p className="text-[16px] text-gray-700">{card.description}</p>
+                            <div className="bg-white text-black rounded-[28px] p-6 relative">
+                                <div className="min-h-[113px] pb-[12px] flex justify-between items-start">
+                                    <div className="space-y-1">
+                                        {card.title && (<h3 className="text-[40px] font-semibold leading-[1] tracking-[-0.06em]">{card.title}</h3>)}
+                                        {card.description && (<p className="text-[18px] font-normal leading-[1.3] tracking-[-0.04em]">{card.description}</p>)}
                                     </div>
-                                    <div className="text-right">
-                                        <p className="text-[24px] font-bold">{card.price}</p>
-                                        <p className="text-[16px] text-gray-700">{card.priceDescription}</p>
+                                    <div className="space-y-1 text-right">
+                                        {card.price && (<p className="text-[40px] font-semibold leading-[1] tracking-[-0.06em]">{card.price}</p>)}
+                                        {card.priceDescription && (<p className=" text-[18px] font-normal leading-[1.3] tracking-[-0.04em]">{card.priceDescription}</p>)}
                                     </div>
                                 </div>
-
                                 {card.monthLimits && (
-                                    <div className="mt-4">
-                                        {card.monthLimitsTitle && (
-                                            <p className="text-[16px] font-semibold text-black mb-1">
-                                                {card.monthLimitsTitle}
-                                            </p>
-                                        )}
-                                        <ul className="text-[14px] text-gray-700 space-y-1">
+                                    <div className="text-black ">
+                                        <h4 className="mb-[12px] text-[24px] leading-[1.1] tracking-[-0.06em] font-semibold">{card.monthLimitsTitle}</h4>
+                                        <ul className="text-[13px] space-y-[4px]">
                                             {card.monthLimits.map((item, idx) => (
-                                                <li key={idx}>• {item}</li>
+                                                <li key={idx} className="flex items-start gap-[5px]">
+                                                    <span className="mt-[3px] w-[17px] h-[17px] bg-black rounded-full flex justify-center items-center text-black">
+                                                        <svg className="w-[9px] h-[7px] text-white">
+                                                            <use href="./icons/sprite/sprite.svg#check"></use>
+                                                        </svg>
+                                                    </span>
+                                                    <span className="text-[18px] leading-[1.3] tracking-[-0.04em] font-normal">{item}</span>
+                                                </li>
                                             ))}
                                         </ul>
                                     </div>
                                 )}
 
                                 {card.blackLabel && (
-                                    <span className="absolute bottom-4 right-4 bg-black text-white px-4 py-1 rounded text-[18px]">
+                                    <span className="inline-flex h-[35px] items-center justify-center absolute bottom-[20px] right-[20px] bg-black
+                                      text-white rounded-[100px] px-[14px] text-[18px] leading-[1.3] tracking-[-0.04em]  ">
                                         {card.blackLabel}
                                     </span>
                                 )}
                             </div>
 
                             {/* Второй блок */}
-                            <div className="mt-12 text-[18px]">
-                                <p className="mb-4">{card.planPrice}</p>
-                                {left.length > 0 && <h4 className="text-[24px] font-semibold mb-4">{card.includedTitle}</h4>}
-                                <div className="grid grid-cols-2 gap-4">
-                                    <ul className="space-y-2">
-                                        {left.map((item, idx) => (
-                                            <li key={idx} className="flex items-center gap-2">
-                                                <span className="w-4 h-4 bg-black rounded-full flex justify-center items-center text-white text-xs">✓</span>
-                                                {item}
-                                            </li>
-                                        ))}
-                                    </ul>
-                                    <ul className="space-y-2">
-                                        {right.length > 0 && card.limitsTitle && (
-                                            <>
-                                                <h4 className="text-[24px] font-semibold mb-2">{card.limitsTitle}</h4>
-                                                {right.map((item, idx) => (
-                                                    <li key={idx} className="flex items-center gap-2">
-                                                        <span className="w-4 h-4 bg-black rounded-full flex justify-center items-center text-white text-xs">✓</span>
-                                                        {item}
+                            <div className="flex flex-col h-full justify-between">
+
+                                <div className="px-[23px]">
+                                    {card.planPrice && (
+                                        <p className="mb-[30px] pt-[15px] text-[18px] leading-[1.3] tracking-[-0.04em] font-normal">{card.planPrice}</p>
+                                    )}
+                                    {left.length > 0 && (
+                                        <h4 className="mb-[15px] text-white text-[24px] leading-[1.1] tracking-[-0.06em] font-semibold">{card.includedTitle}</h4>
+                                    )}
+
+                                    <div className="grid grid-cols-1 3xl:grid-cols-2 gap-2 3xl:gap-4 mb-[30px]">
+                                        {left.length > 0 && (
+                                            <ul className="space-y-2">
+                                                {left.map((item, idx) => (
+                                                    <li key={idx} className="flex items-start gap-[5px]">
+                                                        <span className="mt-[3px] w-[17px] h-[17px] bg-white rounded-full flex justify-center items-center text-white">
+                                                            <svg className="w-[9px] h-[7px] text-black">
+                                                                <use href="./icons/sprite/sprite.svg#check"></use>
+                                                            </svg>
+                                                        </span>
+                                                        <span className="text-[18px] leading-[1.3] tracking-[-0.04em] font-normal">{item}</span>
                                                     </li>
                                                 ))}
-                                            </>
+                                            </ul>
                                         )}
-                                        {right.length > 0 && !card.limitsTitle && right.map((item, idx) => (
-                                            <li key={idx} className="flex items-center gap-2">
-                                                <span className="w-4 h-4 bg-black rounded-full flex justify-center items-center text-white text-xs">✓</span>
-                                                {item}
-                                            </li>
-                                        ))}
-                                    </ul>
+
+                                        {right.length > 0 && (
+                                            <ul className="space-y-2">
+                                                {right.length > 0 && card.limitsTitle && (
+                                                    <>
+                                                        <h4 className="text-[24px] font-semibold mb-2">{card.limitsTitle}</h4>
+                                                        {right.map((item, idx) => (
+                                                            <li key={idx} className="flex items-start gap-[5px]">
+                                                                <span className="mt-[3px] w-[17px] h-[17px] bg-white rounded-full flex justify-center items-center text-white">
+                                                                    <svg className="w-[9px] h-[7px] text-black">
+                                                                        <use href="./icons/sprite/sprite.svg#check"></use>
+                                                                    </svg>
+                                                                </span>
+                                                                <span className="text-[14px] leading-[1.2] tracking-[-0.04em] font-normal">{item}</span>
+                                                            </li>
+                                                        ))}
+                                                    </>
+                                                )}
+                                                {right.length > 0 && !card.limitsTitle && right.map((item, idx) => (
+                                                    <li key={idx} className="flex items-start gap-[5px]">
+                                                        <span className="mt-[3px] w-[17px] h-[17px] bg-white rounded-full flex justify-center items-center text-white">
+                                                            <svg className="w-[9px] h-[7px] text-black">
+                                                                <use href="./icons/sprite/sprite.svg#check"></use>
+                                                            </svg>
+                                                        </span>
+                                                        <span className="text-[18px] leading-[1.3] tracking-[-0.04em] font-normal">{item}</span>
+                                                    </li>
+                                                ))}
+                                            </ul>
+                                        )}
+                                    </div>
                                 </div>
+
+                                <WhiteBtn className="font-medium text-[20px] tracking-[-0.04em] h-[70px] w-full rounded-full">
+                                    {card.buttonText}
+                                </WhiteBtn>
                             </div>
-
-
-
-                            <button className="mt-auto bg-white text-black text-[20px] h-[70px] rounded-[100px] w-full mt-8">
-                                {card.buttonText}
-                            </button>
                         </div>
                     );
                 })}
             </div>
 
             {/* DESKTOP: Нижняя горизонтальная карточка */}
-            <div className="hidden 2xl:flex ">
+            <div className="hidden 3xl:flex ">
                 {(() => {
-                    const card = cards[3];
+                    const card = cards[0];
                     const { left, right } = splitIncluded(card);
                     return (
-                        <div className=" border border-solid border-white/15 bg-[rgba(85, 85, 85, 0.1)] rounded-[18px] p-[10px] w-full h-full grid grid-cols-3 gap-20 relative ">
+                        <div className=" border border-solid border-white/15 bg-[rgba(85, 85, 85, 0.1)] rounded-[28px] w-full h-full grid grid-cols-3 gap-8 relative ">
                             {/* Левый блок */}
-                            <div>
-                                <div className="bg-white rounded-[30px] p-6 relative">
-                                    <div className="flex justify-between items-start">
-                                        <div>
-                                            <h3 className="text-[24px] font-bold">{card.title}</h3>
-                                            <p className="text-[16px] text-gray-700">{card.description}</p>
+                            <div className="p-[10px]">
+                                <div className="bg-white text-black rounded-[28px] p-6 relative">
+                                    <div className="min-h-[113px] pb-[12px] flex justify-between items-start">
+                                        <div className="space-y-1">
+                                            {card.title && (<h3 className="text-[40px] font-semibold leading-[1] tracking-[-0.06em]">{card.title}</h3>)}
+                                            {card.description && (<p className="text-[18px] font-normal leading-[1.3] tracking-[-0.04em]">{card.description}</p>)}
                                         </div>
-                                        <div className="text-right">
-                                            <p className="text-[24px] font-bold">{card.price}</p>
-                                            <p className="text-[16px] text-gray-700">{card.priceDescription}</p>
+                                        <div className="space-y-1 text-right">
+                                            {card.price && (<p className="text-[40px] font-semibold leading-[1] tracking-[-0.06em]">{card.price}</p>)}
+                                            {card.priceDescription && (<p className=" text-[18px] font-normal leading-[1.3] tracking-[-0.04em]">{card.priceDescription}</p>)}
                                         </div>
                                     </div>
 
                                     {card.monthLimits && (
-                                        <div className="mt-4">
-                                            {card.monthLimitsTitle && (
-                                                <p className="text-[16px] font-semibold text-black mb-1">
-                                                    {card.monthLimitsTitle}
-                                                </p>
-                                            )}
-                                            <ul className="text-[14px] text-gray-700 space-y-1">
+                                        <div className=" text-black ">
+                                            <h4 className="mb-[12px] text-[24px] leading-[1.1] tracking-[-0.06em] font-semibold">{card.monthLimitsTitle}</h4>
+                                            <ul className="text-[13px] space-y-[4px]">
                                                 {card.monthLimits.map((item, idx) => (
-                                                    <li key={idx}>• {item}</li>
+                                                    <li key={idx} className="flex items-start gap-[5px]">
+                                                        <span className="mt-[3px] w-[17px] h-[17px] bg-black rounded-full flex justify-center items-center text-black">
+                                                            <svg className="w-[9px] h-[7px] text-white">
+                                                                <use href="./icons/sprite/sprite.svg#check"></use>
+                                                            </svg>
+                                                        </span>
+                                                        <span className="text-[18px] leading-[1.3] tracking-[-0.04em] font-normal">{item}</span>
+                                                    </li>
                                                 ))}
                                             </ul>
                                         </div>
-                                    )}
-
-                                    {card.blackLabel && (
-                                        <span className="absolute bottom-4 right-4 bg-black text-white px-4 py-1 rounded text-[18px]">
-                                            {card.blackLabel}
-                                        </span>
                                     )}
                                 </div>
                             </div>
 
                             {/* Центральный блок */}
-                            <div className="text-[18px]">
-                                {left.length > 0 && (
-                                    <>
-                                        <h4 className="text-[24px] font-semibold mb-4">{card.includedTitle}</h4>
-                                        <ul className="space-y-2">
+                            {left.length > 0 && (
+                                <div className="p-[10px]">
+                                    <div className="px-[18px]">
+                                        <h4 className="mb-[15px] text-white text-[24px] leading-[1.1] tracking-[-0.06em] font-semibold">{card.includedTitle}</h4>
+                                        <ul className="space-y-1.5">
                                             {left.map((item, idx) => (
-                                                <li key={idx} className="flex items-center gap-2">
-                                                    <span className="w-4 h-4 bg-black rounded-full flex justify-center items-center text-white text-xs">✓</span>
-                                                    {item}
+                                                <li key={idx} className="flex items-start gap-[5px]">
+                                                    <span className="mt-[3px] w-[17px] h-[17px] bg-white rounded-full flex justify-center items-center text-white">
+                                                        <svg className="w-[9px] h-[7px] text-black">
+                                                            <use href="./icons/sprite/sprite.svg#check"></use>
+                                                        </svg>
+                                                    </span>
+                                                    <span className="text-[18px] leading-[1.3] tracking-[-0.04em] font-normal">{item}</span>
                                                 </li>
                                             ))}
                                         </ul>
-                                    </>
-                                )}
-                            </div>
+                                    </div>
+                                </div>
+                            )}
 
                             {/* Правый блок */}
                             {right.length > 0 && (
-                                <div className="text-[18px]">
-                                    {card.limitsTitle && <h4 className="text-[24px] font-semibold mb-4">{card.limitsTitle}</h4>}
-                                    <ul className="space-y-2">
-                                        {right.map((item, idx) => (
-                                            <li key={idx} className="flex items-center gap-2">
-                                                <span className="w-4 h-4 bg-black rounded-full flex justify-center items-center text-white text-xs">✓</span>
-                                                {item}
-                                            </li>
-                                        ))}
-                                    </ul>
+                                <div className="p-[10px] flex flex-col justify-between relative">
+                                    <div className="block px-[18px]">
+                                        {card.limitsTitle && (
+                                            <h4 className="mb-[15px] text-white text-[24px] leading-[1.1] tracking-[-0.06em] font-semibold">{card.limitsTitle}</h4>
+                                        )}
+                                        <ul className="space-y-1.5">
+                                            {right.map((item, idx) => (
+                                                <li key={idx} className="flex items-start gap-[5px]">
+                                                    <span className="mt-[3px] w-[17px] h-[17px] bg-white rounded-full flex justify-center items-center text-white">
+                                                        <svg className="w-[9px] h-[7px] text-black">
+                                                            <use href="./icons/sprite/sprite.svg#check"></use>
+                                                        </svg>
+                                                    </span>
+                                                    <span className="text-[18px] leading-[1.3] tracking-[-0.04em] font-normal">{item}</span>
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </div>
 
-                                    <WhiteBtn className="font-medium text-[18px] h-[46px] w-full rounded-full">
+                                    {card.whiteLabel && (
+                                        <span className="inline-flex h-[35px] items-center justify-center absolute top-[10px] right-[10px] bg-white 
+                                      text-black rounded-[100px] px-[10px] text-[18px] leading-[1.3] tracking-[-0.04em]  ">
+                                            {card.whiteLabel}
+                                        </span>
+                                    )}
+
+                                    <WhiteBtn className="font-medium text-[20px] tracking-[-0.04em] h-[70px] w-full rounded-full">
                                         {card.buttonText}
                                     </WhiteBtn>
                                 </div>
@@ -220,92 +262,94 @@ export default function Pricing() {
             </div>
 
             {/* MOBILE / TABLET */}
-            <div className="grid grid-cols-1 mdd:grid-cols-2 gap-y-10 gap-x-5 2xl:hidden">
+            <div className="grid grid-cols-1 mdd:grid-cols-2 gap-y-10 gap-x-5 3xl:hidden">
                 {cards.map((card, i) => {
                     const { left, right } = splitIncluded(card);
                     return (
-                        <div key={i} className={`border border-solid border-white/15 bg-[rgba(85, 85, 85, 0.1)] rounded-[18px] p-[10px] flex flex-col relative h-full`}>
-                            <div className="bg-white text-black rounded-[18px] p-[12px] relative">
-                                <div className="flex justify-between items-start">
-                                    <div className="space-y-1">
-                                        {card.title && (<h3 className="text-[26px] font-semibold leading-[1] tracking-[-0.06em]">{card.title}</h3>)}
-                                        {card.description && (<p className="max-w-[155px] sm:max-w-[initial] text-[14px] font-normal leading-[1.2] tracking-[-0.04em]">{card.description}</p>)}
+                        <div key={i} className={`border border-solid border-white/15 bg-[rgba(85, 85, 85, 0.1)] rounded-[18px] 2xl:rounded-[28px] p-[10px] 2xl:p-[15px] flex flex-col relative h-full justify-between`}>
+                            <div className="flex flex-col">
+                                <div className="bg-white text-black rounded-[18px] p-[12px] xl:p-[20px] relative">
+                                    <div className="min-h-[90px] pb-[12px] flex justify-between items-start">
+                                        <div className="space-y-1">
+                                            {card.title && (<h3 className="text-[26px] 2xl:text-[40px] font-semibold leading-[1] tracking-[-0.06em]">{card.title}</h3>)}
+                                            {card.description && (<p className="max-w-[155px] sm:max-w-[initial] text-[14px] 2xl:text-[18px] font-normal leading-[1.2] 2xl:leading-[1.3] tracking-[-0.04em]">{card.description}</p>)}
+                                        </div>
+                                        <div className="space-y-1 text-right">
+                                            {card.price && (<p className="text-[26px] 2xl:text-[40px] font-semibold leading-[1] tracking-[-0.06em]">{card.price}</p>)}
+                                            {card.priceDescription && (<p className=" text-[14px] 2xl:text-[18px] font-normal leading-[1.2] 2xl:leading-[1.3] tracking-[-0.04em]">{card.priceDescription}</p>)}
+                                        </div>
                                     </div>
-                                    <div className="space-y-1 text-right">
-                                        {card.price && (<p className="text-[26px] font-semibold leading-[1] tracking-[-0.06em]">{card.price}</p>)}
-                                        {card.priceDescription && (<p className=" text-[14px] font-normal leading-[1.2] tracking-[-0.04em]">{card.priceDescription}</p>)}
-                                    </div>
+
+                                    {card.monthLimits && (
+                                        <div className="mt-[25px]">
+                                            <h4 className="mb-2.5 text-black text-[14px] 2xl:text-[24px] 2xl:mb-[10px] leading-[1.3] 2xl:leading-[1.1] tracking-[-0.04em] 2xl:tracking-[-0.06em] font-semibold">{card.monthLimitsTitle}</h4>
+                                            <ul className="text-[13px] space-y-[3px]">
+                                                {card.monthLimits.map((item, idx) => (
+                                                    <li key={idx} className="flex items-start gap-[5px]">
+                                                        <span className="shrink-0 mt-[3px] w-[12px] h-[12px] 2xl:w-[17px] 2xl:h-[17px] bg-black rounded-full flex justify-center items-center text-black">
+                                                            <svg className="w-[6px] h-[4px] 2xl:w-[9px] 2xl:h-[7px] text-white">
+                                                                <use href="./icons/sprite/sprite.svg#check"></use>
+                                                            </svg>
+                                                        </span>
+                                                        <span className="text-[14px] 2xl:text-[18px] leading-[1.2] 2xl:leading-[1.3] tracking-[-0.04em] font-normal">{item}</span>
+                                                    </li>
+                                                ))}
+                                            </ul>
+
+                                        </div>
+                                    )}
+                                    {card.blackLabel && (
+                                        <span className="hidden sm:inline-flex h-[35px] items-center justify-center absolute bottom-[10px] 2xl:bottom-[20px] right-[10px] 2xl:right-[20px] bg-black border-dusty-blue border-solid
+                                      text-white rounded-[100px] px-[10px] 2xl:px-[15px] text-[14px] 2xl:text-[18px] leading-[1.2] tracking-[-0.04em]  ">
+                                            {card.blackLabel}
+                                        </span>
+                                    )}
                                 </div>
 
-                                {card.monthLimits && (
-                                    <div className="mt-[25px]">
-                                        <h4 className="mb-2.5 text-black text-[14px] leading-[1.3] tracking-[-0.04em] font-semibold">{card.monthLimitsTitle}</h4>
-                                        <ul className="text-[13px] space-y-[4px]">
-                                            {card.monthLimits.map((item, idx) => (
-                                                <li key={idx} className="flex items-start gap-[5px]">
-                                                    <span className="mt-[3px] w-[12px] h-[12px] bg-black rounded-full flex justify-center items-center text-black">
-                                                        <svg className="w-[6px] h-[4px] text-white">
-                                                            <use href="./icons/sprite/sprite.svg#check"></use>
-                                                        </svg>
-                                                    </span>
-                                                    <span className="text-[14px] leading-[1.2] tracking-[-0.04em] font-normal">{item}</span>
-                                                </li>
-                                            ))}
-                                        </ul>
-
-                                    </div>
-                                )}
-                                {card.blackLabel && (
-                                    <span className="hidden sm:inline-flex h-[35px] items-center justify-center absolute bottom-3 right-3 bg-black border-dusty-blue border-solid
-                                      text-white rounded-[100px] px-[10px] text-[14px] leading-[1.2] tracking-[-0.04em]  ">
-                                        {card.blackLabel}
-                                    </span>
-                                )}
+                                {card.planPrice && (<p className="sm:mb-[-10px] 2xl:mb-[-5px] 2xl:pt-[15px] px-[12px] pt-[10px] text-[14px] 2xl:text-[18px] leading-[1.2] 2xl:leading-[1.3] tracking-[-0.04em] font-normal">{card.planPrice}</p>)}
+                                <div className="grid grid-cols-1 gap-2 sm:grid-cols-2 sm:gap-4 md:gap-0 min-h-[150px] mb-[40px]">
+                                    {left.length > 0 && (
+                                        <div className="px-[12px] 2xl:px-[20px] flex flex-col gap-2 pt-[30px] sm:pt-[40px]">
+                                            <h4 className="text-white text-[15px] 2xl:text-[24px] 2xl:mb-[5px] leading-[1.1] tracking-[-0.06em] font-semibold">{card.includedTitle}</h4>
+                                            <ul className="space-y-1.5">
+                                                {left.map((item, idx) => (
+                                                    <li key={idx} className="flex items-start gap-[5px]">
+                                                        <span className="mt-[3px] shrink-0 w-[12px] h-[12px] 2xl:w-[17px] 2xl:h-[17px] bg-white rounded-full flex justify-center items-center text-white">
+                                                            <svg className="w-[6px] h-[4px] 2xl:w-[9px] 2xl:h-[7px] text-black">
+                                                                <use href="./icons/sprite/sprite.svg#check"></use>
+                                                            </svg>
+                                                        </span>
+                                                        <span className=" text-[14px] 2xl:text-[18px] leading-[1.2] 2xl:leading-[1.3] tracking-[-0.04em] font-normal">{item}</span>
+                                                    </li>
+                                                ))}
+                                            </ul>
+                                        </div>
+                                    )}
+                                    {right.length > 0 && (
+                                        <div className="px-[12px] flex flex-col gap-2 sm:pt-[40px]">
+                                            {card.limitsTitle ? (
+                                                <h4 className="text-white text-[15px] 2xl:text-[24px] 2xl:mb-[5px]  leading-[1.1] tracking-[-0.06em] font-semibold pt-[20px] sm:pt-0">{card.limitsTitle}</h4>
+                                            ) : (
+                                                <h4 className="hidden sm:block text-transparent text-[15px] 2xl:mb-[5px]  2xl:text-[24px] leading-[1.1] tracking-[-0.06em] font-semibold">*</h4>
+                                            )}
+                                            <ul className="space-y-1.5 ">
+                                                {right.map((item, idx) => (
+                                                    <li key={idx} className="flex items-start gap-2">
+                                                        <span className="mt-[3px] shrink-0 w-[12px] h-[12px] 2xl:w-[17px] 2xl:h-[17px] bg-white rounded-full flex justify-center items-center text-white">
+                                                            <svg className="w-[6px] h-[4px] 2xl:w-[9px] 2xl:h-[7px] text-black">
+                                                                <use href="./icons/sprite/sprite.svg#check"></use>
+                                                            </svg>
+                                                        </span>
+                                                        <span className="text-[14px] 2xl:text-[18px] leading-[1.2] 2xl:leading-[1.3] tracking-[-0.04em] font-normal">{item}</span>
+                                                    </li>
+                                                ))}
+                                            </ul>
+                                        </div>
+                                    )}
+                                </div>
                             </div>
 
-                            {card.planPrice && (<p className="sm:mb-[-10px] px-[12px] pt-[10px] text-[14px] leading-[1.2] tracking-[-0.04em] font-normal">{card.planPrice}</p>)}
-                            <div className="grid grid-cols-1 gap-2 sm:grid-cols-2 sm:gap-4 md:gap-0 min-h-[150px] mb-[40px]">
-                                {left.length > 0 && (
-                                    <div className="px-[12px] flex flex-col gap-2 pt-[30px] sm:pt-[40px]">
-                                        <h4 className="text-white text-[15px] leading-[1.1] tracking-[-0.06em] font-semibold">{card.includedTitle}</h4>
-                                        <ul className="space-y-2">
-                                            {left.map((item, idx) => (
-                                                <li key={idx} className="flex items-start gap-[5px]">
-                                                    <span className="mt-[3px] w-[12px] h-[12px] bg-white rounded-full flex justify-center items-center text-white">
-                                                        <svg className="w-[6px] h-[4px] text-black">
-                                                            <use href="./icons/sprite/sprite.svg#check"></use>
-                                                        </svg>
-                                                    </span>
-                                                    <span className="text-[14px] leading-[1.2] tracking-[-0.04em] font-normal">{item}</span>
-                                                </li>
-                                            ))}
-                                        </ul>
-                                    </div>
-                                )}
-                                {right.length > 0 && (
-                                    <div className="px-[12px] flex flex-col gap-2 sm:pt-[40px]">
-                                        {card.limitsTitle ? (
-                                            <h4 className="text-white text-[15px] leading-[1.1] tracking-[-0.06em] font-semibold pt-[20px] sm:pt-0">{card.limitsTitle}</h4>
-                                        ) : (
-                                            <h4 className="hidden sm:block text-transparent text-[15px] leading-[1.1] tracking-[-0.06em] font-semibold">*</h4>
-                                        )}
-                                        <ul className="space-y-2">
-                                            {right.map((item, idx) => (
-                                                <li key={idx} className="flex items-start gap-2">
-                                                    <span className="mt-[3px] w-[12px] h-[12px] bg-white rounded-full flex justify-center items-center text-white">
-                                                        <svg className="w-[6px] h-[4px] text-black">
-                                                            <use href="./icons/sprite/sprite.svg#check"></use>
-                                                        </svg>
-                                                    </span>
-                                                    <span className="text-[14px] leading-[1.2] tracking-[-0.04em] font-normal">{item}</span>
-                                                </li>
-                                            ))}
-                                        </ul>
-                                    </div>
-                                )}
-                            </div>
-
-                            <WhiteBtn className="font-medium text-[18px] h-[46px] w-full rounded-full">
+                            <WhiteBtn className="font-medium text-[18px] lg:text-[20px] h-[46px] lg:h-[70px] w-full rounded-full">
                                 {card.buttonText}
                             </WhiteBtn>
 

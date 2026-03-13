@@ -10,7 +10,7 @@ export default function WorkflowSteps() {
   }) as WorkflowStepsCardType[]
 
   return (
-    <section className="container py-10">
+    <section className="my-container py-10">
 
 
       <h2 className="text-center text-[120px] leading-[1.05] mb-50">

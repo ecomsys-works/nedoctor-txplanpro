@@ -22,7 +22,7 @@ export default function WorkflowDetails() {
   const nextRef = useRef<HTMLButtonElement>(null)
 
   return (
-    <section className="container py-10">
+    <section className="my-container mb-[70px] sm:mb-[100px] 2xl:mb-[200px]">
 
       {/* MOBILE */}
       <div className="lg:hidden">

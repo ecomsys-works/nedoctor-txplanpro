@@ -17,7 +17,7 @@ export default function Partners() {
   const rows = t("partners.rows", { returnObjects: true }) as PartnersRow[];
 
   return (
-    <section className="container py-20">
+    <section className="my-container py-20">
       <h2 className="text-center text-[120px] leading-[1.05] mb-16">
         {t("partners.title")}
       </h2>

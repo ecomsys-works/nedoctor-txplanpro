@@ -197,161 +197,174 @@
     }
   },
   "benefits": {
-    "title": "Преимущества платформы",
+    "font": "zt",
+    "title": "Один инструмент для всех",
     "accordions": [
       {
-        "header": "Врачи",
+        "headerMob": "Врачи",
+        "headerDesk": "Для врачей",
         "rows": [
           {
-            "title": "Увеличение эффективности",
-            "description": "Автоматизация рутинных процессов"
+            "title": "Больше времени с пациентами — меньше бумажной работы",
+            "description": "Создавайте ясные, наглядные планы лечения за минуты — без замедления работы."
           },
           {
-            "title": "Лучшее взаимодействие",
-            "description": "Пациенты получают ясные рекомендации"
+            "title": "Планируйте лечение так, как мыслите на самом деле",
+            "description": "Пошаговое планирование сложных кейсов без хаоса в заметках и скриншотах."
           },
           {
-            "title": "Рост дохода",
-            "description": "Оптимизация работы клиники"
+            "title": "Принимайте точные решения и получайте согласия пациентов",
+            "description": "Понятные визуальные планы снижают возражения и улучшают результаты лечения."
           }
         ]
       },
       {
-        "header": "Пациенты",
+        "headerMob": "Пациенты",
+        "headerDesk": "Для пациентов",
         "rows": [
           {
-            "title": "Понимание лечения",
-            "description": "Все шаги объяснены понятно"
+            "title": "Ваши пациенты понимиают вас по-настоящему",
+            "description": "Наглядные планы делают сложное лечение понятным и простым."
           },
           {
-            "title": "Контроль прогресса",
-            "description": "Следите за результатами лечения"
+            "title": "Пациент точно знает, за что платит",
+            "description": "Понятные этапы и стоимость снимают сомнения и стресс."
           },
           {
-            "title": "Доступность информации",
-            "description": "Все данные в одном месте"
+            "title": "Пациенты уверены в вашей работе и рекомендуют вас",
+            "description": "Ясность укрепляет доверие, а доверие — долгую лояльность."
           }
         ]
       },
       {
-        "header": "Владельцы",
+        "headerMob": "Владельцы",
+        "headerDesk": "Для владельцев",
         "rows": [
           {
-            "title": "Аналитика бизнеса",
-            "description": "Понимание ключевых показателей"
+            "title": "Работа без сбоев и ошибок",
+            "description": "Единый подход к планам уменьшает хаос, переделки и проблемы с согласованием."
           },
           {
-            "title": "Управление персоналом",
-            "description": "Оптимизация загрузки сотрудников"
+            "title": "Больше успешуных консультаций и лояльных пациентов",
+            "description": "Ясная коммуникация увеличивает одобрения и укрепляет доверие."
           },
-          { "title": "Рост прибыли", "description": "Принятие быстрых решений" }
+          {
+            "title": "Предсказуемый доход и стабильные результаты",
+            "description": "Наглядные и брендированные планы упрощают прогнозирование лечения и прибыли."
+          }
         ]
       }
     ]
   },
   "double": {
+    "font": "zt",
     "cards": [
       {
-        "image": "/images/card1.png"
+        "imageMob": "/images/webp/double/mob/think.webp",
+        "imageDesk": "/images/webp/double/desk/think.webp"
       },
       {
-        "title": "Хотите попасть в лист ожидания?",
+        "title": "Хотите, чтобы пациенты сразу понимали и соглашались?",
         "button": "Попасть в лист ожидания"
       }
     ]
   },
   "gettingStarted": {
     "title": "Как начать",
+    "font": "zt",
     "cards": [
       {
-        "title": "Регистрация",
-        "description": "Создайте аккаунт и настройте профиль.",
+        "title": "Мгновенный старт — всё работает онлайн",
+        "description": "Создайте аккаунт и сразу начните пользоваться TxPlanPro. Всё работает онлайн: без ожидания, без согласований и без ручной настройки.",
         "count": "01"
       },
       {
-        "title": "Выбор плана",
-        "description": "Определите тариф и получите доступ к функциям.",
+        "title": "Адаптируйте под вашу клинику",
+        "description": "При необходимости наша команда поможет адаптировать шаблоны под ваш бренд, рабочие процессы и стиль документации.",
         "count": "02"
       },
       {
-        "title": "Добавление команды",
-        "description": "Пригласите коллег и распределите роли.",
+        "title": "Быстрое обучение команды",
+        "description": "Короткое онлайн-обучение поможет всей команде быстро начать работу — без технической подготовки.",
         "count": "03"
       },
       {
-        "title": "Настройка процессов",
-        "description": "Оптимизируйте рабочие процессы для команды.",
+        "title": "Поддержка в любое время",
+        "description": "База знаний доступна в любое время, а наша служба поддержки всегда готова помочь.",
         "count": "04"
       },
       {
-        "title": "Аналитика",
-        "description": "Следите за ключевыми показателями и результатами.",
+        "title": "Надёжная и безопасная система",
+        "description": "Автоматические резервные копии и встроенные механизмы защиты обеспечат безопасность данных и снизят риски ошибок.",
         "count": "05"
       },
       {
-        "title": "Старт работы",
-        "description": "Начните использовать платформу эффективно.",
+        "title": "Мы постоянно совершенствуемся",
+        "description": "TxPlanPro постоянно развивается благодаря обратной связи от клиник, а новые функции проходят тщательное тестирование перед релизом.",
         "count": "06"
       }
     ]
   },
   "developed": {
+    "font": "zt",
     "top": {
       "title": "Создано практикующими стоматологами",
-      "description": "Мы сделали этот инструмент так, чтобы он был понятен и удобен для всех стоматологов."
+      "description": "Разработано врачами, которые ежедневно работают с пациентами и понимают, как проходит планирование лечения в реальной клинической практике."
     },
+    "diagramMob": "/images/webp/developed/mob/diagram.webp",
+    "diagramDesk": "/images/webp/developed/desk/diagram.webp",
     "bottom": [
       {
-        "title": "Удобство использования",
-        "description": "Интуитивно понятный интерфейс для быстрого освоения."
+        "title": "Клиническая логика — прежде всего",
+        "description": "Пошаговые планы, построенные так, как реально мыслит стоматолог."
       },
       {
-        "title": "Безопасность данных",
-        "description": "Ваши данные защищены и надежно хранятся."
+        "title": "Основано на доказательной медицине",
+        "description": "Структура опирается на клиническое мышление и исключает догадки."
       },
       {
-        "title": "Поддержка команды",
-        "description": "Мы всегда готовы помочь и ответить на ваши вопросы."
+        "title": "Гибкость с умом",
+        "description": "Система с ясными правилами, но гибкая для каждого пациента."
       }
     ]
   },
   "reviews": {
-    "title": "Клиенты Анас",
+    "title": "Клиенты о нас",
     "cards": [
       {
-        "avatar": "https://randomuser.me/api/portraits/men/32.jpg",
-        "name": "Доктор Майкл Андерсон",
-        "specialty": "Дантист",
-        "clinicLogo": "https://via.placeholder.com/32x32?text=Logo1",
-        "text": "Отличная платформа, помогла нам автоматизировать процессы."
+        "avatar": "/images/webp/reviews/avatar.webp",
+        "name": "Dr. Michael Anderson",
+        "specialty": "Chief Dentist",
+        "clinicLogo": "",
+        "text": "TxPlanPro has completely transformed the way we present treatment plans in our clinic. The application is intuitive, professional, and saves us an incredible amount of time. I’ve had a great experience."
       },
       {
-        "avatar": "https://randomuser.me/api/portraits/women/44.jpg",
-        "name": "Доктор Эмили Робертс",
-        "specialty": "Ортодонт",
-        "clinicLogo": "https://via.placeholder.com/32x32?text=Logo2",
-        "text": "Простая и удобная, команда в восторге."
+        "avatar": "/images/webp/reviews/avatar.webp",
+        "name": "Dr. Michael Anderson",
+        "specialty": "Chief Dentist",
+        "clinicLogo": "",
+        "text": "TxPlanPro has completely transformed the way we present treatment plans in our clinic. The application is intuitive, professional, and saves us an incredible amount of time. I’ve had a great experience."
       },
       {
-        "avatar": "https://randomuser.me/api/portraits/men/58.jpg",
-        "name": "Доктор Джон Смит",
-        "specialty": "Стоматолог-хирург",
-        "clinicLogo": "https://via.placeholder.com/32x32?text=Logo3",
-        "text": "Надежно и безопасно, рекомендую всем стоматологам."
+        "avatar": "/images/webp/reviews/avatar.webp",
+        "name": "Dr. Michael Anderson",
+        "specialty": "Chief Dentist",
+        "clinicLogo": "",
+        "text": "TxPlanPro has completely transformed the way we present treatment plans in our clinic. The application is intuitive, professional, and saves us an incredible amount of time. I’ve had a great experience."
       },
       {
-        "avatar": "https://randomuser.me/api/portraits/women/25.jpg",
-        "name": "Доктор Сара Льюис",
-        "specialty": "Пародонтолог",
-        "clinicLogo": "https://via.placeholder.com/32x32?text=Logo4",
-        "text": "Очень удобный интерфейс и отличная поддержка."
+        "avatar": "/images/webp/reviews/avatar.webp",
+        "name": "Dr. Michael Anderson",
+        "specialty": "Chief Dentist",
+        "clinicLogo": "",
+        "text": "TxPlanPro has completely transformed the way we present treatment plans in our clinic. The application is intuitive, professional, and saves us an incredible amount of time. I’ve had a great experience."
       },
       {
-        "avatar": "https://randomuser.me/api/portraits/men/70.jpg",
-        "name": "Доктор Томас Миллер",
-        "specialty": "Дантист",
-        "clinicLogo": "https://via.placeholder.com/32x32?text=Logo5",
-        "text": "Инструмент экономит время и силы нашей команды."
+        "avatar": "/images/webp/reviews/avatar.webp",
+        "name": "Dr. Michael Anderson",
+        "specialty": "Chief Dentist",
+        "clinicLogo": "",
+        "text": "eatment plans in our clinic. The application is intuitive, professional, and saves us an incredible amount of time. I’ve had a great experience."
       }
     ]
   },
@@ -363,7 +376,7 @@
         "description": "Попробуйте TxPlan Pro на реальных пациентах",
         "price": "Бесплатно",
         "priceDescription": "",
-        "blacklabel": "",
+        "blackLabel": "",
         "whiteLabel": "Бесплатно",
         "monthLimitsTitle": "Лимиты в месяц:",
         "monthLimits": [
@@ -392,7 +405,7 @@
         "description": "Для одного врача",
         "price": "59€",
         "priceDescription": "в месяц",
-        "blacklabel": "",
+        "blackLabel": "",
         "whiteLabel": "",
         "monthLimitsTitle": "Лимиты в месяц:",
         "monthLimits": [
@@ -418,7 +431,7 @@
         "description": "Для кабинета / небольшой клиники",
         "price": "149€",
         "priceDescription": "в месяц",
-        "blacklabel": "Популярный",
+        "blackLabel": "Популярный",
         "whiteLabel": "",
         "monthLimitsTitle": "Лимиты в месяц:",
         "monthLimits": [
@@ -443,7 +456,7 @@
         "description": "Для клиник / медицинских центров",
         "price": "€300",
         "priceDescription": "в месяц",
-        "blacklabel": "",
+        "blackLabel": "",
         "whiteLabel": "",
         "monthLimitsTitle": "Лимиты в месяц:",
         "monthLimits": [
@@ -458,7 +471,7 @@
           "Приоритетная поддержка",
           "До 10 пользователей"
         ],
-        "buttonText": "Связаться с нами"
+        "buttonText": "Подключить Clinic"
       }
     ]
   },

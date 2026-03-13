@@ -25,42 +25,71 @@ export default function GettingStarted() {
         [null, cards[3], cards[4], cards[5]]
     ];
 
+    const font = t("gettingStarted.font");
+
     return (
-        <section className="container py-16 mx-auto">
+        <section className="my-container mb-[65px] sm:mb-[100px] md:mb-[100px] 2xl:mb-[200px] ">
 
             {/* Описание + стрелки */}
-            <div className="flex justify-between items-center mb-4">
+            <div className="flex justify-between items-center">
                 {/* Заголовок секции */}
-                <h2 className="text-[40px] md:text-[55px] font-bold mb-6 text-center">{title}</h2>
+                <h2 className={`text-[30px] 2xl:text-[40px] 3xl:text-[55px] mb-[20px] 2xl:mb-[30px] 3xl:mb-[40px] leading-[1] 3xl:leading-[0.88] tracking-[-0.03em] 3xl:tracking-[-0.05em] font-${font}`}>{title}</h2>
 
-                <div className="flex gap-3 md:hidden">
-                    <button ref={prevRef} className="w-10 h-10 bg-neutral-200 rounded-full cursor-pointer">←</button>
-                    <button ref={nextRef} className="w-10 h-10 bg-neutral-200 rounded-full cursor-pointer">→</button>
+                <div className="xs:flex gap-4 items-center hidden text-grey mdd:hidden">
+                    <button ref={prevRef} className="cursor-pointer hover:text-black">
+                        <svg className="w-[21px] h-[16px]">
+                            <use href="/icons/sprite/sprite.svg#arrow-left" />
+                        </svg>
+                    </button>
+                    <button ref={nextRef} className="cursor-pointer hover:text-black">
+                        <svg className="w-[21px] h-[16px]">
+                            <use href="/icons/sprite/sprite.svg#arrow-right" />
+                        </svg>
+                    </button>
                 </div>
             </div>
 
-            {/* MOBILE / TABLET <768px */}
-            <div className="md:hidden">
+            <div className="mdd:hidden">
                 <Swiper
                     modules={[Navigation]}
-                    className="!overflow-visible"
+                    className="!overflow-visible gettingstarted-swiper"
                     onBeforeInit={(swiper) => {
-                        // @ts-expect-error: refs are initialized after render
+                        // @ts-expect-error: ewe
                         swiper.params.navigation.prevEl = prevRef.current;
-                        // @ts-expect-error: refs are initialized after render
+                        // @ts-expect-error: ewew
                         swiper.params.navigation.nextEl = nextRef.current;
                         swiper.navigation.init();
                         swiper.navigation.update();
                     }}
-                    spaceBetween={10}
-                    slidesPerView={1}
+                    spaceBetween={5}
+                    slidesPerView={1.05}
                     breakpoints={{
-                        360: { slidesPerView: 1 },
-                        640: { slidesPerView: 2 },
+                        375: {
+                            slidesPerView: 1.3,
+                        },
+                        420: {
+                            slidesPerView: 1.6,
+                        },
+                        480: {
+                            slidesPerView: 1.8,
+                        },
+                        530: {
+                            slidesPerView: 1.9,
+                        },
+
+                        660: {
+                            slidesPerView: 2.3,
+                        },
+                         768: {
+                            slidesPerView: 2.8,
+                        },
+                            840: {
+                            slidesPerView: 3.1,
+                        },
                     }}
                 >
                     {cards.map((card, index) => (
-                        <SwiperSlide key={index} className="!w-[85%]">
+                        <SwiperSlide key={index}>
                             <GettingStartedCard card={card} />
                         </SwiperSlide>
                     ))}
@@ -68,7 +97,7 @@ export default function GettingStarted() {
             </div>
 
             {/* DESKTOP / >=768px */}
-            <div className="hidden md:grid grid-cols-4 gap-6">
+            <div className="hidden mdd:grid grid-cols-4 gap-[6px]">
                 {desktopGrid.map((row, rowIndex) =>
                     row.map((card, colIndex) =>
                         card ? (

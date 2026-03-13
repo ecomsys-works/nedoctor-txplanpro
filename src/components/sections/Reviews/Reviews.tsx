@@ -14,47 +14,89 @@ export default function Reviews() {
   const { t } = useTranslation();
 
   const title = t("reviews.title");
-  const Reviews = t("reviews.cards", { returnObjects: true }) as ReviewCardType[];
+  const reviews = t("reviews.cards", { returnObjects: true }) as ReviewCardType[];
 
   return (
-    <section className="py-16">
-      <div className="container mx-auto">
-        {/* Заголовок */}
-        <h2 className="text-[120px] font-bold mb-10 text-center md:text-left">
-          {title}
-        </h2>
+    <section className="reviews-swiper my-container my-container--reviews mb-[70px] sm:mb-[100px] 2xl:mb-[200px]">
 
-        {/* Слайдер */}
-        <Swiper
-          spaceBetween={20}
-          slidesPerView={1.1}
-          breakpoints={{
-            0: { slidesPerView: 1.1, centeredSlides: false, spaceBetween: 10 },
-            576: { slidesPerView: 2, centeredSlides: true, spaceBetween: 10 },
-            992: { slidesPerView: 3, centeredSlides: false, spaceBetween: 20 },
-          }}
-          className="!overflow-visible"
-        >
-          {Reviews.map((card, i) => (
-            <SwiperSlide key={i}>
-              <div className="bg-white p-5 rounded-[20px]">
-                {/* Шапка карточки */}
-                <div className="flex items-center gap-3 mb-4">
-                  {card.avatar && <img src={card.avatar} alt="Avatar" className="w-12 h-12 rounded-full" />}
-                  <div>
-                    {card.name && <p className="font-semibold">{card.name}</p>}
-                    {card.specialty && <p className="text-gray-500">{card.specialty}</p>}
-                  </div>
-                  {card.clinicLogo && <img src={card.clinicLogo} alt="Clinic" className="w-8 h-8 ml-auto" />}
+      {/* Заголовок */}
+      <h2 className="text-[40px] sm:text-[60px] 2xl:text-[120px] mb-[25px] sm:mb-[40px] leading-[1] tracking-[-0.06em] font-semibold text-center uppercase">
+        {title}
+      </h2>
+
+      {/* Слайдер */}
+      <Swiper
+        autoHeight={false}
+        spaceBetween={4}
+        slidesPerView={1.1}
+        breakpoints={{
+          0: { slidesPerView: 1.1, centeredSlides: false, spaceBetween: 4 },
+          576: { slidesPerView: 2, centeredSlides: true, spaceBetween: 4 },
+          992: { slidesPerView: 3, centeredSlides: false, spaceBetween: 6 },
+          1536: { slidesPerView: 3, centeredSlides: false, spaceBetween: 10 },
+          1880: { slidesPerView: 3, centeredSlides: false, spaceBetween: 25 },
+        }}
+        className="!overflow-visible"
+      >
+        {reviews.map((card, i) => (
+          <SwiperSlide key={i} className="!h-auto flex">
+
+            {/* Карточка */}
+            <div className="bg-white p-[15px] 2xl:p-[30px] rounded-[15px] 2xl:rounded-[20px] flex flex-col w-full">
+
+              {/* Header */}
+              <div className="flex items-center gap-3 mb-[36px]">
+
+                {card.avatar && (
+                  <img
+                    src={card.avatar}
+                    alt="Avatar"
+                    className="w-[38px] h-[38px] 2xl:w-[54px] 2xl:h-[54px] rounded-full"
+                  />
+                )}
+
+                <div>
+                  {card.name && (
+                    <p className="text-[14px] 2xl:text-[18px] leading-[1.3] tracking-[-0.04em] font-semibold">
+                      {card.name}
+                    </p>
+                  )}
+
+                  {card.specialty && (
+                    <p className="text-[14px] 2xl:text-[18px] leading-[1] 2xl:leading-[1.3] tracking-[-0.04em] font-light">
+                      {card.specialty}
+                    </p>
+                  )}
                 </div>
 
-                {/* Текст */}
-                <p>{card.text}</p>
+                {card.clinicLogo ? (
+                  <img
+                    src={card.clinicLogo}
+                    alt="Clinic"
+                    className="ml-auto h-[31px] 2xl:h-[54px] w-auto"
+                  />
+                ) : (
+                  <span
+                    className="text-nowrap ml-auto h-[31px] 2xl:h-[54px] flex items-center justify-center border border-blue-stroke px-[6px]
+                    text-grey text-[10px] 2xl:text-[18px] font-thin leading-[1.3] tracking-[-0.04em]
+                    rounded-[58px] 2xl:rounded-[100px] 2xl:px-[12px]"
+                  >
+                    clinic logo
+                  </span>
+                )}
+
               </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
-      </div>
+
+              {/* Text */}
+              <p className="text-black text-[14px] 2xl:text-[18px] leading-[1.2] tracking-[-0.04em]">
+                {card.text}
+              </p>
+
+            </div>
+
+          </SwiperSlide>
+        ))}
+      </Swiper>
     </section>
   );
 }

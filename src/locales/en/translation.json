@@ -198,158 +198,174 @@
     }
   },
   "benefits": {
-    "title": "Platform Benefits",
+    "font": "libre",
+    "title": "One tool: Benefits for everyone",
     "accordions": [
       {
-        "header": "Doctors",
+        "headerMob": "Doctors",
+        "headerDesk": "For doctors",
         "rows": [
           {
-            "title": "Efficiency Boost",
-            "description": "Automate routine processes"
+            "title": "More time with patients –Less time on paperwork",
+            "description": "Create clear, visual treatment plans in minutes — without slowing down your day"
           },
           {
-            "title": "Better Interaction",
-            "description": "Patients get clear recommendations"
+            "title": "Plan treatments the way you actually think",
+            "description": "Structure complex cases step-by-step, without messy notes or screenshots"
           },
           {
-            "title": "Revenue Growth",
-            "description": "Optimize clinic workflow"
+            "title": "Make better clinical decisions and get more patient “yes”",
+            "description": "Clear visuals reduce objections and support stronger treatment outcomes"
           }
         ]
       },
       {
-        "header": "Patients",
+        "headerMob": "Patients",
+        "headerDesk": "For patients",
         "rows": [
           {
-            "title": "Treatment Understanding",
-            "description": "All steps clearly explained"
+            "title": "They finally understand – Not guess",
+            "description": "Visual plans make complex care clear and approachable"
           },
           {
-            "title": "Progress Tracking",
-            "description": "Monitor treatment outcomes"
+            "title": "They know exactly what they’re paying for",
+            "description": "Transparent steps and costs remove uncertainty and stress"
           },
           {
-            "title": "Info Accessibility",
-            "description": "All data in one place"
+            "title": "They feel confident in your care and recommend you",
+            "description": "Clarity builds trust, and trust builds lasting loyalty"
           }
         ]
       },
       {
-        "header": "Owners",
+        "headerMob": "Owners",
+        "headerDesk": "For owners",
         "rows": [
           {
-            "title": "Business Analytics",
-            "description": "Understand key metrics"
+            "title": "Smoother operations with fewer mistakes",
+            "description": "Standardized plans reduce staff friction, rework, and coordination issues"
           },
-          { "title": "Staff Management", "description": "Optimize workload" },
-          { "title": "Profit Growth", "description": "Make faster decisions" }
+          {
+            "title": "Higher case acceptance and stronger retention",
+            "description": "Clear communication leads to more approvals and more loyal patients"
+          },
+          {
+            "title": "More predictable consistent revenue",
+            "description": "Structured, visual, and branded plans make outcomes and cash flow easier to forecast"
+          }
         ]
       }
     ]
   },
   "double": {
+    "font": "libre",
     "cards": [
       {
-        "image": "/images/card1.png"
+        "imageMob": "/images/webp/double/mob/think.webp",
+        "imageDesk": "/images/webp/double/desk/think.webp"
       },
       {
-        "title": "Want to join the waitlist?",
-        "button": "Join Waitlist"
+        "title": "Ever wish your patients truly understood and agreed instantly? ",
+        "button": "Join the waitlist"
       }
     ]
   },
   "gettingStarted": {
-    "title": "Getting Started",
+    "font": "libre",
+    "title": "How to get started ",
     "cards": [
       {
-        "title": "Registration",
-        "description": "Create an account and set up your profile.",
-        "count": "0.1"
+        "title": "Start instantly – fully online",
+        "description": "Create your account and begin using TxPlanPro right away. Everything works online: no waiting, no approvals, no manual setup required.",
+        "count": "01"
       },
       {
-        "title": "Choose a Plan",
-        "description": "Select a subscription plan and access features.",
-        "count": "0.2"
+        "title": "Customize it for your clinic",
+        "description": "If you want, our team will help tailor your templates aligning them with your branding, preferred workflows, and documentation style.",
+        "count": "02"
       },
       {
-        "title": "Add Team",
-        "description": "Invite colleagues and assign roles.",
-        "count": "0.3"
+        "title": "Simple training for your team",
+        "description": "Quick remote training gets everyone up to speed – no technical expertise required.",
+        "count": "03"
       },
       {
-        "title": "Setup Processes",
-        "description": "Optimize workflows for your team.",
-        "count": "0.4"
+        "title": "Support wherever you need it",
+        "description": "Access our knowledge base anytime, or reach out to our team if you need help.",
+        "count": "04"
       },
       {
-        "title": "Analytics",
-        "description": "Track key metrics and results.",
-        "count": "0.5"
+        "title": "Secure & reliable by design",
+        "description": "Your data is protected with automatic backups and built-in safeguards that minimize errors.",
+        "count": "05"
       },
       {
-        "title": "Start Working",
-        "description": "Begin using the platform effectively.",
-        "count": "0.6"
+        "title": "Constantly getting better",
+        "description": "TxPlanPro evolves based on real clinic feedback, with new features carefully tested before release.",
+        "count": "06"
       }
     ]
   },
   "developed": {
+    "font": "libre",
     "top": {
-      "title": "developed by practicing dentists",
-      "description": "We designed this tool to be clear and easy to use for all dental professionals."
+      "title": "Developed by clinicians",
+      "description": "Built by practicing dentists who know how treatment planning actually works in real clinics under real time pressure, with real patients and real teams."
     },
+    "diagramMob": "/images/webp/developed/mob/diagram.webp",
+    "diagramDesk": "/images/webp/developed/desk/diagram.webp",
     "bottom": [
       {
-        "title": "Ease of use",
-        "description": "Intuitive interface for quick onboarding."
+        "title": "Clinical logic first",
+        "description": "Clear, step-by-step plans that follow how dentists actually think."
       },
       {
-        "title": "Data security",
-        "description": "Your data is protected and stored securely."
+        "title": "Evidence-based",
+        "description": "Structured around clinical reasoning for better decisions, not guesswork."
       },
       {
-        "title": "Team support",
-        "description": "We are always ready to help and answer your questions."
+        "title": "Smart flexibility",
+        "description": "A clear framework that still adapts to unique, patient-specific cases."
       }
     ]
   },
   "reviews": {
-    "title": "Anas Clients",
+    "title": "What our clients say",
     "cards": [
       {
-        "avatar": "https://randomuser.me/api/portraits/men/32.jpg",
+        "avatar": "/images/webp/reviews/avatar.webp",
         "name": "Dr. Michael Anderson",
-        "specialty": "Dentist",
-        "clinicLogo": "https://via.placeholder.com/32x32?text=Logo1",
-        "text": "Great platform, helped us automate processes."
+        "specialty": "Chief Dentist",
+        "clinicLogo": "",
+        "text": "TxPlanPro has completely transformed the way we present treatment plans in our clinic. The application is intuitive, professional, and saves us an incredible amount of time. I’ve had a great experience."
       },
       {
-        "avatar": "https://randomuser.me/api/portraits/women/44.jpg",
-        "name": "Dr. Emily Roberts",
-        "specialty": "Orthodontist",
-        "clinicLogo": "https://via.placeholder.com/32x32?text=Logo2",
-        "text": "Simple and convenient, the team loves it."
+        "avatar": "/images/webp/reviews/avatar.webp",
+        "name": "Dr. Michael Anderson",
+        "specialty": "Chief Dentist",
+        "clinicLogo": "",
+        "text": "TxPlanPro has completely transformed the way we present treatment plans in our clinic. The application is intuitive, professional, and saves us an incredible amount of time. I’ve had a great experience."
       },
       {
-        "avatar": "https://randomuser.me/api/portraits/men/58.jpg",
-        "name": "Dr. John Smith",
-        "specialty": "Oral Surgeon",
-        "clinicLogo": "https://via.placeholder.com/32x32?text=Logo3",
-        "text": "Reliable and secure, I recommend to all dentists."
+        "avatar": "/images/webp/reviews/avatar.webp",
+        "name": "Dr. Michael Anderson",
+        "specialty": "Chief Dentist",
+        "clinicLogo": "",
+        "text": "TxPlanPro has completely transformed the way we present treatment plans in our clinic. The application is intuitive, professional, and saves us an incredible amount of time. I’ve had a great experience."
       },
       {
-        "avatar": "https://randomuser.me/api/portraits/women/25.jpg",
-        "name": "Dr. Sarah Lewis",
-        "specialty": "Periodontist",
-        "clinicLogo": "https://via.placeholder.com/32x32?text=Logo4",
-        "text": "Very user-friendly interface and excellent support."
+        "avatar": "/images/webp/reviews/avatar.webp",
+        "name": "Dr. Michael Anderson",
+        "specialty": "Chief Dentist",
+        "clinicLogo": "",
+        "text": "TxPlanPro has completely transformed the way we present treatment plans in our clinic. The application is intuitive, professional, and saves us an incredible amount of time. I’ve had a great experience."
       },
       {
-        "avatar": "https://randomuser.me/api/portraits/men/70.jpg",
-        "name": "Dr. Thomas Miller",
-        "specialty": "Dentist",
-        "clinicLogo": "https://via.placeholder.com/32x32?text=Logo5",
-        "text": "This tool saves our team time and effort."
+        "avatar": "/images/webp/reviews/avatar.webp",
+        "name": "Dr. Michael Anderson",
+        "specialty": "Chief Dentist",
+        "clinicLogo": "",
+        "text": "TxPlanPro has completely transformed the way we present treatment plans in our clinic. The application is intuitive, professional, and saves us an incredible amount of time. I’ve had a great experience."
       }
     ]
   },
@@ -361,7 +377,7 @@
         "description": "Try TxPlan Pro with real patients",
         "price": "Free",
         "priceDescription": "",
-        "blacklabel": "",
+        "blackLabel": "",
         "whiteLabel": "Free plan",
         "monthLimitsTitile": "Monthly limits:",
         "monthLimits": [
@@ -386,7 +402,7 @@
         "description": "Best for individual dentists",
         "price": "59€",
         "priceDescription": "per month",
-        "blacklabel": "",
+        "blackLabel": "",
         "whiteLabel": "",
         "monthLimitsTitile": "Monthly limits:",
         "monthLimits": [
@@ -412,7 +428,7 @@
         "description": "Best for small clinics & dental teams",
         "price": "149€",
         "priceDescription": "per month",
-        "blacklabel": "Most popular",
+        "blackLabel": "Most popular",
         "whiteLabel": "",
         "monthLimitsTitile": "Monthly limits:",
         "monthLimits": [
@@ -437,7 +453,7 @@
         "description": "Best for growing clinics",
         "price": "€300",
         "priceDescription": "",
-        "blacklabel": "",
+        "blackLabel": "",
         "whiteLabel": "Free plan",
         "monthLimitsTitile": "Monthly limits:",
         "monthLimits": [
