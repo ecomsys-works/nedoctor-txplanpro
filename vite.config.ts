@@ -14,7 +14,12 @@ export default defineConfig({
 
   server: {
     open: true,
-    port: 5173,
+    fs: {
+      strict: false, // разрешаем доступ к файловой системе
+    },
+    host: true, // разрешаем все хосты
+    strictPort: true,
+    allowedHosts: ["subuncinated-shiftless-gertie.ngrok-free.dev"],
   },
 
   build: {

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
+import { formatHeader } from "@/utils/formaters";
 
 export default function BenefitsAccordion() {
     const { t } = useTranslation();
@@ -16,26 +17,12 @@ export default function BenefitsAccordion() {
         setOpenIndex(openIndex === index ? null : index);
     };
 
-    const font = t("benefits.font");
-
-    function formatHeader(title: string) {
-        // Проверяем, есть ли двоеточие
-        if (title.includes(":")) {
-            const parts = title.split(":");
-            return (
-                <>
-                    {parts[0]}:<br />
-                    {parts.slice(1).join(":")} {/* на случай, если двоеточие несколько раз */}
-                </>
-            );
-        }
-        return title;
-    }
+    const font = t("benefits.font");    
 
     return (
         <section className="mb-[70px] sm:mb-[100px] 2xl:mb-[200px]">
             <h2 className={`text-[25px] 3xl:text-[55px] mb-[20px] md:mb-[30px] 2xl:mb-[40px] leading-[1] tracking-[-0.03em] my-container font-${font}`}>
-               {formatHeader(title)}
+                {formatHeader(title)}
             </h2>
 
             <div className="mx-[10px] xs:mx-[15px] sm:mx-0 flex flex-col rounded-[20px] bg-white sm:bg-transparent sm:rounded-0">
@@ -76,7 +63,7 @@ export default function BenefitsAccordion() {
                                         }`}
                                 >
                                     <div className="my-container">
-                                        <AccordionContent                                     
+                                        <AccordionContent
                                             header={accordion.headerDesk}
                                             accordion={accordion}
                                             isOpen={isOpen}

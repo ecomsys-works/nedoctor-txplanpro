@@ -22,6 +22,7 @@
     "login": "Log in"
   },
   "hero": {
+    "font": "libre",
     "title": "Build the Future of Finance",
     "subtitle": "A powerful platform designed to simplify analytics, automate workflows and help teams make smarter decisions faster.",
     "cta": "Join the Waitlist",
@@ -49,75 +50,80 @@
     ]
   },
   "partners": {
-    "title": "partners by dental professionals",
+    "font": "libre",
+    "title": "Our partners",
     "rows": [
       {
-        "title": "Increase case acceptance",
-        "description": "Help patients better understand their treatment options.",
+        "title": "For individual dentists ",
+        "description": "Is paperwork stealing your time while patients leave confused?",
         "cards": [
           {
-            "title": "Clear explanations",
-            "text": "Patients easily understand treatment plans."
+            "title": "Wasted time",
+            "text": "You spend too much chair time explaining plans patients still can’t visualize.",
+            "icon": "our-1"
           },
           {
-            "title": "Visual guidance",
-            "text": "Show procedures visually and reduce confusion."
+            "title": "Low clarity",
+            "text": "Text-heavy or handwritten plans make complex treatments harder to understand.",
+            "icon": "our-2"
           },
           {
-            "title": "Better decisions",
-            "text": "Patients feel confident about treatment choices."
+            "title": "Poor presentation",
+            "text": "Messy, inconsistent documents make even great dentistry look unprofessional.",
+            "icon": "our-3"
           }
         ]
       },
       {
-        "title": "Save chair time",
-        "description": "Spend less time explaining and more time treating.",
+        "title": "For dental clinics [br] Small to large",
+        "description": "When your team works from one clear plan, the entire clinic runs smoother.",
         "cards": [
           {
-            "title": "Faster consultations",
-            "text": "Reduce repetitive explanations."
+            "title": "No standard",
+            "text": "Unclear plans slow consultations, lower case acceptance, and make revenue harder to predict.",
+            "icon": "our-4"
           },
           {
-            "title": "Automated visuals",
-            "text": "Show procedures automatically."
+            "title": "Team friction",
+            "text": "You spend too much chair time explaining plans patients still can’t visualize.",
+            "icon": "our-5"
           },
           {
-            "title": "Improved workflow",
-            "text": "Streamline your daily routine."
+            "title": "Weak brand",
+            "text": "Inconsistent formats and branding weaken trust and your clinic’s professional image.",
+            "icon": "our-6"
           }
         ]
       }
     ]
   },
   "featureGrid": {
+    "font": "libre",
     "cards": [
       {
-        "type": "text",
-        "title": "Create treatment plans in seconds",
-        "description": "AI helps dentists generate structured treatment plans quickly and accurately."
+        "type": "title",
+        "title": "Хотите, чтобы пациенты сразу понимали и соглашались?",
+        "description": "Меньше путаницы. Меньше трения. [br] Больше принятых планов лечения."
       },
       {
-        "type": "image",
-        "image": "/images/feature-language-en.png"
+        "type": "error",
+        "imageDesk": "/images/webp/feature-grid/en/error-desk.webp",
+        "imageTab": "/images/webp/feature-grid/en/error-tab.webp",
+        "imageMob": "/images/webp/feature-grid/en/error-mob.webp"
       },
       {
-        "type": "label",
-        "label": "Plan Pro",
-        "description": "Professional planning tools designed specifically for dental clinics."
+        "type": "plan",
+        "label": "TX Plan Pro",
+        "description": "Создаёт планы лечения в том виде, как вы сами привыкли думать и объяснять их пациентам.",
+        "imageDesk": "/images/webp/feature-grid/en/tablet-desk.webp",
+        "imageTab": "/images/webp/feature-grid/en/tablet-tab.webp",
+        "imageMob": "/images/webp/feature-grid/en/tablet-mob.webp"
       },
       {
         "type": "diagram",
-        "points": [
-          {
-            "text": "AI powered"
-          },
-          {
-            "text": "Clear and visual"
-          },
-          {
-            "text": "Patient consent ready"
-          }
-        ]
+        "imageDesk": "/images/webp/feature-grid/en/diagram-desk.webp",
+        "imageTab": "/images/webp/feature-grid/en/diagram-tab.webp",
+        "imageMob": "/images/webp/feature-grid/en/diagram-mob.webp"
       }
     ]
   },
@@ -128,78 +134,79 @@
         {
           "title": "Upload patient data",
           "description": "Quickly upload diagnostics and patient information.",
-          "icon": "upload",
-          "image": "/images/workflow/upload.png"
+          "icon": "show",
+          "image": "/images/webp/workflow-steps/en/pic-1.webp"
         },
         {
           "title": "AI analyzes the case",
           "description": "Our AI evaluates the clinical data and builds a treatment structure.",
-          "icon": "ai",
-          "image": "/images/workflow/ai.png"
+          "icon": "relax",
+          "image": "/images/webp/workflow-steps/en/pic-2.webp"
         },
         {
           "title": "Review treatment plan",
           "description": "Edit and refine the suggested treatment plan.",
-          "icon": "review",
-          "image": "/images/workflow/review.png"
+          "icon": "diamand",
+          "image": "/images/webp/workflow-steps/en/pic-3.webp"
         },
         {
           "title": "Visual explanation",
           "description": "Show the patient a clear and visual explanation.",
-          "icon": "visual",
-          "image": "/images/workflow/visual.png"
+          "icon": "edino",
+          "image": "/images/webp/workflow-steps/en/pic-4.webp"
         },
         {
           "title": "Patient approval",
           "description": "Patients clearly understand and approve the plan.",
-          "icon": "approval",
-          "image": "/images/workflow/approval.png"
+          "icon": "chart",
+          "image": "/images/webp/workflow-steps/en/pic-5.webp"
         },
         {
           "title": "Start treatment",
           "description": "Begin treatment with full clarity and documentation.",
-          "icon": "treatment",
-          "image": "/images/workflow/treatment.png"
+          "icon": "table",
+          "image": "/images/webp/workflow-steps/en/pic-6.webp"
         }
       ]
     },
 
     "details": {
+      "font": "libre",
       "cards": [
         {
-          "title": "How it works inside",
-          "description": "The system analyzes patient data and automatically generates a treatment plan."
+          "title": "How it looks & feels",
+          "description": "Designed to reduce friction for you and your patients."
         },
         {
-          "label": "AI",
-          "title": "AI powered",
-          "description": "Treatment plans are generated using artificial intelligence.",
-          "image": "/images/workflow/ai.png"
+          "label": "No installation",
+          "title": "Start instantly",
+          "description": "Open the app and begin creating plans right away. No installation, no IT headaches.",
+          "image": "/images/webp/workflow-details/en/pic-1.webp"
         },
         {
-          "label": "UI",
-          "title": "Clear visualization",
-          "description": "All treatment stages are clearly visualized.",
-          "image": "/images/workflow/visual.png"
+          "label": "Adapts to workflow",
+          "title": "Matches how you think",
+          "description": "A clear, step-by-step structure that follows how you actually think and explain.",
+          "image": "/images/webp/workflow-details/en/pic-2.webp"
         },
         {
-          "label": "PATIENT",
-          "title": "Patient friendly",
-          "description": "Patients easily understand their treatment.",
-          "image": "/images/workflow/patient.png"
+          "label": "No distraction",
+          "title": "Clean & focused design",
+          "description": "Modern layout that keeps attention on the case, not on the tool.",
+          "image": "/images/webp/workflow-details/en/pic-3.webp"
         },
         {
-          "label": "DOCS",
-          "title": "Ready documents",
-          "description": "Automatic documents for patient consent.",
-          "image": "/images/workflow/docs.png"
+          "label": "Better decisions",
+          "title": "Less cognitive load",
+          "description": "The interface helps you stay focused, reduces stress for your team, and makes plans easier for patients to follow.",
+          "image": "/images/webp/workflow-details/en/pic-4.webp"
         }
       ]
     }
   },
   "benefits": {
     "font": "libre",
-    "title": "One tool: Benefits for everyone",
+    "title": "One tool: [br] Benefits for everyone",
     "accordions": [
       {
         "headerMob": "Doctors",

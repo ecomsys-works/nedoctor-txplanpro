@@ -4,6 +4,7 @@ import { Navigation } from "swiper/modules"
 import "swiper/css"
 import "swiper/css/navigation"
 
+import { formatHeader, formatHeaderNo } from "@/utils/formaters"
 import { useTranslation } from "react-i18next"
 
 import WorkflowDetailsHeroCard from "./WorkflowDetailsHeroCard"
@@ -21,24 +22,37 @@ export default function WorkflowDetails() {
   const prevRef = useRef<HTMLButtonElement>(null)
   const nextRef = useRef<HTMLButtonElement>(null)
 
+  const font = t("workflow.details.font");
+
   return (
-    <section className="my-container mb-[70px] sm:mb-[100px] 2xl:mb-[200px]">
+    <section className="workflow-details-swiper my-container mb-[70px] sm:mb-[100px] 2xl:mb-[200px]">
 
       {/* MOBILE */}
-      <div className="lg:hidden">
+      <div className="md:hidden">
 
         {/* Hero title */}
-        <h2 className="text-[40px] leading-[1.1] mb-4">
+        <h2 className={`text-[25px] mb-[10px] leading-[1] tracking-[-0.03em] font-${font}
+          2xl:text-[40px] 3xl:text-[55px]  2xl:mb-[30px] 3xl:mb-[40px]  3xl:leading-[0.88]  3xl:tracking-[-0.05em]`}>
           {heroCard.title}
         </h2>
 
         {/* Description + arrows in one container */}
-        <div className="flex justify-between items-center mb-6">
-          <p className="text-[18px] text-neutral-600">{heroCard.description}</p>
+        <div className="flex justify-between items-end mb-[20px]">
+          <p className="text-[14px] leading-[1.2] tracking-[-0.04em] text-black
+          2xl:text-[18px]">
+            {formatHeader(heroCard.description)}</p>
 
-          <div className="flex gap-3">
-            <button ref={prevRef} className="w-10 h-10 bg-neutral-200 rounded-full cursor-pointer">←</button>
-            <button ref={nextRef} className="w-10 h-10 bg-neutral-200 rounded-full cursor-pointer">→</button>
+          <div className="flex gap-4 items-center text-grey mdd:hidden">
+            <button ref={prevRef} className="cursor-pointer hover:text-black">
+              <svg className="w-[21px] h-[16px]">
+                <use href="/icons/sprite/sprite.svg#arrow-left" />
+              </svg>
+            </button>
+            <button ref={nextRef} className="cursor-pointer hover:text-black">
+              <svg className="w-[21px] h-[16px]">
+                <use href="/icons/sprite/sprite.svg#arrow-right" />
+              </svg>
+            </button>
           </div>
         </div>
 
@@ -54,29 +68,61 @@ export default function WorkflowDetails() {
             swiper.navigation.init()
             swiper.navigation.update()
           }}
-          spaceBetween={10}
-          slidesPerView={"auto"}
+          spaceBetween={5}
+          slidesPerView={1.01}
+          className="!overflow-visible"
+          breakpoints={{
+            375: {
+              slidesPerView: 1.01,
+            },
+            480: {
+              slidesPerView: 1.85,
+            }
+          }}
         >
           {featureCards.map((card, index) => (
-            <SwiperSlide key={index} className="!w-[85%]">
-              <WorkflowDetailsCard card={card} />
+            <SwiperSlide key={index}>
+              <WorkflowDetailsCard card={card} index={index} />
             </SwiperSlide>
           ))}
         </Swiper>
 
       </div>
 
+      {/* TABLET */}
+      <div className="hidden md:block 2xxl:hidden">
+        {/* Hero title */}
+        <h2 className={`text-[25px] mb-[10px] leading-[1] tracking-[-0.03em] font-${font}
+          2xl:text-[40px] 2xl:tracking-[-0.05em] 3xl:text-[55px] `}>
+          {heroCard.title}
+        </h2>
+
+        {/* Description */}
+        <p className="text-[14px] leading-[1.2] tracking-[-0.04em] text-black mb-[20px] 2xl:text-[18px] 2xl:mb-[30px]">
+          {formatHeaderNo(heroCard.description)}</p>
+
+        <div className="grid grid-cols-2 gap-[6px] rounded-[45px] bg-black p-[6px]">
+
+          <WorkflowDetailsCard card={featureCards[0]} index={0} />
+          <WorkflowDetailsCard card={featureCards[1]} index={1} />
+          <WorkflowDetailsCard card={featureCards[2]} index={2} />
+          <WorkflowDetailsCard card={featureCards[3]} index={3} />
+
+        </div>
+      </div>
+
+
       {/* DESKTOP */}
-      <div className="hidden lg:grid grid-cols-3 gap-[10px]">
+      <div className="hidden 2xxl:grid grid-cols-3 gap-[8px] rounded-[45px] bg-black p-[8px]">
 
         <div className="col-span-2">
-          <WorkflowDetailsHeroCard card={heroCard} />
+          <WorkflowDetailsHeroCard card={heroCard} font={font} />
         </div>
 
-        <WorkflowDetailsCard card={featureCards[0]} />
-        <WorkflowDetailsCard card={featureCards[1]} />
-        <WorkflowDetailsCard card={featureCards[2]} />
-        <WorkflowDetailsCard card={featureCards[3]} />
+        <WorkflowDetailsCard card={featureCards[0]} index={0} />
+        <WorkflowDetailsCard card={featureCards[1]} index={1} />
+        <WorkflowDetailsCard card={featureCards[2]} index={2} />
+        <WorkflowDetailsCard card={featureCards[3]} index={3} />
 
       </div>
     </section>
