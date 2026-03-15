@@ -38,10 +38,10 @@ export default function Partners() {
   const font = t("partners.font");
 
   return (
-    <section className="my-container mb-[70px] sm:mb-[100px] 2xl:mb-[200px]">
+    <section className="my-container mb-[70px] sm:mb-[120px] 2xl:mb-[200px] 3xl:mb-[250px]">
       {/* SECTION TITLE */}
 
-      <h2 className="text-[35px] xxs:text-[60px] 2xl:text-[120px] mb-[30px] xxs:mb-[45px] 2xl:mb-[70px] 3xl:mb-[90px] leading-[1] tracking-[-0.06em] font-bold text-center uppercase">
+      <h2 className="text-[35px]  xxs:text-[60px] 2xl:text-[120px] mb-[25px] xxs:mb-[45px] mdd:mb-[15px] 2xl:mb-[70px] 3xl:mb-[90px] leading-[1] tracking-[-0.06em] font-semibold text-center uppercase">
         {t("partners.title")}
       </h2>
 
@@ -52,19 +52,19 @@ export default function Partners() {
           return (
             <div
               key={i}
-              className="grid grid-cols-1 lg:grid-cols-[24%_1fr] xl:grid-cols-[29%_1fr] gap-[20px]"
+              className="grid grid-cols-1 lg:grid-cols-[24%_1fr] xl:grid-cols-[29%_1fr] 3xl:grid-cols-[37%_1fr] gap-[20px]"
             >
               {/* TEXT BLOCK */}
 
               <div className="flex flex-col justify-start">
                 <h3
-                  className={`sm:max-w-[365px] text-[25px] sm:text-[35px] 2xl:text-[40px] 3xl:text-[55px] mb-[10px] 2xl:mb-[15px] 3xl:mb-[20px] leading-[1] tracking-[-0.03em] sm:tracking-[-0.05em] font-${font}`}
+                  className={`sm:max-w-[365px] text-[25px] md:text-[35px] mdd:text-[25px] 2xl:text-[40px] 3xl:text-[55px] mb-[10px] 2xl:mb-[15px] 3xl:mb-[20px] leading-[1] tracking-[-0.03em] sm:tracking-[-0.05em] font-${font}`}
                 >
                   {formatHeaderGrey(row.title)}
                 </h3>
 
                 <div className="flex items-end justify-between" >
-                  <p className="max-w-[75%] sm:max-w-[350px] text-[14px] sm:text-[16px] 2xl:text-[18px] leading-[1.2] sm:leading-[1.3] tracking-[-0.04em]">
+                  <p className="max-w-[75%] sm:max-w-[350px] text-[14px] md:text-[16px] 2xl:text-[18px] leading-[1.2] sm:leading-[1.3] tracking-[-0.04em]">
                     {row.description}
                   </p>
 
@@ -90,11 +90,11 @@ export default function Partners() {
 
               {/* MOBILE */}
 
-              <div className="flex flex-col gap-[4px] sm:hidden bg-black rounded-[25px] p-[4px]">
+              <div className="flex flex-col gap-[3px] sm:hidden bg-black rounded-[25px] p-[3px]">
                 {row.cards.map((card, j) => (
                   <div
                     key={j}
-                    className="relative bg-white rounded-[20px] px-[20px] py-[20px] flex flex-col justify-between"
+                    className="relative bg-white rounded-[23px] px-[20px] py-[20px] flex flex-col justify-between"
                   >
 
 

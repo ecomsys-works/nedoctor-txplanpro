@@ -28,12 +28,12 @@ export default function GettingStarted() {
     const font = t("gettingStarted.font");
 
     return (
-        <section className="my-container mb-[65px] sm:mb-[100px] md:mb-[100px] 2xl:mb-[200px] ">
+        <section id="#how-to-start" className="my-container pt-[35px] sm:pt-[50px] 2xl:pt-[50px] mb-[70px] sm:mb-[95px] 2xl:mb-[200px] ">
 
             {/* Описание + стрелки */}
             <div className="flex justify-between items-center">
                 {/* Заголовок секции */}
-                <h2 className={`text-[30px] 2xl:text-[40px] 3xl:text-[55px] mb-[20px] 2xl:mb-[30px] 3xl:mb-[40px] leading-[1] 3xl:leading-[0.88] tracking-[-0.03em] 3xl:tracking-[-0.05em] font-${font}`}>{title}</h2>
+                <h2 className={`text-[25px] sm:text-[30px] 2xl:text-[40px] 3xl:text-[55px] mb-[20px] 2xl:mb-[30px] 3xl:mb-[40px] leading-[1] 3xl:leading-[0.88] tracking-[-0.03em] 3xl:tracking-[-0.05em] font-${font}`}>{title}</h2>
 
                 <div className="xs:flex gap-4 items-center hidden text-grey mdd:hidden">
                     <button ref={prevRef} className="cursor-pointer hover:text-black">
@@ -62,10 +62,10 @@ export default function GettingStarted() {
                         swiper.navigation.update();
                     }}
                     spaceBetween={5}
-                    slidesPerView={1.05}
+                    slidesPerView={1.15}
                     breakpoints={{
                         375: {
-                            slidesPerView: 1.3,
+                            slidesPerView: 1.15,
                         },
                         420: {
                             slidesPerView: 1.6,
@@ -74,7 +74,7 @@ export default function GettingStarted() {
                             slidesPerView: 1.8,
                         },
                         530: {
-                            slidesPerView: 1.9,
+                            slidesPerView: 2.05,
                         },
 
                         660: {

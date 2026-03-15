@@ -45,9 +45,9 @@ export default function Pricing() {
     };
 
     return (
-        <section className="my-container mb-[70px] sm:mb-25 2xl:mb-50 cover-gradient overflow-visible text-white rounded-[20px] sm:rounded-[30px] 2xl:rounded-[60px] pt-[5px] pb-[50px]">
+        <section id="#pricing" className="my-container mb-[70px] sm:mb-25 mdd:mb-24 2xl:mb-50 cover-gradient overflow-visible text-white rounded-[20px] sm:rounded-[30px] 2xl:rounded-[60px] pt-[5px] pb-[50px]">
 
-            <h2 className="leading-[1] uppercase text-[40px] sm:text-[78px] 2xl:text-[120px] font-semibold text-white pt-10 3xl:pt-[70px] pb-9 3xl:pb-[45px] text-center">{title}</h2>
+            <h2 className="leading-[1] uppercase text-[40px] sm:text-[78px] 2xl:text-[120px] font-semibold text-white pt-10 3xl:pt-[70px] pb-[32px] sm:pb-[18px] 3xl:pb-[45px] text-center">{title}</h2>
 
             {/* DESKTOP: Верхние 3 вертикальные карточки */}
             <div className="hidden 3xl:grid grid-cols-3 gap-x-5 mb-15">
@@ -269,7 +269,7 @@ export default function Pricing() {
                         <div key={i} className={`border border-solid border-white/15 bg-[rgba(85, 85, 85, 0.1)] rounded-[18px] 2xl:rounded-[28px] p-[10px] 2xl:p-[15px] flex flex-col relative h-full justify-between`}>
                             <div className="flex flex-col">
                                 <div className="bg-white text-black rounded-[18px] p-[12px] xl:p-[20px] relative">
-                                    <div className="min-h-[90px] pb-[12px] flex justify-between items-start">
+                                    <div className="flex justify-between items-start mdd:min-h-[65px]">
                                         <div className="space-y-1">
                                             {card.title && (<h3 className="text-[26px] 2xl:text-[40px] font-semibold leading-[1] tracking-[-0.06em]">{card.title}</h3>)}
                                             {card.description && (<p className="max-w-[155px] sm:max-w-[initial] text-[14px] 2xl:text-[18px] font-normal leading-[1.2] 2xl:leading-[1.3] tracking-[-0.04em]">{card.description}</p>)}
@@ -281,7 +281,7 @@ export default function Pricing() {
                                     </div>
 
                                     {card.monthLimits && (
-                                        <div className="mt-[25px]">
+                                        <div className="mt-[30px] mdd:mt-[8px]">
                                             <h4 className="mb-2.5 text-black text-[14px] 2xl:text-[24px] 2xl:mb-[10px] leading-[1.3] 2xl:leading-[1.1] tracking-[-0.04em] 2xl:tracking-[-0.06em] font-semibold">{card.monthLimitsTitle}</h4>
                                             <ul className="text-[13px] space-y-[3px]">
                                                 {card.monthLimits.map((item, idx) => (
@@ -307,11 +307,11 @@ export default function Pricing() {
                                 </div>
 
                                 {card.planPrice && (<p className="sm:mb-[-10px] 2xl:mb-[-5px] 2xl:pt-[15px] px-[12px] pt-[10px] text-[14px] 2xl:text-[18px] leading-[1.2] 2xl:leading-[1.3] tracking-[-0.04em] font-normal">{card.planPrice}</p>)}
-                                <div className="grid grid-cols-1 gap-2 sm:grid-cols-2 sm:gap-4 md:gap-0 min-h-[150px] mb-[40px]">
+                                <div className="grid grid-cols-1 gap-1.5 sm:grid-cols-2 sm:gap-4 md:gap-0 min-h-[120px] mb-[30px]">
                                     {left.length > 0 && (
                                         <div className="px-[12px] 2xl:px-[20px] flex flex-col gap-2 pt-[30px] sm:pt-[40px]">
                                             <h4 className="text-white text-[15px] 2xl:text-[24px] 2xl:mb-[5px] leading-[1.1] tracking-[-0.06em] font-semibold">{card.includedTitle}</h4>
-                                            <ul className="space-y-1.5">
+                                            <ul className="space-y-1">
                                                 {left.map((item, idx) => (
                                                     <li key={idx} className="flex items-start gap-[5px]">
                                                         <span className="mt-[3px] shrink-0 w-[12px] h-[12px] 2xl:w-[17px] 2xl:h-[17px] bg-white rounded-full flex justify-center items-center text-white">

@@ -19,7 +19,7 @@ export default function WorkflowDetailsCard({ card, index }: Props) {
   ]
 
   return (
-    <div className="flex flex-col justify-between rounded-[20px] md:rounded-[40px] p-[15px] md:p-[25px] flex flex-col h-full bg-white md:aspect-square 2xxl:aspect-[initial]">
+    <div className="flex flex-col justify-between rounded-[20px] md:rounded-[40px] p-[15px] md:p-[25px] flex flex-col h-full bg-white md:aspect-[46/43] 2xl:aspect-[635/529] 3xl:aspect-[initial]">
 
       {/* label */}
 
@@ -35,7 +35,7 @@ export default function WorkflowDetailsCard({ card, index }: Props) {
       {/* image */}
 
       <div className="pt-[10px] pb-[10px] 2xl:pb-[30px]">
-        <div className="aspect-[42/22] 2xl:aspect-[42/26] w-full flex items-end justify-center">
+        <div className="aspect-[42/22] w-full flex items-end justify-center">
           <img
             src={card.image}
             alt={card.title}

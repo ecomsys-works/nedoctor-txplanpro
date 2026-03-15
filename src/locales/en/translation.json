@@ -23,29 +23,44 @@
   },
   "hero": {
     "font": "libre",
-    "title": "Build the Future of Finance",
-    "subtitle": "A powerful platform designed to simplify analytics, automate workflows and help teams make smarter decisions faster.",
-    "cta": "Join the Waitlist",
+    "title": "Spend less chair time explaining and boost case acceptance",
+    "subtitle": "Create clear, visual treatment plans in minutes — so patients understand, trust, and commit",
+    "cta": "Join the waitlist",
     "cards": [
       {
-        "title": "Analytics",
-        "description": "Real-time insights"
+        "title": "Fewer objections",
+        "description": "Clarity removes hesitation",
+        "imageDesk": "/images/webp/hero/en/desk/diagram-1.webp", 
+        "imageMob": "/images/webp/hero/en/mob/diagram-1.webp",
+        "imageTab": "/images/webp/hero/en/tab/diagram-1.webp"
       },
       {
-        "title": "Automation",
-        "description": "Workflow automation"
+        "title": "Higher case acceptance",
+        "description": "Clear plans convert better",
+        "imageDesk": "/images/webp/hero/en/desk/diagram-3.webp", 
+        "imageMob": "/images/webp/hero/en/mob/diagram-3.webp",
+        "imageTab": "/images/webp/hero/en/tab/diagram-3.webp"
       },
       {
-        "title": "Security",
-        "description": "Enterprise grade"
+        "title": "Faster consultations",
+        "description": "Performance boost",
+        "imageDesk": "/images/webp/hero/en/desk/diagram-2.webp", 
+        "imageMob": "/images/webp/hero/en/mob/diagram-2.webp",
+        "imageTab": "/images/webp/hero/en/tab/diagram-2.webp"
       },
       {
-        "title": "Integrations",
-        "description": "Connect your tools"
+        "title": "AI-Powered",
+        "description": "Your personal assistant",
+        "imageDesk": "/images/webp/hero/en/desk/diagram-4.webp", 
+        "imageMob": "/images/webp/hero/en/mob/diagram-4.webp",
+        "imageTab": "/images/webp/hero/en/tab/diagram-4.webp" 
       },
       {
-        "title": "Scalability",
-        "description": "Built to grow"
+        "title": "Stronger revenue flow",
+        "description": "Predictable growth",
+        "imageDesk": "/images/webp/hero/en/desk/diagram-5.webp", 
+        "imageMob": "/images/webp/hero/en/mob/diagram-5.webp",
+        "imageTab": "/images/webp/hero/en/tab/diagram-5.webp"
       }
     ]
   },

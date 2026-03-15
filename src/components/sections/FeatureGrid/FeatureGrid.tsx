@@ -31,7 +31,7 @@ export default function FeatureGrid() {
       {/* tablet */}
       {imageTab && (
         <source
-          media="(min-width: 640px)"
+          media="(min-width: 662px)"
           srcSet={imageTab}
         />
       )}
@@ -58,7 +58,7 @@ export default function FeatureGrid() {
               {card.title}
             </h3>
 
-            <p className="text-[14px] md:text-[14px] xl:text-[18px] leading-[1.2] xl:leading-[1.3] tracking-[-0.04em]">
+            <p className="sm:max-w-[initial] text-[14px] md:text-[14px] xl:text-[18px] leading-[1.2] xl:leading-[1.3] tracking-[-0.04em]">
               {card.description.split("[br]").map((line, idx) => (
                 <span key={idx}>
                   {line}
@@ -113,10 +113,10 @@ export default function FeatureGrid() {
   };
 
   return (
-    <section className="my-container mb-[70px] sm:mb-[100px] 2xl:mb-[200px]">
+    <section className="my-container mb-[35px] sm:mb-[40px] 2xl:mb-[150px]">
 
       {/* Десктоп и планшет */}
-      <div className="hidden sm:grid grid-cols-2 gap-[6px] 2xl:gap-[9px] bg-black p-[6px] 2xl:p-[9px] rounded-[40px] xl:rounded-[70px]">
+      <div className="hidden smm:grid grid-cols-2 gap-[6px] 2xl:gap-[9px] bg-black p-[6px] 2xl:p-[9px] rounded-[40px] xl:rounded-[70px]">
         {cards.map((card, index) => (
           <div
             key={index}
@@ -128,12 +128,12 @@ export default function FeatureGrid() {
       </div>
 
       {/* Мобильная версия */}
-      <div className="grid sm:hidden gap-[6px] bg-black p-[6px] rounded-[28px]">
+      <div className="grid smm:hidden gap-[3px] xs:gap-[5px] bg-black p-[3px] xs:p-[5px] rounded-[28px] xs:rounded-[35px]">
 
         {/* Первая + вторая карточка */}
         {cards[0] && cards[1] && (
-          <div className="sm:aspect-[787/652] bg-white rounded-[25px] flex flex-col overflow-hidden">
-            <div className="flex-1">
+          <div className="smm:aspect-[787/652] bg-white rounded-[25px] xs:rounded-[30px] flex flex-col overflow-hidden">
+            <div className="flex-1 pt-[10px] xs:pt-[55px] ">
               {renderCardContent(cards[0])}
             </div>
 
@@ -147,7 +147,7 @@ export default function FeatureGrid() {
         {cards.slice(2).map((card, index) => (
           <div
             key={index + 2}
-            className="bg-white rounded-[25px] aspect-[589/498] overflow-hidden"
+            className="bg-white rounded-[25px] xs:rounded-[30px] aspect-[589/498] overflow-hidden"
           >
             {renderCardContent(card)}
           </div>

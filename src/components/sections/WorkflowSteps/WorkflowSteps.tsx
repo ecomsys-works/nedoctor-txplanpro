@@ -10,14 +10,14 @@ export default function WorkflowSteps() {
   }) as WorkflowStepsCardType[]
 
   return (
-    <section className="my-container mb-[70px] sm:mb-[100px] 2xl:mb-[200px]">
+    <section id="#how-it-works" className="my-container pt-[35px] sm:pt-[50px] 2xl:pt-[50px] mb-[70px] sm:mb-[100px] mdd:mb-[130px] 2xl:mb-[220px]">
 
       <div className="3xl:px-[60px]">
-        <h2 className="text-[35px] xxs:text-[60px] 2xl:text-[120px] mb-[30px] xxs:mb-[45px] 2xl:mb-[70px] 3xl:mb-[90px] leading-[1] tracking-[-0.06em] font-bold text-center uppercase">
+        <h2 className="text-[35px] xxs:text-[60px] 2xl:text-[120px] mb-[30px] xxs:mb-[40px] 2xl:mb-[70px] 3xl:mb-[90px] leading-[1] tracking-[-0.06em] font-semibold text-center uppercase">
           {t("workflow.steps.title")}
         </h2>
 
-        <div className="grid xxs:grid-cols-2 mdd:grid-cols-3 gap-[25px] xxs:gap-[10px] 2xl:gap-[26px]">
+        <div className="grid xxs:grid-cols-2 mdd:grid-cols-3 gap-[20px] xxs:gap-[10px] 2xl:gap-[26px]">
 
           {cards.map((card, i) => {
 

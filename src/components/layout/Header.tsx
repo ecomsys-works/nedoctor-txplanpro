@@ -27,7 +27,7 @@ export default function Header() {
   }, [isOpen]);
 
   return (
-    <header className="my-container py-[10px] sm:py-[15px] w-full bg-black text-white relative">
+    <header className="my-container py-[10px] sm:py-[15px] w-full bg-black text-white relative mb-[-1px]">
       <div className="flex items-center justify-between">
 
         {/* Logo */}
@@ -39,7 +39,7 @@ export default function Header() {
         </a>
 
         {/* Desktop Menu */}
-        <nav className="hidden md:flex glass rounded-[32px] h-[40px] px-[23px] xl:h-[48px] xl:px-[30px] 3xl:px-[55px] items-center gap-[15px] xl:gap-[25px] 3xl:gap-[25px]">
+        <nav className="hidden md:flex glass rounded-[32px] h-[40px] px-[23px] xl:h-[48px] xl:px-[30px] 3xl:px-[55px] items-center gap-[15px] xl:gap-[25px] 2xl:gap-[30px]">
           {menu.map((item, i) => (
             <a
               key={i}
@@ -62,7 +62,7 @@ export default function Header() {
         <button
           className="md:hidden flex items-center justify-center w-[42px] h-[42px] cursor-pointer rounded-full text-white border border-white/20 shadow-inner transition"
           onClick={() => setIsOpen(true)}
-        >      
+        >
           <svg className="w-[24px] h-[24px]">
             <use href="/icons/sprite/sprite.svg#burger" />
           </svg>
@@ -70,7 +70,9 @@ export default function Header() {
       </div>
 
       {/* Mobile Canvas Menu */}
-      <div className={`cover-gradient px-[10px] sm:px-5 pt-5 pb-[70px] sm:pb-[50px] rounded-b-[50px] fixed top-0 left-0 h-full w-full z-50 transform transition-transform duration-700 ease-out ${isOpen ? "translate-y-0" : "-translate-y-full"} md:hidden flex flex-col`}>
+      <div
+        className={`cover-gradient px-[10px] sm:px-[20px] pt-5 pb-[70px] sm:pb-[50px] fixed top-0 left-0 h-full w-full z-50
+  transition-all duration-300 ${isOpen ? "opacity-100 scale-100" : "opacity-0 scale-95 pointer-events-none"} md:hidden flex flex-col`}>
         {/* Header inside canvas */}
         <div className="flex items-center justify-between">
           {/* Logo */}
@@ -80,7 +82,7 @@ export default function Header() {
 
           {/* Close button */}
           <button
-            className="text-white hover:text-white/75 transition text-3xl font-bold cursor-pointer"
+            className="text-white hover:text-white/75 transition cursor-pointer"
             onClick={() => setIsOpen(false)}
           >
             <svg className="w-[18px] h-[18px]">
@@ -90,7 +92,7 @@ export default function Header() {
         </div>
 
         {/* Menu items */}
-        <nav className="overflow-y-auto scrollbar-none flex flex-col items-center justify-start pt-[70px] sm:pt-[140px] pb-[100px] gap-[25px] sm:gap-[30px] flex-1">
+        <nav className="overflow-y-auto scrollbar-none flex flex-col items-center justify-start pt-[80px] sm:pt-[150px] pb-[100px] gap-[30px] flex-1">
           {menu.map((item, i) => (
             <a
               key={i}

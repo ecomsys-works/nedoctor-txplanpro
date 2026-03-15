@@ -11,7 +11,7 @@ export default function SayYes() {
     const imageDesk = t("sayyes.imageDesk");
 
     return (
-        <div className="my-container mb-[100px] xl:mb-[10px] 3xl:mb-[90px]">
+        <div className="my-container mb-[50px] sm:mb-[100px] xl:mb-[10px] 3xl:mb-[90px]">
             <section className="bg-white relative w-full min-h-[434px] sm:min-h-[565px] md:min-h-[540px] lg:aspect-[94/54] xl:aspect-[1300/743] 3xl:aspect-[1600/973] rounded-[20px] sm:rounded-[30px] md:rounded-[50px] overflow-hidden">
 
                 {/* RESPONSIVE IMAGE */}

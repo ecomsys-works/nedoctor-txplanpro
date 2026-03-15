@@ -25,14 +25,14 @@ export default function WorkflowDetails() {
   const font = t("workflow.details.font");
 
   return (
-    <section className="workflow-details-swiper my-container mb-[70px] sm:mb-[100px] 2xl:mb-[200px]">
+    <section className="workflow-details-swiper my-container mb-[35px] sm:mb-[50px] mdd:mb-[80px] 2xl:mb-[150px]">
 
       {/* MOBILE */}
       <div className="md:hidden">
 
         {/* Hero title */}
-        <h2 className={`text-[25px] mb-[10px] leading-[1] tracking-[-0.03em] font-${font}
-          2xl:text-[40px] 3xl:text-[55px]  2xl:mb-[30px] 3xl:mb-[40px]  3xl:leading-[0.88]  3xl:tracking-[-0.05em]`}>
+        <h2 className={`text-[25px] leading-[1] tracking-[-0.03em] font-${font}
+          2xl:text-[40px] 3xl:text-[55px] mb-[10px] 2xl:mb-[30px] 3xl:mb-[40px]  3xl:leading-[0.88]  3xl:tracking-[-0.05em]`}>
           {heroCard.title}
         </h2>
 
@@ -90,7 +90,7 @@ export default function WorkflowDetails() {
       </div>
 
       {/* TABLET */}
-      <div className="hidden md:block 2xxl:hidden">
+      <div className="hidden md:block 3xl:hidden">
         {/* Hero title */}
         <h2 className={`text-[25px] mb-[10px] leading-[1] tracking-[-0.03em] font-${font}
           2xl:text-[40px] 2xl:tracking-[-0.05em] 3xl:text-[55px] `}>
@@ -101,7 +101,7 @@ export default function WorkflowDetails() {
         <p className="text-[14px] leading-[1.2] tracking-[-0.04em] text-black mb-[20px] 2xl:text-[18px] 2xl:mb-[30px]">
           {formatHeaderNo(heroCard.description)}</p>
 
-        <div className="grid grid-cols-2 gap-[6px] rounded-[45px] bg-black p-[6px]">
+        <div className="grid grid-cols-2 gap-[6px] 2xl:gap-[10px] rounded-[45px] bg-black p-[6px] 2xl:p-[10px]">
 
           <WorkflowDetailsCard card={featureCards[0]} index={0} />
           <WorkflowDetailsCard card={featureCards[1]} index={1} />
@@ -113,7 +113,7 @@ export default function WorkflowDetails() {
 
 
       {/* DESKTOP */}
-      <div className="hidden 2xxl:grid grid-cols-3 gap-[8px] rounded-[45px] bg-black p-[8px]">
+      <div className="hidden 3xl:grid grid-cols-3 gap-[8px] rounded-[45px] bg-black p-[8px]">
 
         <div className="col-span-2">
           <WorkflowDetailsHeroCard card={heroCard} font={font} />

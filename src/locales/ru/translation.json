@@ -28,24 +28,39 @@
     "cta": "Попасть в лист ожидания",
     "cards": [
       {
-        "title": "Меньше возражений",
-        "description": "Прозрачность убирает сомнения"
+        "title": "Меньше [br]возражений",
+        "description": "Прозрачность убирает [br]сомнения",
+        "imageDesk": "/images/webp/hero/ru/desk/diagram-1.webp", 
+        "imageMob": "/images/webp/hero/ru/mob/diagram-1.webp",
+        "imageTab": "/images/webp/hero/ru/tab/diagram-1.webp"  
       },
       {
         "title": "Выше процент одобрения",
-        "description": "Понятные планы повышают конверсию"
+        "description": "Понятные планы [br]повышают конверсию",
+        "imageDesk": "/images/webp/hero/ru/desk/diagram-3.webp", 
+        "imageMob": "/images/webp/hero/ru/mob/diagram-3.webp",
+        "imageTab": "/images/webp/hero/ru/tab/diagram-3.webp" 
       },
       {
         "title": "Консультации –быстрее",
-        "description": "Повышение эффективности"
+        "description": "Повышение [br]эффективности",
+        "imageDesk": "/images/webp/hero/ru/desk/diagram-2.webp", 
+        "imageMob": "/images/webp/hero/ru/mob/diagram-2.webp",
+        "imageTab": "/images/webp/hero/ru/tab/diagram-2.webp"
       },
       {
         "title": "Поддержка ИИ",
-        "description": "Твой личный ассистент"
+        "description": "Твой личный [br]ассистент",
+        "imageDesk": "/images/webp/hero/ru/desk/diagram-4.webp", 
+        "imageMob": "/images/webp/hero/ru/mob/diagram-4.webp",
+        "imageTab": "/images/webp/hero/ru/tab/diagram-4.webp"
       },
       {
         "title": "Усиление денежного потока",
-        "description": "Предсказуемый рост"
+        "description": "Предсказуемый рост",
+        "imageDesk": "/images/webp/hero/ru/desk/diagram-5.webp", 
+        "imageMob": "/images/webp/hero/ru/mob/diagram-5.webp",
+        "imageTab": "/images/webp/hero/ru/tab/diagram-5.webp"
       }
     ]
   },

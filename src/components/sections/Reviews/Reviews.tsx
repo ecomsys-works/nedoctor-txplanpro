@@ -20,7 +20,7 @@ export default function Reviews() {
     <section className="reviews-swiper my-container my-container--reviews mb-[70px] sm:mb-[100px] 2xl:mb-[200px]">
 
       {/* Заголовок */}
-      <h2 className="text-[40px] sm:text-[60px] 2xl:text-[120px] mb-[25px] sm:mb-[40px] leading-[1] tracking-[-0.06em] font-semibold text-center uppercase">
+      <h2 className="text-[40px] sm:text-[60px] 2xl:text-[120px] mb-[25px] sm:mb-[40px] 2xl:mb-[70px] leading-[1] tracking-[-0.06em] font-semibold text-center uppercase">
         {title}
       </h2>
 
@@ -45,7 +45,7 @@ export default function Reviews() {
             <div className="bg-white p-[15px] 2xl:p-[30px] rounded-[15px] 2xl:rounded-[20px] flex flex-col w-full">
 
               {/* Header */}
-              <div className="flex items-center gap-3 mb-[36px]">
+              <div className="flex items-center gap-3 mb-[36px] 2xl:min-h-[80px]">
 
                 {card.avatar && (
                   <img

@@ -1,5 +1,7 @@
 html {
     scrollbar-gutter: stable;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -8,26 +10,25 @@ body {
     background-color: #EEEEEE;
 }
 
-.scrollbar-none {
-    &::-webkit-scrollbar {
-        inline-size: 0px;
-        background-color: transparent;
-    }
 
-    &::-webkit-scrollbar-track {
-        background: transparent;
-    }
-
-    &::-webkit-scrollbar-thumb {
-        border: 0 none transparent;
-        background-color: transparent;
-    }
+.scrollbar-none::-webkit-scrollbar {
+    inline-size: 0px;
+    background-color: transparent;
 }
+
+.scrollbar-none::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.scrollbar-none::-webkit-scrollbar-thumb {
+    border: 0 none transparent;
+    background-color: transparent;
+}
+
 
 /* reviews swiper  */
 .partners-swiper .swiper-wrapper,
-.workflow-details-swiper 
-.reviews-swiper .swiper-wrapper {
+.workflow-details-swiper .reviews-swiper .swiper-wrapper {
     align-items: stretch;
     user-select: none;
 }
@@ -36,7 +37,7 @@ body {
 .workflow-details-swiper .swiper-slide,
 .reviews-swiper .swiper-slide {
     height: auto;
-    display: flex;    
+    display: flex;
 }
 
 /* gettingstarted-swiper */
@@ -52,31 +53,32 @@ body {
 /* только для мобилки */
 @media (max-width: 639px) {
 
-  .accordion-group {
-    position: relative;
-  }
+    .accordion-group {
+        position: relative;
+    }
 
-  .accordion-group::after {
-    content: "";
-    position: absolute;
-    left: 0px;
-    right: 0px;
-    bottom: 0px;
+    .accordion-group::after {
+        content: "";
+        position: absolute;
+        left: 0px;
+        right: 0px;
+        bottom: 0px;
 
-    height: 0px;
-    background: white;
-/* 
+        height: 0px;
+        background: white;
+        /* 
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px; */
 
-    z-index: 0;
-  }
+        z-index: 0;
+    }
 
-  .accordion-group:last-child::after {
-    display: none;
-  }
+    .accordion-group:last-child::after {
+        display: none;
+    }
 
 }
+
 /* .accordion .accordion-group:last-child .accordion-mobile{
     @apply pb-[25px];
 } */
@@ -162,60 +164,55 @@ body {
 Header glass-nav
 ------------------------------------------*/
 @layer components {
-.glass {
-    position: relative;
+    .glass {
+        position: relative;
 
-    /* основа стекла */
-    background: linear-gradient(
-        360deg,
-        rgba(255,255,255,0.12) 0%,
-        rgba(255,255,255,0.02) 100%
-    );
+        /* основа стекла */
+        background: linear-gradient(360deg,
+                rgba(255, 255, 255, 0.12) 0%,
+                rgba(255, 255, 255, 0.02) 100%);
 
-    border-radius: 40px;
-    overflow: hidden;
+        border-radius: 40px;
+        overflow: hidden;
 
-    /* свет и глубина */
-    box-shadow:
-        inset 0 1px 0 rgba(255,255,255,0.15),
-        inset 0 -1px 0 rgba(255,255,255,0.08),
-        0 10px 30px rgba(0,0,0,0.25);
-}
+        /* свет и глубина */
+        box-shadow:
+            inset 0 1px 0 rgba(255, 255, 255, 0.15),
+            inset 0 -1px 0 rgba(255, 255, 255, 0.08),
+            0 10px 30px rgba(0, 0, 0, 0.25);
+    }
 
-.glass::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    border-radius: inherit;
+    .glass::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        border-radius: inherit;
 
-    /* верхний блик */
-    background: linear-gradient(
-        360deg,
-        rgba(255,255,255,0.18) 0%,
-        rgba(255,255,255,0.08) 30%,
-        transparent 60%
-    );
+        /* верхний блик */
+        background: linear-gradient(360deg,
+                rgba(255, 255, 255, 0.18) 0%,
+                rgba(255, 255, 255, 0.08) 30%,
+                transparent 60%);
 
-    opacity: 0.6;
-}
+        opacity: 0.6;
+    }
 
-.glass::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    border-radius: inherit;
+    .glass::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        border-radius: inherit;
 
-    /* лёгкая глубина */
-    background: radial-gradient(
-        circle at 50% 0%,
-        rgba(255,255,255,0.15),
-        transparent 60%
-    );
+        /* лёгкая глубина */
+        background: radial-gradient(circle at 50% 0%,
+                rgba(255, 255, 255, 0.15),
+                transparent 60%);
 
-    opacity: 0.4;
-}
+        opacity: 0.4;
+    }
+
     .cover-gradient {
         background: linear-gradient(180deg, #111114 0%, #102a2f 150%);
     }

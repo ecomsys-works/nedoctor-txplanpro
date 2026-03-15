@@ -20,8 +20,8 @@ export default function BenefitsAccordion() {
     const font = t("benefits.font");    
 
     return (
-        <section className="mb-[70px] sm:mb-[100px] 2xl:mb-[200px]">
-            <h2 className={`text-[25px] 3xl:text-[55px] mb-[20px] md:mb-[30px] 2xl:mb-[40px] leading-[1] tracking-[-0.03em] my-container font-${font}`}>
+        <section id="#benefits" className="pt-[35px] sm:pt-[50px] 2xl:pt-[50px] mb-[70px] sm:mb-[100px] mdd:mb-[125px] 2xl:mb-[200px]">
+            <h2 className={`text-[25px] 3xl:text-[55px] mb-[20px] 2xl:mb-[40px] leading-[1] tracking-[-0.03em] my-container font-${font}`}>
                 {formatHeader(title)}
             </h2>
 
@@ -95,7 +95,7 @@ function AccordionContent({
         <>
             {/* Заголовок аккордеона */}
             <div
-                className="flex justify-between items-start sm:items-center cursor-pointer gap-5 pl-[10px] pr-[20px] pt-[12px] pb-[25px] sm:pt-[20px] sm:pb-[25px] 2xl:pr-[30px] 3xl:py-[40px]"
+                className="flex justify-between items-start sm:items-center cursor-pointer gap-5 pl-[10px] pr-[20px] pt-[10px] pb-[25px] sm:pt-[15px] sm:pb-[20px] 2xl:pt-[30px] 2xl:pb-[30px] 2xl:pr-[30px] 3xl:py-[40px]"
                 onClick={toggle}
             >
                 <h3 className={`font-semibold text-[35px] sm:text-[60px] 2xl:text-[120px] leading-[1] tracking-[-0.06em] uppercase ${isOpen ? "2xl:text-[#b2b2b2]" : "2xl:text-black"}`}>

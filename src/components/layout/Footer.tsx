@@ -39,10 +39,10 @@ export default function Footer() {
 
 
             {/* ================= MOBILE ================= */}
-            <div className="nop-container lg:hidden cover-gradient text-white rounded-t-[40px] pb-[10px]">
+            <div className="nop-container lg:hidden cover-gradient text-white rounded-t-[30px] sm:rounded-t-[40px] pb-[10px]">
 
                 {/* LOGO */}
-                <div className="text-center font-bold text-[16px] font-micro px-[10px] pt-[30px] md:pt-[50px] pb-[10px] md:pb-[15px]">
+                <div className="text-center font-bold text-[16px] font-micro px-[10px] pt-[20px] md:pt-[50px] pb-[10px] md:pb-[15px]">
                     <span>{t("footer.logo")}</span>
                 </div>
 
@@ -59,8 +59,8 @@ export default function Footer() {
                         {/* MENU */}
                         <ul className="flex flex-col gap-0">
                             {menu.map((item, i) => (
-                                <li key={i}>
-                                    <a href="#" className="text-[14px] leading-[1.2] tracking-[-0.04em] font-normal text-white/50 hover:underline hover:text-white transition">{item}</a>
+                                <li key={i} className=" leading-[1.3]">
+                                    <a href="#" className="text-[14px] leading-[1] tracking-[-0.04em] font-normal text-white/50 hover:underline hover:text-white transition">{item}</a>
                                 </li>
                             ))}
                         </ul>

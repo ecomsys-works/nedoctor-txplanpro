@@ -14,7 +14,7 @@ export default function DoubleCardSection() {
     const font = t("double.font");
 
     return (
-        <section className="my-container mb-[70px] sm:mb-[100px] 2xl:mb-[190px]">
+        <section className="my-container mb-[35px] sm:mb-[50px] mdd:mb-[40px] 2xl:mb-[150px] ">
             <div className="flex flex-col smm:flex-row gap-[50px] smm:gap-[6px] 2xl:gap-[10px] smm:bg-black sm:rounded-[30px] 2xl:rounded-[40px] sm:p-[6px] 2xl:p-[10px]">
 
                 {/* Первая карточка — изображение */}
@@ -41,9 +41,9 @@ export default function DoubleCardSection() {
                 {/* Вторая карточка — текст + кнопка */}
                 <div
                     className={`flex-[1_1_50%] flex flex-col justify-center items-center gap-4
-                      smm:bg-white md:p-6 rounded-[24px] 2xl:rounded-[40px] w-full px-[15px]`}
+                      smm:bg-white md:p-6 rounded-[24px] 2xl:rounded-[40px] w-full`}
                 >
-                    <h3 className={`text-[30px] 2xl:text-[45px] 3xl:text-[55px] xs:max-w-[75%] sm:max-w-[90%] md:max-w-[300px] 2xl:max-w-[500px] leading-[1] tracking-[-0.03em]  3xl:mb-[30px] 3xl:leading-[0.88] tracking-[-0.05em] 3xl:max-w-[520px] mx-auto text-center font-${font} text-black`}>
+                    <h3 className={`text-[25px] 2xl:text-[45px] 3xl:text-[55px] xs:mb-[10px] 3xl:mb-[30px]  max-w-[350px] 2xl:max-w-[500px] leading-[1] tracking-[-0.03em]  3xl:leading-[0.88] tracking-[-0.05em] mx-auto text-center font-${font} text-black`}>
                         {cards[1].title}
                     </h3>
 
