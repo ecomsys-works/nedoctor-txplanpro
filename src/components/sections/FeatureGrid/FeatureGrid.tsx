@@ -54,7 +54,7 @@ export default function FeatureGrid() {
       case "title":
         return (
           <div className="flex flex-col items-center justify-center text-center h-full p-6">
-            <h3 className={`text-[28px] md:text-[25px] xl:text-[40px] 3xl:text-[55px] leading-[1] tracking-[-0.05em] font-${font} mb-[10px] md:max-w-[350px] xl:max-w-[603px] xl:mb-[20px]`}>
+            <h3 className={`text-[28px] md:text-[25px] xl:text-[40px] 3xl:text-[55px] leading-[1] tracking-[-0.05em] font-${font} mb-[10px]  md:max-w-[350px] xl:max-w-[603px] xl:mb-[20px]`}>
               {card.title}
             </h3>
 
