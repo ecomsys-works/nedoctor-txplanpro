@@ -47,7 +47,7 @@ export default function Pricing() {
     };
 
     return (
-        <section id="#pricing" className="pricing gsap-up my-container mb-[4.375rem] sm:mb-25 mdd:mb-24 2xl:mb-50 cover-gradient overflow-visible text-white rounded-[1.25rem] sm:rounded-[1.875rem] 2xl:rounded-[3.75rem] pt-[0.3125rem] pb-[3.125rem]">
+        <section id="#pricing" className="pricing gsap-up my-container mb-[4.375rem] sm:mb-[6.25rem] mdd:mb-[5.9375rem] 2xl:mb-[12.5rem] cover-gradient overflow-visible text-white rounded-[1.25rem] sm:rounded-[1.875rem] 2xl:rounded-[3.75rem] pt-[0.3125rem] pb-[3.125rem]">
 
             <h2 className="leading-[1] uppercase text-[2.5rem] sm:text-[4.875rem] 2xl:text-[7.5rem] font-semibold text-white pt-10 3xl:pt-[4.375rem] pb-[2rem] sm:pb-[1.125rem] 3xl:pb-[2.8125rem] text-center">{title}</h2>
 
@@ -107,7 +107,7 @@ export default function Pricing() {
                                         <h4 className="mb-[0.9375rem] text-white text-[1.5rem] leading-[1.1] tracking-[-0.06em] font-semibold">{card.includedTitle}</h4>
                                     )}
 
-                                    <div className={`grid grid-cols-1 3xl:grid-cols-${cols} gap-2 3xl:gap-4 mb-[1.875rem]`}>
+                                    <div className={`grid grid-cols-1 3xl:grid-cols-${cols} gap-2 mb-[1.875rem]`}>
                                         {left.length > 0 && (
                                             <ul className="space-y-2">
                                                 {left.map((item, idx) => (

@@ -140,7 +140,7 @@ export default function Hero() {
                 className="
                 select-none transition-all duration-300 ease-out
   hover:-translate-y-[0.625rem] hover:scale-[1.04] hover:z-10
-  hover:shadow-[0_20px_60px_rgba(0,0,0,0.35)]
+  hover:shadow-[0_1.25rem_3.75rem_rgba(0,0,0,0.35)]
                 w-full max-w-[33.33%] aspect-square glass rounded-[1.875rem] p-[0.9375rem] overflow-hidden text-white flex flex-col justify-between"
               >
                 <div>
@@ -168,7 +168,7 @@ export default function Hero() {
                 className="
                 select-none transition-all duration-300 ease-out
   hover:-translate-y-[0.625rem] hover:scale-[1.04] hover:z-10
-  hover:shadow-[0_20px_60px_rgba(0,0,0,0.35)]
+  hover:shadow-[0_1.25rem_3.75rem_rgba(0,0,0,0.35)]
                 w-full max-w-[33.33%] aspect-square glass rounded-[1.875rem] p-[0.9375rem] overflow-hidden text-white flex flex-col justify-between"
               >
                 <div>
@@ -203,7 +203,7 @@ export default function Hero() {
                 className="p-[0.9375rem] rounded-[1.875rem] absolute glass flex flex-col justify-between aspect-square
   transition-all duration-300 ease-out select-none
   hover:-translate-y-[0.625rem] hover:scale-[1.04] hover:z-10
-  hover:shadow-[0_20px_60px_rgba(0,0,0,0.35)]
+  hover:shadow-[0_1.25rem_3.75rem_rgba(0,0,0,0.35)]
   mdd:w-[20.5%] 2xl:w-[18%] 2xl:p-[1.25rem]
   3xl:w-[18%] 3xl:p-[1.5625rem]"
                 style={{
