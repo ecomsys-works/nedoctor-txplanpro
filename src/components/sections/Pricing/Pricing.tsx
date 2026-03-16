@@ -59,7 +59,7 @@ export default function Pricing() {
                     return (
                         <div key={i} className="border border-solid border-white/15 bg-[rgba(85, 85, 85, 0.1)] rounded-[1.75rem] p-[0.625rem] flex flex-col relative h-full">
                             {/* Верхний блок */}
-                            <div className="bg-white text-black rounded-[1.75rem] p-6 relative">
+                            <div className="bg-white text-black rounded-[1.75rem] p-[1.5625rem] relative">
                                 <div className="min-h-[7.0625rem] pb-[0.75rem] flex justify-between items-start">
                                     <div className="space-y-1">
                                         {card.title && (<h3 className="text-[2.5rem] font-semibold leading-[1] tracking-[-0.06em]">{card.title}</h3>)}
@@ -107,7 +107,7 @@ export default function Pricing() {
                                         <h4 className="mb-[0.9375rem] text-white text-[1.5rem] leading-[1.1] tracking-[-0.06em] font-semibold">{card.includedTitle}</h4>
                                     )}
 
-                                    <div className={`grid grid-cols-1 3xl:grid-cols-${cols} gap-2 mb-[1.875rem]`}>
+                                    <div className={`grid grid-cols-1 3xl:grid-cols-${cols} gap-[0.5rem] mb-[1.875rem]`}>
                                         {left.length > 0 && (
                                             <ul className="space-y-2">
                                                 {left.map((item, idx) => (
@@ -124,10 +124,10 @@ export default function Pricing() {
                                         )}
 
                                         {right.length > 0 && (
-                                            <ul className="space-y-2">
+                                            <ul className="space-y-2 ">
                                                 {right.length > 0 && card.limitsTitle && (
                                                     <>
-                                                        <h4 className="text-[1.5rem] font-semibold mb-2">{card.limitsTitle}</h4>
+                                                        <h4 className="text-[1.5rem] font-semibold mb-[0.5rem] ">{card.limitsTitle}</h4>
                                                         {right.map((item, idx) => (
                                                             <li key={idx} className="flex items-start gap-[0.3125rem]">
                                                                 <span className="mt-[0.1875rem] w-[1.0625rem] h-[1.0625rem] bg-white rounded-full flex justify-center items-center text-white">
@@ -135,7 +135,7 @@ export default function Pricing() {
                                                                         <use href="./icons/sprite/sprite.svg#check"></use>
                                                                     </svg>
                                                                 </span>
-                                                                <span className="text-[0.875rem] leading-[1.2] tracking-[-0.04em] font-normal">{item}</span>
+                                                                <span className="text-[0.875rem]  leading-[1.2] tracking-[-0.04em] font-normal">{item}</span>
                                                             </li>
                                                         ))}
                                                     </>
