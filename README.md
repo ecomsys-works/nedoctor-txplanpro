@@ -37,9 +37,20 @@ nedoctor/
 ├── index.html           # главный файл 
 ├── tailwind.config.js   # настройки tailwind
 ├── package.json         # зависимости
+├── convert.php          # конвертер rem/px
 ├── vite.config.ts       # конфиг для vite
 └── ...
 ```
+
+
+# Языки определеться сами по локации браузера но можно посмотреть добаваи префикс lang=en
+---
+// http://localhost:5173/?lang=en
+---
+
+---
+// http://localhost:5173/?lang=ru
+---
 
 
 # Использование справйтов svg
@@ -48,4 +59,39 @@ nedoctor/
  <svg className="w-[18px] h-[18px] text-white">
     <use href="/icons/sprite/sprite.svg#close" />
 </svg>
+```
+
+
+# Конвертируем REM в PX и обратно для автомасштабирования !
+
+в файле convert.php установи напрвление конвертации ($mode = 'toRem' или $mode = 'toPx') и запусти скрипт
+
+```powershell
+ php convert.php
+```
+
+скрипт пропарсит все папки внутри папки src и заменит значения на равценные.
+
+
+# Отключить автомасштабирование просто закомментируй как здесь
+```js
+// src/app/App.tsx
+import { useEffect } from "react";
+import React from "react";
+import { AppRouter } from "../router/router";
+// import autoREM from "@/utils/autoRem";
+
+export const App: React.FC = () => {
+
+//   useEffect(() => {
+//     const cleanup = autoREM(1920, 16);
+
+//     return cleanup;
+//   }, []);
+
+  return (
+    <AppRouter />
+  );
+};
+
 ```

@@ -1,4 +1,10 @@
 {
+  "popup": {
+    "font": "libre",
+    "title": "Be the first one to get TX Plan Pro at early bird prices.",
+    "placeholder": "Enter your email address",
+    "buttonText": "Join the waitlist"
+  },
   "header": {
     "logo": "TX Plan Pro",
     "menu": [
@@ -30,35 +36,35 @@
       {
         "title": "Fewer objections",
         "description": "Clarity removes hesitation",
-        "imageDesk": "/images/webp/hero/en/desk/diagram-1.webp", 
+        "imageDesk": "/images/webp/hero/en/desk/diagram-1.webp",
         "imageMob": "/images/webp/hero/en/mob/diagram-1.webp",
         "imageTab": "/images/webp/hero/en/tab/diagram-1.webp"
       },
       {
         "title": "Higher case acceptance",
         "description": "Clear plans convert better",
-        "imageDesk": "/images/webp/hero/en/desk/diagram-3.webp", 
+        "imageDesk": "/images/webp/hero/en/desk/diagram-3.webp",
         "imageMob": "/images/webp/hero/en/mob/diagram-3.webp",
         "imageTab": "/images/webp/hero/en/tab/diagram-3.webp"
       },
       {
         "title": "Faster consultations",
         "description": "Performance boost",
-        "imageDesk": "/images/webp/hero/en/desk/diagram-2.webp", 
+        "imageDesk": "/images/webp/hero/en/desk/diagram-2.webp",
         "imageMob": "/images/webp/hero/en/mob/diagram-2.webp",
         "imageTab": "/images/webp/hero/en/tab/diagram-2.webp"
       },
       {
         "title": "AI-Powered",
         "description": "Your personal assistant",
-        "imageDesk": "/images/webp/hero/en/desk/diagram-4.webp", 
+        "imageDesk": "/images/webp/hero/en/desk/diagram-4.webp",
         "imageMob": "/images/webp/hero/en/mob/diagram-4.webp",
-        "imageTab": "/images/webp/hero/en/tab/diagram-4.webp" 
+        "imageTab": "/images/webp/hero/en/tab/diagram-4.webp"
       },
       {
         "title": "Stronger revenue flow",
         "description": "Predictable growth",
-        "imageDesk": "/images/webp/hero/en/desk/diagram-5.webp", 
+        "imageDesk": "/images/webp/hero/en/desk/diagram-5.webp",
         "imageMob": "/images/webp/hero/en/mob/diagram-5.webp",
         "imageTab": "/images/webp/hero/en/tab/diagram-5.webp"
       }
@@ -90,7 +96,7 @@
         ]
       },
       {
-        "title": "For dental clinics [br] Small to large",
+        "title": "For dental clinics [grey] [br] Small to large [grey]",
         "description": "When your team works from one clear plan, the entire clinic runs smoother.",
         "cards": [
           {
@@ -117,8 +123,8 @@
     "cards": [
       {
         "type": "title",
-        "title": "Хотите, чтобы пациенты сразу понимали и соглашались?",
-        "description": "Меньше путаницы. Меньше трения. [br] Больше принятых планов лечения."
+        "title": "Ever wish your patients truly understood and agreed instantly? ",
+        "description": "When your team works from one clear plan, the entire clinic runs smoother."
       },
       {
         "type": "error",
@@ -129,7 +135,7 @@
       {
         "type": "plan",
         "label": "TX Plan Pro",
-        "description": "Создаёт планы лечения в том виде, как вы сами привыкли думать и объяснять их пациентам.",
+        "description": "Helps you build treatment plans the way you naturally think and explain.",
         "imageDesk": "/images/webp/feature-grid/en/tablet-desk.webp",
         "imageTab": "/images/webp/feature-grid/en/tablet-tab.webp",
         "imageMob": "/images/webp/feature-grid/en/tablet-mob.webp"
@@ -144,41 +150,41 @@
   },
   "workflow": {
     "steps": {
-      "title": "How Plan Pro Works",
+      "title": "how it works",
       "cards": [
         {
-          "title": "Upload patient data",
-          "description": "Quickly upload diagnostics and patient information.",
+          "title": "Show, don’t just tell so patients truly understand",
+          "description": "Use clear images, photos, and diagrams that make complex procedures immediately understandable. Patients see the plan, feel confident, and give informed consent faster.",
           "icon": "show",
           "image": "/images/webp/workflow-steps/en/pic-1.webp"
         },
         {
-          "title": "AI analyzes the case",
-          "description": "Our AI evaluates the clinical data and builds a treatment structure.",
+          "title": "Ease patient anxiety before it turns to hesitation",
+          "description": "Create personalized plans quickly and effortlessly, so every patient feels seen, cared for, and confident in their treatment.",
           "icon": "relax",
           "image": "/images/webp/workflow-steps/en/pic-2.webp"
         },
         {
-          "title": "Review treatment plan",
-          "description": "Edit and refine the suggested treatment plan.",
+          "title": "Make your brand unmistakable",
+          "description": "Use pre-designed, fully customizable templates with your logo, colors, fonts, and visuals — so every plan looks professional, consistent, and recognizably yours.",
           "icon": "diamand",
           "image": "/images/webp/workflow-steps/en/pic-3.webp"
         },
         {
-          "title": "Visual explanation",
-          "description": "Show the patient a clear and visual explanation.",
+          "title": "Keep your team aligned",
+          "description": "Centralize every treatment plan in one clear format so dentists, assistants, and coordinators stay on the same page. Fewer misunderstandings. Smoother care. Less rework.",
           "icon": "edino",
           "image": "/images/webp/workflow-steps/en/pic-4.webp"
         },
         {
-          "title": "Patient approval",
-          "description": "Patients clearly understand and approve the plan.",
+          "title": "Reclaim valuable chair time",
+          "description": "Pre-populated templates let you create plans fast right during the consult — freeing up more time for clinical decisions and patient interaction.",
           "icon": "chart",
           "image": "/images/webp/workflow-steps/en/pic-5.webp"
         },
         {
-          "title": "Start treatment",
-          "description": "Begin treatment with full clarity and documentation.",
+          "title": "Make insurance and costs simple",
+          "description": "Clearly separate what is covered and what is not, so patients understand their financial responsibility upfront — with fewer awkward conversation sand billing surprises.",
           "icon": "table",
           "image": "/images/webp/workflow-steps/en/pic-6.webp"
         }
@@ -190,24 +196,24 @@
       "cards": [
         {
           "title": "How it looks & feels",
-          "description": "Designed to reduce friction for you and your patients."
+          "description": "Designed to reduce friction [br] for you and your patients."
         },
         {
           "label": "No installation",
           "title": "Start instantly",
-          "description": "Open the app and begin creating plans right away. No installation, no IT headaches.",
+          "description": "Open the app and begin creating plans [br] right away. No installation, no IT headaches.",
           "image": "/images/webp/workflow-details/en/pic-1.webp"
         },
         {
           "label": "Adapts to workflow",
           "title": "Matches how you think",
-          "description": "A clear, step-by-step structure that follows how you actually think and explain.",
+          "description": "A clear, step-by-step structure that [br] follows how you actually think and explain.",
           "image": "/images/webp/workflow-details/en/pic-2.webp"
         },
         {
           "label": "No distraction",
           "title": "Clean & focused design",
-          "description": "Modern layout that keeps attention on the case, not on the tool.",
+          "description": "Modern layout that keeps attention [br] on the case, not on the tool.",
           "image": "/images/webp/workflow-details/en/pic-3.webp"
         },
         {

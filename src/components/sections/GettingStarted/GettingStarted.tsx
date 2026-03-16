@@ -28,21 +28,21 @@ export default function GettingStarted() {
     const font = t("gettingStarted.font");
 
     return (
-        <section id="#how-to-start" className="my-container pt-[35px] sm:pt-[50px] 2xl:pt-[50px] mb-[70px] sm:mb-[95px] 2xl:mb-[200px] ">
+        <section id="#how-to-start" className="getting-started gsap-up my-container pt-[2.1875rem] sm:pt-[3.125rem] 2xl:pt-[3.125rem] mb-[4.375rem] sm:mb-[5.9375rem] 2xl:mb-[12.5rem] ">
 
             {/* Описание + стрелки */}
             <div className="flex justify-between items-center">
                 {/* Заголовок секции */}
-                <h2 className={`text-[25px] sm:text-[30px] 2xl:text-[40px] 3xl:text-[55px] mb-[20px] 2xl:mb-[30px] 3xl:mb-[40px] leading-[1] 3xl:leading-[0.88] tracking-[-0.03em] 3xl:tracking-[-0.05em] font-${font}`}>{title}</h2>
+                <h2 className={`text-[1.5625rem] sm:text-[1.875rem] 2xl:text-[2.5rem] 3xl:text-[3.4375rem] mb-[1.25rem] 2xl:mb-[1.875rem] 3xl:mb-[2.5rem] leading-[1] 3xl:leading-[0.88] tracking-[-0.03em] 3xl:tracking-[-0.05em] font-${font}`}>{title}</h2>
 
                 <div className="xs:flex gap-4 items-center hidden text-grey mdd:hidden">
                     <button ref={prevRef} className="cursor-pointer hover:text-black">
-                        <svg className="w-[21px] h-[16px]">
+                        <svg className="w-[1.3125rem] h-[1rem]">
                             <use href="/icons/sprite/sprite.svg#arrow-left" />
                         </svg>
                     </button>
                     <button ref={nextRef} className="cursor-pointer hover:text-black">
-                        <svg className="w-[21px] h-[16px]">
+                        <svg className="w-[1.3125rem] h-[1rem]">
                             <use href="/icons/sprite/sprite.svg#arrow-right" />
                         </svg>
                     </button>
@@ -96,8 +96,8 @@ export default function GettingStarted() {
                 </Swiper>
             </div>
 
-            {/* DESKTOP / >=768px */}
-            <div className="hidden mdd:grid grid-cols-4 gap-[6px]">
+            {/* DESKTOP / >=48rem */}
+            <div className="hidden mdd:grid grid-cols-4 gap-[0.375rem]">
                 {desktopGrid.map((row, rowIndex) =>
                     row.map((card, colIndex) =>
                         card ? (

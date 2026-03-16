@@ -25,31 +25,31 @@ export default function WorkflowDetails() {
   const font = t("workflow.details.font");
 
   return (
-    <section className="workflow-details-swiper my-container mb-[35px] sm:mb-[50px] mdd:mb-[80px] 2xl:mb-[150px]">
+    <section className="worflow-details gsap-up workflow-details-swiper my-container mb-[2.1875rem] sm:mb-[3.125rem] mdd:mb-[5rem] 2xl:mb-[9.375rem]">
 
       {/* MOBILE */}
       <div className="md:hidden">
 
         {/* Hero title */}
-        <h2 className={`text-[25px] leading-[1] tracking-[-0.03em] font-${font}
-          2xl:text-[40px] 3xl:text-[55px] mb-[10px] 2xl:mb-[30px] 3xl:mb-[40px]  3xl:leading-[0.88]  3xl:tracking-[-0.05em]`}>
+        <h2 className={`text-[1.5625rem] leading-[1] tracking-[-0.03em] font-${font}
+          2xl:text-[2.5rem] 3xl:text-[3.4375rem] mb-[0.625rem] 2xl:mb-[1.875rem] 3xl:mb-[2.5rem]  3xl:leading-[0.88]  3xl:tracking-[-0.05em]`}>
           {heroCard.title}
         </h2>
 
         {/* Description + arrows in one container */}
-        <div className="flex justify-between items-end mb-[20px]">
-          <p className="text-[14px] leading-[1.2] tracking-[-0.04em] text-black
-          2xl:text-[18px]">
+        <div className="flex justify-between items-end mb-[1.25rem]">
+          <p className="text-[0.875rem] leading-[1.2] tracking-[-0.04em] text-black
+          2xl:text-[1.125rem]">
             {formatHeader(heroCard.description)}</p>
 
           <div className="flex gap-4 items-center text-grey mdd:hidden">
             <button ref={prevRef} className="cursor-pointer hover:text-black">
-              <svg className="w-[21px] h-[16px]">
+              <svg className="w-[1.3125rem] h-[1rem]">
                 <use href="/icons/sprite/sprite.svg#arrow-left" />
               </svg>
             </button>
             <button ref={nextRef} className="cursor-pointer hover:text-black">
-              <svg className="w-[21px] h-[16px]">
+              <svg className="w-[1.3125rem] h-[1rem]">
                 <use href="/icons/sprite/sprite.svg#arrow-right" />
               </svg>
             </button>
@@ -92,16 +92,16 @@ export default function WorkflowDetails() {
       {/* TABLET */}
       <div className="hidden md:block 3xl:hidden">
         {/* Hero title */}
-        <h2 className={`text-[25px] mb-[10px] leading-[1] tracking-[-0.03em] font-${font}
-          2xl:text-[40px] 2xl:tracking-[-0.05em] 3xl:text-[55px] `}>
+        <h2 className={`text-[1.5625rem] mb-[0.625rem] leading-[1] tracking-[-0.03em] font-${font}
+          2xl:text-[2.5rem] 2xl:tracking-[-0.05em] 3xl:text-[3.4375rem] `}>
           {heroCard.title}
         </h2>
 
         {/* Description */}
-        <p className="text-[14px] leading-[1.2] tracking-[-0.04em] text-black mb-[20px] 2xl:text-[18px] 2xl:mb-[30px]">
+        <p className="text-[0.875rem] leading-[1.2] tracking-[-0.04em] text-black mb-[1.25rem] 2xl:text-[1.125rem] 2xl:mb-[1.875rem]">
           {formatHeaderNo(heroCard.description)}</p>
 
-        <div className="grid grid-cols-2 gap-[6px] 2xl:gap-[10px] rounded-[45px] bg-black p-[6px] 2xl:p-[10px]">
+        <div className="grid grid-cols-2 gap-[0.375rem] 2xl:gap-[0.625rem] rounded-[2.8125rem] bg-black p-[0.375rem] 2xl:p-[0.625rem]">
 
           <WorkflowDetailsCard card={featureCards[0]} index={0} />
           <WorkflowDetailsCard card={featureCards[1]} index={1} />
@@ -113,7 +113,7 @@ export default function WorkflowDetails() {
 
 
       {/* DESKTOP */}
-      <div className="hidden 3xl:grid grid-cols-3 gap-[8px] rounded-[45px] bg-black p-[8px]">
+      <div className="hidden 3xl:grid grid-cols-3 gap-[0.5rem] rounded-[2.8125rem] bg-black p-[0.5rem]">
 
         <div className="col-span-2">
           <WorkflowDetailsHeroCard card={heroCard} font={font} />

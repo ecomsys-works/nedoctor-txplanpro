@@ -1,4 +1,10 @@
 {
+  "popup": {
+    "font": "zt",
+    "title": "Будьте среди первых и получите поступ к TxPlanPro по специальной цене",    
+    "placeholder": "Введите ваш e-mail",
+    "buttonText": "Попасть в лист ожидания"
+  },
   "header": {
     "logo": "TX Plan Pro",
     "menu": [

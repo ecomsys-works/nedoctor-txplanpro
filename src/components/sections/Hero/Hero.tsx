@@ -4,6 +4,8 @@ import { useState, useLayoutEffect, useMemo } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 
+import { usePopup } from "@/сontext/Popup/usePopup";
+
 type CardPosition = {
   x: number;
   y: number;
@@ -13,6 +15,7 @@ type CardPosition = {
 export default function Hero() {
   const { t } = useTranslation();
   const [windowWidth, setWindowWidth] = useState(0);
+  const { setIsOpen: setIsOpenPopup } = usePopup();
 
   const cards = t("hero.cards", { returnObjects: true }) as {
     title: string;
@@ -80,14 +83,14 @@ export default function Hero() {
   }, [windowWidth]);
 
   return (
-    <section className="
-    mb-[25px] sm:mb-[50px] 2xl:mb-[90px] 3xl:mb-[100px] 
-    pb-[65px] sm:pb-[80px] mdd:pb-[30px] 2xl:pb-[50px] 3xl:pb-[100px] 
-    my-container cover-gradient text-white rounded-b-[30px] md:rounded-b-[60px] 2xl:rounded-b-[120px] relative overflow-hidden">
+    <section className="hero mb-[1.5625rem] pb-[4.0625rem] my-container cover-gradient text-white rounded-b-[1.875rem] relative overflow-hidden
+    sm:mb-[3.125rem] sm:pb-[5rem] mdd:pb-[1.875rem] md:rounded-b-[3.75rem] 
+    2xl:mb-[5.625rem] 2xl:pb-[3.125rem] 2xl:rounded-b-[7.5rem] 
+    3xl:mb-[6.25rem] 3xl:pb-[6.25rem]">
 
       {/* Mobile Swiper */}
       {windowWidth < 640 && (
-        <div className="pb-[40px] pt-[15px]">
+        <div className="pb-[2.5rem] pt-[0.9375rem]">
           <Swiper
             spaceBetween={36}
             slidesPerView={1.5}
@@ -103,13 +106,13 @@ export default function Hero() {
             {cards.map((card, i) => (
               <SwiperSlide key={i}>
                 <div
-                  className={`w-[100%] min-h-[270px] aspect-[22/32] glass rounded-[20px] p-[20px] overflow-hidden text-white flex flex-col justify-between ${mobileOffsets[i]}`}
+                  className={`w-[100%] min-h-[16.875rem] aspect-[22/32] glass rounded-[1.25rem] p-[1.25rem] overflow-hidden text-white flex flex-col justify-between ${mobileOffsets[i]}`}
                 >
                   <div>
-                    <h3 className="text-[20px] leading-[1] tracking-[-0.04em] mb-[6px]">
+                    <h3 className="text-[1.25rem] leading-[1] tracking-[-0.04em] mb-[0.375rem]">
                       {formatHeader(card.title)}
                     </h3>
-                    <p className="text-[14px] leading-[1.2] tracking-[-0.04em] mb-[5px]">
+                    <p className="text-[0.875rem] leading-[1.2] tracking-[-0.04em] mb-[0.3125rem]">
                       {formatHeader(card.description)}
                     </p>
                   </div>
@@ -129,18 +132,22 @@ export default function Hero() {
 
       {/* Tablet Two Rows */}
       {windowWidth >= 640 && windowWidth < 950 && (
-        <div className="flex flex-col gap-[20px] mb-[120px] pt-[60px]">
-          <div className="flex justify-center gap-[12px]">
+        <div className="flex flex-col gap-[1.25rem] mb-[7.5rem] pt-[3.75rem]">
+          <div className="flex justify-center gap-[0.75rem]">
             {cards.slice(0, 2).map((card, i) => (
               <div
                 key={i}
-                className="w-full max-w-[33.33%] aspect-square glass rounded-[30px] p-[15px] overflow-hidden text-white flex flex-col justify-between"
+                className="
+                select-none transition-all duration-300 ease-out
+  hover:-translate-y-[0.625rem] hover:scale-[1.04] hover:z-10
+  hover:shadow-[0_20px_60px_rgba(0,0,0,0.35)]
+                w-full max-w-[33.33%] aspect-square glass rounded-[1.875rem] p-[0.9375rem] overflow-hidden text-white flex flex-col justify-between"
               >
                 <div>
-                  <h3 className="text-[18px] leading-[1] tracking-[-0.04em] mb-[6px]">
+                  <h3 className="text-[1.125rem] leading-[1] tracking-[-0.04em] mb-[0.375rem]">
                     {formatHeader(card.title)}
                   </h3>
-                  <p className="text-[14px] leading-[1.2] tracking-[-0.04em] mb-[5px]">
+                  <p className="text-[0.875rem] leading-[1.2] tracking-[-0.04em] mb-[0.3125rem]">
                     {formatHeader(card.description)}
                   </p>
                 </div>
@@ -154,17 +161,21 @@ export default function Hero() {
             ))}
           </div>
 
-          <div className="flex justify-center gap-[12px]">
+          <div className="flex justify-center gap-[0.75rem]">
             {cards.slice(2, 5).map((card, i) => (
               <div
                 key={i}
-                className="w-full max-w-[33.33%] aspect-square glass rounded-[30px] p-[15px] overflow-hidden text-white flex flex-col justify-between"
+                className="
+                select-none transition-all duration-300 ease-out
+  hover:-translate-y-[0.625rem] hover:scale-[1.04] hover:z-10
+  hover:shadow-[0_20px_60px_rgba(0,0,0,0.35)]
+                w-full max-w-[33.33%] aspect-square glass rounded-[1.875rem] p-[0.9375rem] overflow-hidden text-white flex flex-col justify-between"
               >
                 <div>
-                  <h3 className="text-[18px] leading-[1] tracking-[-0.04em] mb-[6px]">
+                  <h3 className="text-[1.125rem] leading-[1] tracking-[-0.04em] mb-[0.375rem]">
                     {formatHeader(card.title)}
                   </h3>
-                  <p className="text-[14px] leading-[1.2] tracking-[-0.04em] mb-[5px]">
+                  <p className="text-[0.875rem] leading-[1.2] tracking-[-0.04em] mb-[0.3125rem]">
                     {formatHeader(card.description)}
                   </p>
                 </div>
@@ -182,13 +193,19 @@ export default function Hero() {
 
       {/* Desktop layout */}
       {windowWidth >= 950 && (
-        <div className="w-full pt-[15px] 2xl:pt-[30px] 3xl:pt-[55px] max-w-[100%] mdd 2xl:max-w-[1305px] 3xl:max-w-[1365px] mx-auto ">
+        <div className="w-full pt-[0.9375rem] max-w-[100%] mx-auto 
+        2xl:max-w-[81.5625rem] 2xl:pt-[1.875rem] 3xl:pt-[3.4375rem] 3xl:max-w-[85.3125rem]">
           <div className="relative w-full mdd:aspect-[935/462] 2xl:aspect-[1305/434] 3xl:aspect-[1365/434]">
 
             {layout.map((pos, i) => (
               <div
                 key={i}
-                className="p-[15px]  2xl:p-[20px] 3xl:p-[25px] aspect-square mdd:w-[20.5%] 2xl:w-[18%] 3xl:w-[18%] rounded-[30px] absolute glass flex flex-col justify-between"
+                className="p-[0.9375rem] rounded-[1.875rem] absolute glass flex flex-col justify-between aspect-square
+  transition-all duration-300 ease-out select-none
+  hover:-translate-y-[0.625rem] hover:scale-[1.04] hover:z-10
+  hover:shadow-[0_20px_60px_rgba(0,0,0,0.35)]
+  mdd:w-[20.5%] 2xl:w-[18%] 2xl:p-[1.25rem]
+  3xl:w-[18%] 3xl:p-[1.5625rem]"
                 style={{
                   left: `${pos.x}%`,
                   bottom: `${pos.y}%`,
@@ -196,9 +213,10 @@ export default function Hero() {
                 }}
               >
                 <div>
-                  <h3 className="text-[18px] 2xl:text-[22px] leading-[1] tracking-[-0.04em] 2xl:tracking-[-0.06em] mb-[5px] font-medium">{formatHeader(cards[i].title)}</h3>
+                  <h3 className="text-[1.125rem] leading-[1] tracking-[-0.04em] mb-[0.3125rem] font-medium
+                  2xl:text-[1.375rem] 2xl:tracking-[-0.06em] ">{formatHeader(cards[i].title)}</h3>
 
-                  <p className="text-[14px] 2xl:text-[16px] leading-[1.2] 2xl:leading-[1.3] tracking-[-0.04em] ">
+                  <p className="text-[0.875rem] leading-[1.2] tracking-[-0.04em] 2xl:text-[1rem]  2xl:leading-[1.3]">
                     {formatHeader(cards[i].description)}
                   </p>
                 </div>
@@ -215,36 +233,43 @@ export default function Hero() {
           </div>
 
           {/* Text Section */}
-          <div className="-mt-[200px] 2xl:-mt-[50px] 3xl:-mt-[60px] text-center flex flex-col items-center max-w-[321px] 2xl:max-w-[670px] mx-auto">
+          <div className="-mt-[12.5rem] text-center flex flex-col items-center max-w-[20.0625rem] mx-auto
+          2xl:-mt-[3.125rem] 2xl:max-w-[41.875rem] 3xl:-mt-[3.75rem]">
             <h1
-              className={`text-[30px] 2xl:text-[60px] mb-[20px] 3xl:mb-[25px] leading-[0.85] tracking-[-0.03em] font-${font}`}
+              className={`text-[1.875rem] mb-[1.25rem] leading-[0.85] tracking-[-0.03em] font-${font} 2xl:text-[3.75rem] 3xl:mb-[1.5625rem]`}
             >
               {formatHeader(t("hero.title"))}
             </h1>
 
-            <p className=" mb-[25px] 2xl:mb-[30px] 3xl:mb-[40px] 2xl:text-[18px] leading-[1.3] tracking-[-0.04em] 2xl:max-w-[423px]">
+            <p className="mb-[1.5625rem] leading-[1.3] tracking-[-0.04em] 
+            2xl:mb-[1.875rem] 2xl:text-[1.125rem] 2xl:max-w-[26.4375rem] 3xl:mb-[2.5rem] ">
               {t("hero.subtitle")}
             </p>
 
-            <button className="glass w-full sm:w-[initial] px-[30px] 2xl:px-[50px] text-[18px] h-[55px] 2xl:h-[70px] rounded-[40px] hover:scale-102 transition duration-300 cursor-pointer">
+            <button className="glass w-full sm:w-[initial] px-[1.875rem] text-[1.125rem] h-[3.4375rem] rounded-[2.5rem] hover:scale-102 transition duration-300 cursor-pointer
+            2xl:px-[3.125rem] 2xl:h-[4.375rem]"
+              onClick={() => setIsOpenPopup(true)}
+            >
               {t("hero.cta")}
             </button>
           </div>
         </div>
       )}
       {/* Text Section */}
-      <div className="max-w-[321px] mdd:hidden text-center flex flex-col items-center mx-auto">
+      <div className="max-w-[20.0625rem] mdd:hidden text-center flex flex-col items-center mx-auto">
         <h1
-          className={`mb-[20px] text-[30px] leading-[0.85] tracking-[-0.03em] font-${font}`}
+          className={`mb-[1.25rem] text-[1.875rem] leading-[0.85] tracking-[-0.03em] font-${font}`}
         >
           {formatHeader(t("hero.title"))}
         </h1>
 
-        <p className=" mb-[30px] sm:mb-[60px] text-[14px] leading-[1.2] tracking-[-0.04em]">
+        <p className=" mb-[1.875rem] sm:mb-[3.75rem] text-[0.875rem] leading-[1.2] tracking-[-0.04em]">
           {t("hero.subtitle")}
         </p>
 
-        <button className="glass w-full sm:w-[initial] px-[30px] text-[18px] h-[55px] rounded-[40px] hover:scale-102 transition duration-300 cursor-pointer">
+        <button className="glass w-full sm:w-[initial] px-[1.875rem] text-[1.125rem] h-[3.4375rem] rounded-[2.5rem] hover:scale-102 transition duration-300 cursor-pointer"
+          onClick={() => setIsOpenPopup(true)}
+        >
           {t("hero.cta")}
         </button>
       </div>

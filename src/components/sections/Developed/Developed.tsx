@@ -28,21 +28,24 @@ export default function Developed() {
   const font = t("developed.font");
 
   return (
-    <section className="my-container mb-[65px] sm:mb-[90px] mdd:mb-[60px] 2xl:mb-[190px]">
+    <section className="developed gsap-up my-container mb-[4.0625rem] sm:mb-[5.625rem] mdd:mb-[3.75rem] 2xl:mb-[11.875rem]">
 
       {/* DESKTOP */}
       <div className="hidden md:block">
-        <div className="relative bg-white p-[20px] md:p-[20px] 2xl:p-[30px] 3xl:p-[40px] rounded-[20px] 2xl:rounded-[60px] overflow-hidden p-6">
+        <div className="relative bg-white p-[1.25rem] rounded-[1.25rem] overflow-hidden p-6
+         md:p-[1.25rem] 2xl:p-[1.875rem] 2xl:rounded-[3.75rem] 3xl:p-[2.5rem] ">
 
           {/* Верхний ряд */}
-          <div className="relative md:mb-[50px] 2xl:mb-[70px]">
+          <div className="relative md:mb-[3.125rem] 2xl:mb-[4.375rem]">
             <div className="flex flex-col absolute top-0 left-0 ">
-              <h2 className={`mb-[15pxp] md:mb-[10px] 2xl:mb-[20px] 3xl:mb-[30px] pt-[5px] max-w-[250px] 
-                text-[36px] md:text-[25px] 2xl:text-[45px] 3xl:text-[55px] text-black leading-[1]  2xl:leading-[0.88] 2xl:tracking-[-0.05em] 3xl:tracking-[-0.08em] font-${font}`}>
+              <h2 className={`mb-[0.9375remp]  pt-[0.3125rem] max-w-[15.625rem] text-[2.25rem] text-black leading-[1] font-${font}
+              md:mb-[0.625rem] md:text-[1.5625rem] 2xl:mb-[1.25rem] 2xl:text-[2.8125rem] 2xl:leading-[0.88] 2xl:tracking-[-0.05em]
+              3xl:mb-[1.875rem] 3xl:text-[3.4375rem] 3xl:tracking-[-0.08em] `}>
                 {section.top.title}
               </h2>
 
-              <p className="max-w-[288px] text-[25px] sm:text-[36px] md:text-[14px] 2xl:text-[18px] text-black leading-[1.3] tracking-[-0.04em]">
+              <p className="max-w-[18rem] text-[1.5625rem] text-black leading-[1.3] tracking-[-0.04em]
+              sm:text-[2.25rem] md:text-[0.875rem] 2xl:text-[1.125rem]">
                 {section.top.description}
               </p>
             </div>
@@ -50,7 +53,7 @@ export default function Developed() {
             <img
               src={diagramDesk}
               alt="Diagram"
-              className="md:pt-[40px] 2xl:pt-0 3xl:pt-[10px] 2xl:pl-[0] 3xl:pl-[16.66%] aspect-[1294/676] h-full w-auto"
+              className="aspect-[1294/676] h-full w-auto md:pt-[2.5rem] 2xl:pt-0 3xl:pt-[0.625rem] 2xl:pl-[0] 3xl:pl-[16.66%] "
             />
           </div>
 
@@ -59,16 +62,20 @@ export default function Developed() {
             {section.bottom.map((card, i) => (
               <div
                 key={i}
-                className="flex items-start gap-3 rounded-[20px] bg-white"
+                className="flex items-start gap-3 rounded-[1.25rem] bg-white"
               >
-                <span className="shrink-0 md:w-[10px] md:h-[10px] 2xl:w-[15px] 2xl:h-[15px] bg-red-500 rounded-full md:mt-1 2xl:mt-1.5"></span>
+                <span className="shrink-0 bg-red-500 rounded-full 
+                md:w-[0.625rem] md:h-[0.625rem] md:mt-1
+                2xl:w-[0.9375rem] 2xl:h-[0.9375rem] 2xl:mt-1.5"></span>
 
                 <div className="space-y-2 2xl:space-y-3">
-                  <h3 className=" text-[20px] md:text-[18px] 2xl:text-[26px] 3xl:text-[30px] text-black leading-[1] tracking-[-0.06em]">
+                  <h3 className=" text-[1.25rem] text-black leading-[1] tracking-[-0.06em]
+                  md:text-[1.125rem] 2xl:text-[1.625rem] 3xl:text-[1.875rem] ">
                     {card.title}
                   </h3>
 
-                  <p className=" text-[20px] md:text-[14px] 2xl:text-[18px] text-black md:leading-[1.2] 2xl:leading-[1.3] tracking-[-0.04em]">
+                  <p className=" text-[1.25rem] text-black  tracking-[-0.04em]
+                   md:leading-[1.2] md:text-[0.875rem] 2xl:text-[1.125rem] 2xl:leading-[1.3]">
                     {card.description}
                   </p>
                 </div>
@@ -81,36 +88,37 @@ export default function Developed() {
 
 
       {/* MOBILE */}
-      <div className="rounded-[35px] sm:bg-white sm:px-[25px] sm:pt-[35px] sm:pb-[5px] md:hidden ">
+      <div className="rounded-[2.1875rem] sm:bg-white sm:px-[1.5625rem] sm:pt-[2.1875rem] sm:pb-[0.3125rem] md:hidden ">
 
         {/* Верхний текст */}
-        <div className="space-y-2 mb-[20px] xs:mb-[25px] sm:mb-[30px]">
-          <h2 className={`text-[25px] text-black leading-[1] tracking-[-0.03em] font-${font}`}>
+        <div className="space-y-2 mb-[1.25rem] xs:mb-[1.5625rem] sm:mb-[1.875rem]">
+          <h2 className={`text-[1.5625rem] text-black leading-[1] tracking-[-0.03em] font-${font}`}>
             {section.top.title}
           </h2>
 
-          <p className="text-[14px] text-black leading-[1.2] tracking-[-0.04em]">
+          <p className="text-[0.875rem] text-black leading-[1.2] tracking-[-0.04em]">
             {section.top.description}
           </p>
         </div>
 
         {/* Черный контейнер */}
-        <div className="bg-black sm:bg-transparent p-[3px] sm:p-0 rounded-[20px]">
+        <div className="bg-black sm:bg-transparent p-[0.1875rem] sm:p-0 rounded-[1.25rem]">
 
-          <div className="flex flex-col gap-[3px] sm:gap-[40px] mb-[3px] sm:mb-[80px]">
+          <div className="flex flex-col gap-[0.1875rem] sm:gap-[2.5rem] mb-[0.1875rem] sm:mb-[5rem]">
             {section.bottom.map((card, i) => (
               <div
                 key={i}
-                className="flex items-start gap-2 sm:gap-3 bg-white p-5 sm:p-0 rounded-[15px] sm:rounded-[20px]"
+                className="flex items-start gap-2 sm:gap-3 bg-white p-5 sm:p-0 rounded-[0.9375rem] sm:rounded-[1.25rem]"
               >
-                <span className="shrink-0 w-[10px] h-[10px] smm:w-[15px] smm:h-[15px] bg-red-500 rounded-full mt-0.5"></span>
+                <span className="shrink-0 w-[0.625rem] h-[0.625rem] bg-red-500 rounded-full mt-0.5
+                smm:w-[0.9375rem] smm:h-[0.9375rem]"></span>
 
                 <div className="space-y-2">
-                  <h3 className="text-[18px] text-black leading-[1] tracking-[-0.04em]">
+                  <h3 className="text-[1.125rem] text-black leading-[1] tracking-[-0.04em]">
                     {card.title}
                   </h3>
 
-                  <p className="text-[14px] text-black leading-[1.2] tracking-[-0.04em]">
+                  <p className="text-[0.875rem] text-black leading-[1.2] tracking-[-0.04em]">
                     {card.description}
                   </p>
                 </div>
@@ -119,7 +127,8 @@ export default function Developed() {
           </div>
 
           {/* Диаграмма */}
-          <div className="bg-white px-4 pt-7 pb-4 sm:pt-4 rounded-[15px] sm:rounded-[20px] flex justify-center">
+          <div className="bg-white px-4 pt-7 pb-4 rounded-[0.9375rem] flex justify-center
+          sm:pt-4 sm:rounded-[1.25rem]">
             <img
               src={diagramMob}
               alt="Diagram"

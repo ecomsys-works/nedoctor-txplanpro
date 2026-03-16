@@ -10,14 +10,14 @@ export default function WorkflowSteps() {
   }) as WorkflowStepsCardType[]
 
   return (
-    <section id="#how-it-works" className="my-container pt-[35px] sm:pt-[50px] 2xl:pt-[50px] mb-[70px] sm:mb-[100px] mdd:mb-[130px] 2xl:mb-[220px]">
+    <section id="#how-it-works" className="workflow-steps gsap-up my-container pt-[2.1875rem] sm:pt-[3.125rem] 2xl:pt-[3.125rem] mb-[4.375rem] sm:mb-[6.25rem] mdd:mb-[8.125rem] 2xl:mb-[13.75rem]">
 
-      <div className="3xl:px-[60px]">
-        <h2 className="text-[35px] xxs:text-[60px] 2xl:text-[120px] mb-[30px] xxs:mb-[40px] 2xl:mb-[70px] 3xl:mb-[90px] leading-[1] tracking-[-0.06em] font-semibold text-center uppercase">
+      <div className="3xl:px-[3.75rem]">
+        <h2 className="text-[2.1875rem] xxs:text-[3.75rem] 2xl:text-[7.5rem] mb-[1.875rem] xxs:mb-[2.5rem] 2xl:mb-[4.375rem] 3xl:mb-[5.625rem] leading-[1] tracking-[-0.06em] font-semibold text-center uppercase">
           {t("workflow.steps.title")}
         </h2>
 
-        <div className="grid xxs:grid-cols-2 mdd:grid-cols-3 gap-[20px] xxs:gap-[10px] 2xl:gap-[26px]">
+        <div className="grid xxs:grid-cols-2 mdd:grid-cols-3 gap-[1.25rem] xxs:gap-[0.625rem] 2xl:gap-[1.625rem]">
 
           {cards.map((card, i) => {
 

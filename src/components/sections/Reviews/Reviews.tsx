@@ -17,10 +17,10 @@ export default function Reviews() {
   const reviews = t("reviews.cards", { returnObjects: true }) as ReviewCardType[];
 
   return (
-    <section className="reviews-swiper my-container my-container--reviews mb-[70px] sm:mb-[100px] 2xl:mb-[200px]">
+    <section className="reviews gsap-up reviews-swiper my-container my-container--reviews mb-[4.375rem] sm:mb-[6.25rem] 2xl:mb-[12.5rem]">
 
       {/* Заголовок */}
-      <h2 className="text-[40px] sm:text-[60px] 2xl:text-[120px] mb-[25px] sm:mb-[40px] 2xl:mb-[70px] leading-[1] tracking-[-0.06em] font-semibold text-center uppercase">
+      <h2 className="text-[2.5rem] sm:text-[3.75rem] 2xl:text-[7.5rem] mb-[1.5625rem] sm:mb-[2.5rem] 2xl:mb-[4.375rem] leading-[1] tracking-[-0.06em] font-semibold text-center uppercase">
         {title}
       </h2>
 
@@ -42,28 +42,28 @@ export default function Reviews() {
           <SwiperSlide key={i} className="!h-auto flex">
 
             {/* Карточка */}
-            <div className="bg-white p-[15px] 2xl:p-[30px] rounded-[15px] 2xl:rounded-[20px] flex flex-col w-full">
+            <div className="bg-white p-[0.9375rem] 2xl:p-[1.875rem] rounded-[0.9375rem] 2xl:rounded-[1.25rem] flex flex-col w-full">
 
               {/* Header */}
-              <div className="flex items-center gap-3 mb-[36px] 2xl:min-h-[80px]">
+              <div className="flex items-center gap-3 mb-[2.25rem] 2xl:min-h-[5rem]">
 
                 {card.avatar && (
                   <img
                     src={card.avatar}
                     alt="Avatar"
-                    className="w-[38px] h-[38px] 2xl:w-[54px] 2xl:h-[54px] rounded-full"
+                    className="w-[2.375rem] h-[2.375rem] 2xl:w-[3.375rem] 2xl:h-[3.375rem] rounded-full"
                   />
                 )}
 
                 <div>
                   {card.name && (
-                    <p className="text-[14px] 2xl:text-[18px] leading-[1.3] tracking-[-0.04em] font-semibold">
+                    <p className="text-[0.875rem] 2xl:text-[1.125rem] leading-[1.3] tracking-[-0.04em] font-semibold">
                       {card.name}
                     </p>
                   )}
 
                   {card.specialty && (
-                    <p className="text-[14px] 2xl:text-[18px] leading-[1] 2xl:leading-[1.3] tracking-[-0.04em] font-light">
+                    <p className="text-[0.875rem] 2xl:text-[1.125rem] leading-[1] 2xl:leading-[1.3] tracking-[-0.04em] font-light">
                       {card.specialty}
                     </p>
                   )}
@@ -73,13 +73,13 @@ export default function Reviews() {
                   <img
                     src={card.clinicLogo}
                     alt="Clinic"
-                    className="ml-auto h-[31px] 2xl:h-[54px] w-auto"
+                    className="ml-auto h-[1.9375rem] 2xl:h-[3.375rem] w-auto"
                   />
                 ) : (
                   <span
-                    className="text-nowrap ml-auto h-[31px] 2xl:h-[54px] flex items-center justify-center border border-blue-stroke px-[6px]
-                    text-grey text-[10px] 2xl:text-[18px] font-thin leading-[1.3] tracking-[-0.04em]
-                    rounded-[58px] 2xl:rounded-[100px] 2xl:px-[12px]"
+                    className="text-nowrap ml-auto h-[1.9375rem] 2xl:h-[3.375rem] flex items-center justify-center border border-blue-stroke px-[0.375rem]
+                    text-grey text-[0.625rem] 2xl:text-[1.125rem] font-thin leading-[1.3] tracking-[-0.04em]
+                    rounded-[3.625rem] 2xl:rounded-[6.25rem] 2xl:px-[0.75rem]"
                   >
                     clinic logo
                   </span>
@@ -88,7 +88,7 @@ export default function Reviews() {
               </div>
 
               {/* Text */}
-              <p className="text-black text-[14px] 2xl:text-[18px] leading-[1.2] tracking-[-0.04em]">
+              <p className="text-black text-[0.875rem] 2xl:text-[1.125rem] leading-[1.2] tracking-[-0.04em]">
                 {card.text}
               </p>
 

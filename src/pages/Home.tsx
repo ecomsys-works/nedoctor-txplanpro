@@ -14,24 +14,35 @@ import Partners from "@/components/sections/Partners";
 import WorkflowDetails from "@/components/sections/WorkflowDetails";
 import WorkflowSteps from "@/components/sections/WorkflowSteps";
 
+import Popup from "@/components/sections/Popup";
+import { PopupProvider } from "@/сontext/Popup/PopupProvider";
+
+import { EmailProvider } from "@/сontext/Email/EmailProvider";
+
+import { useScrollAnimations } from "@/hooks/useScrollAnimation";
+
 export function Home() {
+  useScrollAnimations("html");
   return (
-    <div className="page">
-      <Header/>
-      <Hero />
-      <Partners />
-      <FeatureGrid/>
-      <WorkflowSteps/>
-      <WorkflowDetails/>
-      <BenefitsAccordion/>
-      <Double/>
-      <GettingStarted/>
-      <Developed/>
-      <Reviews/>
-      <Pricing/>
-      <SayYes/>
-      <ListForm/>
-      <Footer/>
-    </div>
+    <EmailProvider>
+      <PopupProvider>
+        <Header />
+        <Hero />
+        <Partners />
+        <FeatureGrid />
+        <WorkflowSteps />
+        <WorkflowDetails />
+        <BenefitsAccordion />
+        <Double />
+        <GettingStarted />
+        <Developed />
+        <Reviews />
+        <Pricing />
+        <SayYes />
+        <ListForm />
+        <Footer />
+        <Popup />
+      </PopupProvider>
+    </EmailProvider>
   );
 }

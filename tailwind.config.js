@@ -3,6 +3,15 @@
 module.exports = {
   content: ["./src/**/*.{js,ts,jsx,tsx}"],
 
+  safelist: [
+    "font-inter",
+    "font-zt",
+    "font-sfpro",
+    "font-micro",
+    "font-libre",
+    "font-anek"
+  ],
+
   theme: {
     // container: {
     //   center: true,
@@ -20,6 +29,7 @@ module.exports = {
     screens: {
       'xs': '480px',
       'xxs': '575px',
+      'ssm': '620px',
       'sm': '640px',
       'smm': '660px',
       'md': '768px',
