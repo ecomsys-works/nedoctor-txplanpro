@@ -20,23 +20,23 @@ export default function BenefitsAccordion() {
     const font = t("benefits.font");
 
     return (
-        <section id="#benefits" className="benefits-accordion gsap-up pt-[35px] mb-[70px] 
-        sm:pt-[50px] 2xl:pt-[50px] sm:mb-[100px] mdd:mb-[125px] 2xl:mb-[200px]">
-            <h2 className={`text-[25px] mb-[20px] tracking-[-0.05em] my-container font-${font}
-               3xl:text-[55px] 2xl:mb-[38px] text-[25px] md:tracking-[-0.03em]
-                 ${t('lang') === 'ru' ? "leading-[1]  2xl:text-[40px]" :"leading-[0.88] 2xl:text-[45px]"}
+        <section id="#benefits" className="benefits-accordion gsap-up pt-[2.1875rem] mb-[4.375rem] 
+        sm:pt-[3.125rem] 2xl:pt-[3.125rem] sm:mb-[6.25rem] mdd:mb-[7.8125rem] 2xl:mb-[12.5rem]">
+            <h2 className={`text-[1.5625rem] mb-[1.25rem] tracking-[-0.05em] my-container font-${font}
+               3xl:text-[3.4375rem] 2xl:mb-[2.375rem] text-[1.5625rem] md:tracking-[-0.03em]
+                 ${t('lang') === 'ru' ? "leading-[1]  2xl:text-[2.5rem]" :"leading-[0.88] 2xl:text-[2.8125rem]"}
                 `}>
                 {formatHeader(title)}                
             </h2>
 
-            <div className="mx-[10px] xs:mx-[15px] sm:mx-0 flex flex-col rounded-[20px] bg-white sm:bg-transparent sm:rounded-0">
+            <div className="mx-[0.625rem] xs:mx-[0.9375rem] sm:mx-0 flex flex-col rounded-[1.25rem] bg-white sm:bg-transparent sm:rounded-0">
                 {accordions.map((accordion, index) => {
                     const isOpen = index === openIndex;
                     return (
                         <div key={index} className="w-full transition-colors duration-500 relative">
-                            {/* Мобильная версия <640px */}
+                            {/* Мобильная версия <40rem */}
                             <div className="sm:hidden">
-                                <div className={`rounded-t-[20px] bg-white text-black transition-colors duration-500 overflow-hidden border-t border-grey-200 ${index === accordions.length - 1 ? "rounded-b-[20px]" : ""}`}>
+                                <div className={`rounded-t-[1.25rem] bg-white text-black transition-colors duration-500 overflow-hidden border-t border-grey-200 ${index === accordions.length - 1 ? "rounded-b-[1.25rem]" : ""}`}>
                                     <AccordionContent
                                         header={accordion.headerMob}
                                         accordion={accordion}
@@ -46,7 +46,7 @@ export default function BenefitsAccordion() {
                                 </div>
                             </div>
 
-                            {/* sm+ версия 640px–1279px */}
+                            {/* sm+ версия 40rem–79.9375rem */}
                             <div className="hidden sm:block xl:hidden">
                                 <div className="border-t border-b border-grey-200 bg-white text-black transition-colors duration-500 overflow-hidden">
                                     <div className="my-container">
@@ -60,7 +60,7 @@ export default function BenefitsAccordion() {
                                 </div>
                             </div>
 
-                            {/* Десктоп ≥1280px */}
+                            {/* Десктоп ≥80rem */}
                             <div className="hidden xl:block">
                                 <div
                                     className={`group hover:bg-black transition-colors duration-500 border-t 2xl:border-b border-solid border-black/10 overflow-hidden ${isOpen ? "bg-black text-white" : "bg-white text-black"
@@ -103,25 +103,25 @@ function AccordionContent({
             {/* Заголовок аккордеона */}
             <div
                 className={`flex justify-between items-start cursor-pointer gap-5 
-         ${t('lang') === 'ru' ? "pl-[10px] pr-[20px] pt-[10px] pb-[25px] sm:items-center sm:pt-[15px] sm:pb-[20px] md:pl-[0px]  md:pr-[30px] 2xl:py-[32px] 2xl:pr-[30px] 2xl:px-0 3xl:py-[42px]" 
-            : "pl-[10px] pr-[20px] pt-[10px] pb-[25px] sm:items-center sm:pt-[15px] sm:pb-[20px] md:pl-[0px]  md:pr-[30px] 2xl:py-[52px] 3xl:py-[30px] 2xl:pr-[30px] 2xl:px-0 3xl:py-[58px]"}`}
+         ${t('lang') === 'ru' ? "pl-[0.625rem] pr-[1.25rem] pt-[0.625rem] pb-[1.5625rem] sm:items-center sm:pt-[0.9375rem] sm:pb-[1.25rem] md:pl-[0rem]  md:pr-[1.875rem] 2xl:py-[2rem] 2xl:pr-[1.875rem] 2xl:px-0 3xl:py-[2.625rem]" 
+            : "pl-[0.625rem] pr-[1.25rem] pt-[0.625rem] pb-[1.5625rem] sm:items-center sm:pt-[0.9375rem] sm:pb-[1.25rem] md:pl-[0rem]  md:pr-[1.875rem] 2xl:py-[3.25rem] 3xl:py-[1.875rem] 2xl:pr-[1.875rem] 2xl:px-0 3xl:py-[3.625rem]"}`}
                 onClick={toggle}
             >
                 <h3
                     className={`tracking-[-0.06em] uppercase ${isOpen
                             ? "2xl:text-[#b2b2b2]"
                             : "text-black group-hover:text-[#b2b2b2]"}  
-                             ${t('lang') === 'ru' ? "font-bold text-[35px] leading-[1] sm:text-[60px] 2xl:text-[120px]" :
-                                "font-semibold text-[35px] leading-[0.88] sm:text-[60px] 2xl:text-[160px] font-anek -mb-[3.5%]"}                          
+                             ${t('lang') === 'ru' ? "font-bold text-[2.1875rem] leading-[1] sm:text-[3.75rem] 2xl:text-[7.5rem]" :
+                                "font-semibold text-[2.1875rem] leading-[0.88] sm:text-[3.75rem] 2xl:text-[10rem] font-anek -mb-[3.5%]"}                          
                         `}
                 >
                     <span className="block align-top">{header}</span>
                     
                 </h3>
-                <span className=" group-hover:text-white group-hover:border-white/20 border-white/10 rounded-full 2xl:p-5 -mr-[35px] -mt-[15px] 2xl:border ">
+                <span className=" group-hover:text-white group-hover:border-white/20 border-white/10 rounded-full 2xl:p-5 -mr-[2.1875rem] -mt-[0.9375rem] 2xl:border ">
                     <svg
                         className={`shrink-0 transform transition-transform duration-500 ${isOpen ? "-rotate-90" : "rotate-0"
-                            } w-[18px] h-[18px] 2xl:w-[30px] 2xl:h-[30px]`}
+                            } w-[1.125rem] h-[1.125rem] 2xl:w-[1.875rem] 2xl:h-[1.875rem]`}
                     >
                         <use href="/icons/sprite/sprite.svg#acc-arrow" />
                     </svg>
@@ -130,10 +130,10 @@ function AccordionContent({
 
             {/* Контент */}
             <div
-                className={`transition-[max-height] duration-500 ease-in-out overflow-hidden ${isOpen ? "max-h-[1000px]" : "max-h-0"
+                className={`transition-[max-height] duration-500 ease-in-out overflow-hidden ${isOpen ? "max-h-[62.5rem]" : "max-h-0"
                     }`}
             >
-                <div className="flex flex-col xl:flex-row xl:gap-4 sm:pb-10 pb-[20px]">
+                <div className="flex flex-col xl:flex-row xl:gap-4 sm:pb-10 pb-[1.25rem]">
                     {/* Пустой блок для отступа на десктопе */}
                     <div className="hidden xl:block flex-[0_0_50%]"></div>
 
@@ -142,16 +142,16 @@ function AccordionContent({
                             <div
                                 key={i}
                                 className={`border-grey-200 flex flex-col 
-                                            px-[10px] pt-[20px] gap-2 
-                                            sm:pt-[40px] sm:gap-10 sm:grid sm:grid-cols-2 sm:gap-25 md:gap-35
+                                            px-[0.625rem] pt-[1.25rem] gap-2 
+                                            sm:pt-[2.5rem] sm:gap-10 sm:grid sm:grid-cols-2 sm:gap-25 md:gap-35
                                             xl:items-start 2xl:gap-25 border-t
-                                            ${i === accordion.rows.length - 1 ? "border-b pb-[40px]" : ""}
+                                            ${i === accordion.rows.length - 1 ? "border-b pb-[2.5rem]" : ""}
                                         `}>
-                                <h4 className="text-[14px] sm:text-[18px] leading-[1.3] tracking-[-0.04em] font-semibold
-                                sm:leading-[1] 2xl:text-[24px] 2xl:leading-[1.1] 2xl:text-[#b2b2b2]">{row.title}</h4>
+                                <h4 className="text-[0.875rem] sm:text-[1.125rem] leading-[1.3] tracking-[-0.04em] font-semibold
+                                sm:leading-[1] 2xl:text-[1.5rem] 2xl:leading-[1.1] 2xl:text-[#b2b2b2]">{row.title}</h4>
 
-                                <p className="text-[14px] leading-[1.2] tracking-[-0.04em] font-semibold
-                                2xl:text-[18px] 2xl:leading-[1.3] 2xl:text-[#b2b2b2]">{row.description}</p>
+                                <p className="text-[0.875rem] leading-[1.2] tracking-[-0.04em] font-semibold
+                                2xl:text-[1.125rem] 2xl:leading-[1.3] 2xl:text-[#b2b2b2]">{row.description}</p>
                             </div>
                         ))}
                     </div>

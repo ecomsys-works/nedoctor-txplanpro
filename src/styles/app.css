@@ -12,7 +12,7 @@ body {
 
 
 .scrollbar-none::-webkit-scrollbar {
-    inline-size: 0px;
+    inline-size: 0rem;
     background-color: transparent;
 }
 
@@ -51,7 +51,7 @@ body {
 }
 
 /* только для мобилки */
-@media (max-width: 639px) {
+@media (max-width: 39.9375rem) {
 
     .accordion-group {
         position: relative;
@@ -60,15 +60,15 @@ body {
     .accordion-group::after {
         content: "";
         position: absolute;
-        left: 0px;
-        right: 0px;
-        bottom: 0px;
+        left: 0rem;
+        right: 0rem;
+        bottom: 0rem;
 
-        height: 0px;
+        height: 0rem;
         background: white;
         /* 
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px; */
+    border-bottom-left-radius: 1.25rem;
+    border-bottom-right-radius: 1.25rem; */
 
         z-index: 0;
     }
@@ -80,7 +80,7 @@ body {
 }
 
 /* .accordion .accordion-group:last-child .accordion-mobile{
-    @apply pb-[25px];
+    @apply pb-[1.5625rem];
 } */
 
 @layer components {
@@ -88,58 +88,58 @@ body {
     /* Пример кастомного блока */
     .my-container {
         width: 100%;
-        max-inline-size: 1920px;
-        min-inline-size: 320px;
+        max-inline-size: 120rem;
+        min-inline-size: 20rem;
         margin-inline: auto;
-        padding-inline: 10px;
+        padding-inline: 0.625rem;
     }
 
     .nop-container {
         width: 100%;
-        max-inline-size: 1920px;
-        min-inline-size: 320px;
+        max-inline-size: 120rem;
+        min-inline-size: 20rem;
         margin-inline: auto;
         padding-inline: 0;
     }
 
-    @media (min-width: 480px) {
+    @media (min-width: 30rem) {
         .my-container {
-            padding-inline: 15px;
+            padding-inline: 0.9375rem;
         }
 
     }
 
-    @media (min-width: 640px) {
+    @media (min-width: 40rem) {
         .my-container {
-            padding-inline: 20px;
+            padding-inline: 1.25rem;
         }
 
     }
 
-    @media (min-width: 768px) {
+    @media (min-width: 48rem) {
         .my-container {
-            padding-inline: 30px;
+            padding-inline: 1.875rem;
         }
 
     }
 
-    @media (min-width: 1024px) {
+    @media (min-width: 64rem) {
         .my-container {
-            padding-inline: 30px;
+            padding-inline: 1.875rem;
         }
 
     }
 
-    @media (min-width: 1280px) {
+    @media (min-width: 80rem) {
         .my-container {
-            padding-inline: 100px;
+            padding-inline: 6.25rem;
         }
 
     }
 
-    @media (min-width: 1536px) {
+    @media (min-width: 96rem) {
         .my-container {
-            padding-inline: 150px;
+            padding-inline: 9.375rem;
         }
 
         .my-container.my-container--reviews {
@@ -148,13 +148,13 @@ body {
 
     }
 
-    @media (min-width: 1880px) {
+    @media (min-width: 117.5rem) {
         .my-container {
-            padding-inline: 160px;
+            padding-inline: 10rem;
         }
 
         .my-container.my-container--reviews {
-            padding-inline: 160px;
+            padding-inline: 10rem;
         }
 
     }
@@ -167,23 +167,23 @@ Header glass-nav
     .glass {
         position: relative;
 
-        border-radius: 40px;
+        border-radius: 2.5rem;
         overflow: hidden;
 
-        backdrop-filter: blur(24px);
-        -webkit-backdrop-filter: blur(24px);
+        backdrop-filter: blur(1.5rem);
+        -webkit-backdrop-filter: blur(1.5rem);
 
         /* чуть затемнённое стекло */
         background: rgba(255, 255, 255, 0.095);
 
-        border-top: 1px solid rgba(255, 255, 255, 0.14);
-        border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+        border-top: 0.0625rem solid rgba(255, 255, 255, 0.14);
+        border-bottom: 0.0625rem solid rgba(255, 255, 255, 0.14);
 
         box-shadow:
-            0 10px 40px rgba(0, 0, 0, 0.3),
-            inset 0 1px 0 rgba(255, 255, 255, 0.22),
+            0 0.625rem 2.5rem rgba(0, 0, 0, 0.3),
+            inset 0 0.0625rem 0 rgba(255, 255, 255, 0.22),
             /* ЧЁТКИЙ top */
-            inset 0 -1px 0 rgba(255, 255, 255, 0.12);
+            inset 0 -0.0625rem 0 rgba(255, 255, 255, 0.12);
         /* ЧЁТКИЙ bottom */
     }
 
@@ -197,23 +197,23 @@ Header glass-nav
     .glass-btn {
         position: relative;
 
-        border-radius: 40px;
+        border-radius: 2.5rem;
         overflow: hidden;
 
-        backdrop-filter: blur(24px);
-        -webkit-backdrop-filter: blur(24px);
+        backdrop-filter: blur(1.5rem);
+        -webkit-backdrop-filter: blur(1.5rem);
 
         /* чуть затемнённое стекло */
         background: rgba(255, 255, 255, 0.095);
 
-        border-top: 1px solid rgba(255, 255, 255, 0.14);
-        border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+        border-top: 0.0625rem solid rgba(255, 255, 255, 0.14);
+        border-bottom: 0.0625rem solid rgba(255, 255, 255, 0.14);
 
         box-shadow:
-            0 10px 40px rgba(0, 0, 0, 0.3),
-            inset 0 1px 0 rgba(255, 255, 255, 0.22),
+            0 0.625rem 2.5rem rgba(0, 0, 0, 0.3),
+            inset 0 0.0625rem 0 rgba(255, 255, 255, 0.22),
             /* ЧЁТКИЙ top */
-            inset 0 -1px 0 rgba(255, 255, 255, 0.12);
+            inset 0 -0.0625rem 0 rgba(255, 255, 255, 0.12);
         /* ЧЁТКИЙ bottom */
     }
 
@@ -227,17 +227,17 @@ Header glass-nav
 
     .glass-g {
         position: relative;
-        border-radius: 40px;
+        border-radius: 2.5rem;
         overflow: hidden;
 
-        backdrop-filter: blur(24px);
-        -webkit-backdrop-filter: blur(24px);
+        backdrop-filter: blur(1.5rem);
+        -webkit-backdrop-filter: blur(1.5rem);
 
         /* чуть темнее серое стекло */
         background: rgba(255, 255, 255, 0.05);
 
         /* бордер с градиентом по углам для эффекта “затухания” */
-        border: 1px solid transparent;
+        border: 0.0625rem solid transparent;
         background-clip: padding-box;
     }
 
@@ -249,7 +249,7 @@ Header glass-nav
         border-radius: inherit;
 
         /* имитация мягкого бордера, чтобы углы выглядели “затушёванными” */
-        border: 1px solid rgba(255, 255, 255, 0.14);
+        border: 0.0625rem solid rgba(255, 255, 255, 0.14);
 
         /* маска, чтобы бордер исчезал на нужных углах */
         mask-image: radial-gradient(circle at top right, rgba(0, 0, 0, 0) 15%, rgba(0, 0, 0, 1) 40%),
@@ -288,12 +288,12 @@ Header glass-nav
 
     .foo-underline {
         position: relative;
-        padding-bottom: 2px;
+        padding-bottom: 0.125rem;
     }
 
-    @media(min-width:1880px) {
+    @media(min-width:117.5rem) {
         .foo-underline {
-            padding-bottom: 5px;
+            padding-bottom: 0.3125rem;
         }
     }
 
@@ -303,8 +303,8 @@ Header glass-nav
         bottom: 0;
         left: 0;
         right: 0;
-        height: 1px;
-        border-bottom: 1px solid rgba(0, 0, 0, 1);
+        height: 0.0625rem;
+        border-bottom: 0.0625rem solid rgba(0, 0, 0, 1);
         transition: border-color 0.3s ease-in-out;
     }
 
@@ -316,12 +316,12 @@ Header glass-nav
 
     .fow-underline {
         position: relative;
-        padding-bottom: 2px;
+        padding-bottom: 0.125rem;
     }
 
-    @media(min-width:1880px) {
+    @media(min-width:117.5rem) {
         .fow-underline {
-            padding-bottom: 5px;
+            padding-bottom: 0.3125rem;
         }
     }
 
@@ -331,8 +331,8 @@ Header glass-nav
         bottom: 0;
         left: 0;
         right: 0;
-        height: 1px;
-        border-bottom: 1px solid rgba(255, 255, 255, 1);
+        height: 0.0625rem;
+        border-bottom: 0.0625rem solid rgba(255, 255, 255, 1);
         transition: border-color 0.3s ease-in-out;
     }
 
@@ -372,8 +372,8 @@ Header glass-nav
 }
 
 .white-btn:hover {
-    backdrop-filter: blur(24px);
-    -webkit-backdrop-filter: blur(24px);
+    backdrop-filter: blur(1.5rem);
+    -webkit-backdrop-filter: blur(1.5rem);
 
     /* чуть светлее сверху-слева градиент */
     background: linear-gradient(135deg,
@@ -383,13 +383,13 @@ Header glass-nav
             /* основная база */
         );
 
-    border-top: 1px solid rgba(255, 255, 255, 0.14);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+    border-top: 0.0625rem solid rgba(255, 255, 255, 0.14);
+    border-bottom: 0.0625rem solid rgba(255, 255, 255, 0.14);
 
     box-shadow:
-        0 10px 40px rgba(0, 0, 0, 0.3),
-        inset 0 1px 0 rgba(255, 255, 255, 0.22),
-        inset 0 -1px 0 rgba(255, 255, 255, 0.12);
+        0 0.625rem 2.5rem rgba(0, 0, 0, 0.3),
+        inset 0 0.0625rem 0 rgba(255, 255, 255, 0.22),
+        inset 0 -0.0625rem 0 rgba(255, 255, 255, 0.12);
 
     color: white;
 }

@@ -29,32 +29,32 @@ export default function Developed() {
   const font = t("developed.font");
 
   return (
-    <section className="developed gsap-up my-container mb-[65px] sm:mb-[90px] mdd:mb-[60px] 2xl:mb-[190px]">
+    <section className="developed gsap-up my-container mb-[4.0625rem] sm:mb-[5.625rem] mdd:mb-[3.75rem] 2xl:mb-[11.875rem]">
 
       {/* DESKTOP */}
       <div className="hidden md:block">
-        <div className="relative bg-white p-[20px] rounded-[20px] overflow-hidden p-6
-         md:p-[20px] 2xl:p-[30px] 2xl:rounded-[50px] 3xl:px-[40px] 3xl:py-[32px] ">
+        <div className="relative bg-white p-[1.25rem] rounded-[1.25rem] overflow-hidden p-6
+         md:p-[1.25rem] 2xl:p-[1.875rem] 2xl:rounded-[3.125rem] 3xl:px-[2.5rem] 3xl:py-[2rem] ">
 
           {/* Верхний ряд */}
-          <div className="relative 2xl:mb-[60px] 3xl:mb-[70px]">
+          <div className="relative 2xl:mb-[3.75rem] 3xl:mb-[4.375rem]">
             <div className="flex flex-col absolute top-0 left-0 ">
-              <h2 className={`pt-[5px] max-w-[250px] text-[36px] text-black font-${font}
-              md:text-[25px] 2xl:tracking-[-0.05em] 3xl:text-[55px]
-               ${t('lang') === 'ru' ? "leading-[1] mb-[15pxp] md:mb-[10px] 2xl:mb-[20px] 3xl:mb-[20px] 2xl:text-[40px]" :
-                "leading-[0.88] mb-[15pxp] md:mb-[10px] 2xl:mb-[20px] 3xl:mb-[25px] 2xl:text-[45px]"}
+              <h2 className={`pt-[0.3125rem] max-w-[15.625rem] text-[2.25rem] text-black font-${font}
+              md:text-[1.5625rem] 2xl:tracking-[-0.05em] 3xl:text-[3.4375rem]
+               ${t('lang') === 'ru' ? "leading-[1] mb-[0.9375remp] md:mb-[0.625rem] 2xl:mb-[1.25rem] 3xl:mb-[1.25rem] 2xl:text-[2.5rem]" :
+                "leading-[0.88] mb-[0.9375remp] md:mb-[0.625rem] 2xl:mb-[1.25rem] 3xl:mb-[1.5625rem] 2xl:text-[2.8125rem]"}
               `}>
                 {formatHeader(section.top.title)}
               </h2>
 
-              <p className="max-w-[382px] text-[25px] text-black leading-[1.3] tracking-[-0.04em]
-              sm:text-[36px] md:text-[14px] 2xl:text-[18px]">
+              <p className="max-w-[23.875rem] text-[1.5625rem] text-black leading-[1.3] tracking-[-0.04em]
+              sm:text-[2.25rem] md:text-[0.875rem] 2xl:text-[1.125rem]">
                 {section.top.description}
               </p>
             </div>
 
 
-          <div className="md:pt-[40px] 2xl:pt-0 3xl:pt-[15px] md:pl-[15%] 2xl:pl-[0] 3xl:pl-[15%] ">
+          <div className="md:pt-[2.5rem] 2xl:pt-0 3xl:pt-[0.9375rem] md:pl-[15%] 2xl:pl-[0] 3xl:pl-[15%] ">
             <img
               src={diagramDesk}
               alt="Diagram"
@@ -65,29 +65,29 @@ export default function Developed() {
 
           {/* Нижний ряд */}
           <div className={`grid justify-between 
-           ${t('lang') === 'ru' ? "md:grid-cols-[36%_38%_26%] md:pt-[65px] 2xl:grid-cols-[36%_39%_25%] 2xl:pt-[0] 3xl:pt-[50px]" : 
+           ${t('lang') === 'ru' ? "md:grid-cols-[36%_38%_26%] md:pt-[4.0625rem] 2xl:grid-cols-[36%_39%_25%] 2xl:pt-[0] 3xl:pt-[3.125rem]" : 
             "2xl:grid-cols-[38%_38%_24%] 3xl:grid-cols-[24%_26%_25%_25%]"}
 
             `}>
             {section.bottom.map((card, i) => (
               <div
                 key={i}
-                className="flex items-start gap-[10px] rounded-[20px] bg-white"
+                className="flex items-start gap-[0.625rem] rounded-[1.25rem] bg-white"
               >
                 <span className="shrink-0 bg-red-500 rounded-full 
-                md:w-[10px] md:h-[10px] md:mt-1
-                2xl:w-[16px] 2xl:h-[16px] 2xl:mt-1"></span>
+                md:w-[0.625rem] md:h-[0.625rem] md:mt-1
+                2xl:w-[1rem] 2xl:h-[1rem] 2xl:mt-1"></span>
 
-                <div className="space-y-2 2xl:space-y-2 md:max-w-[328px] 2xl:max-w-[350px]">
+                <div className="space-y-2 2xl:space-y-2 md:max-w-[20.5rem] 2xl:max-w-[21.875rem]">
                   <h3 className={` text-black  tracking-[-0.06em]                  
-                    ${t('lang') === 'ru' ? "text-[20px] md:text-[18px] 2xl:text-[26px] 3xl:text-[24px] leading-[1.1]" : 
-                      "text-[20px] md:text-[18px] 2xl:text-[26px] 3xl:text-[30px] leading-[1]"}
+                    ${t('lang') === 'ru' ? "text-[1.25rem] md:text-[1.125rem] 2xl:text-[1.625rem] 3xl:text-[1.5rem] leading-[1.1]" : 
+                      "text-[1.25rem] md:text-[1.125rem] 2xl:text-[1.625rem] 3xl:text-[1.875rem] leading-[1]"}
                   `}>
                     {formatHeader(card.title)}
                   </h3>
 
-                  <p className=" text-[20px] text-black  tracking-[-0.04em]
-                   md:leading-[1.2] md:text-[14px] 2xl:text-[18px] 2xl:leading-[1.3]">
+                  <p className=" text-[1.25rem] text-black  tracking-[-0.04em]
+                   md:leading-[1.2] md:text-[0.875rem] 2xl:text-[1.125rem] 2xl:leading-[1.3]">
                     {card.description}
                   </p>
                 </div>
@@ -100,37 +100,37 @@ export default function Developed() {
 
 
       {/* MOBILE */}
-      <div className="rounded-[35px] sm:bg-white sm:px-[25px] sm:pt-[35px] sm:pb-[5px] md:hidden ">
+      <div className="rounded-[2.1875rem] sm:bg-white sm:px-[1.5625rem] sm:pt-[2.1875rem] sm:pb-[0.3125rem] md:hidden ">
 
         {/* Верхний текст */}
-        <div className="space-y-2 mb-[20px] xs:mb-[25px] sm:mb-[30px]">
-          <h2 className={`text-[25px] text-black leading-[1] tracking-[-0.03em] font-${font}`}>
+        <div className="space-y-2 mb-[1.25rem] xs:mb-[1.5625rem] sm:mb-[1.875rem]">
+          <h2 className={`text-[1.5625rem] text-black leading-[1] tracking-[-0.03em] font-${font}`}>
             {formatHeader(section.top.title)}
           </h2>
 
-          <p className="text-[14px] text-black leading-[1.2] tracking-[-0.04em]">
+          <p className="text-[0.875rem] text-black leading-[1.2] tracking-[-0.04em]">
             {section.top.description}
           </p>
         </div>
 
         {/* Черный контейнер */}
-        <div className="bg-black sm:bg-transparent p-[3px] sm:p-0 rounded-[20px]">
+        <div className="bg-black sm:bg-transparent p-[0.1875rem] sm:p-0 rounded-[1.25rem]">
 
-          <div className="flex flex-col gap-[3px] sm:gap-[40px] mb-[3px] sm:mb-[80px]">
+          <div className="flex flex-col gap-[0.1875rem] sm:gap-[2.5rem] mb-[0.1875rem] sm:mb-[5rem]">
             {section.bottom.map((card, i) => (
               <div
                 key={i}
-                className="flex items-start gap-2 sm:gap-3 bg-white p-5 sm:p-0 rounded-[15px] sm:rounded-[20px]"
+                className="flex items-start gap-2 sm:gap-3 bg-white p-5 sm:p-0 rounded-[0.9375rem] sm:rounded-[1.25rem]"
               >
-                <span className="shrink-0 w-[10px] h-[10px] bg-red-500 rounded-full mt-0.5
-                smm:w-[15px] smm:h-[15px]"></span>
+                <span className="shrink-0 w-[0.625rem] h-[0.625rem] bg-red-500 rounded-full mt-0.5
+                smm:w-[0.9375rem] smm:h-[0.9375rem]"></span>
 
                 <div className="space-y-2">
-                  <h3 className="text-[18px] text-black leading-[1] tracking-[-0.04em]">
+                  <h3 className="text-[1.125rem] text-black leading-[1] tracking-[-0.04em]">
                     {card.title}
                   </h3>
 
-                  <p className="text-[14px] text-black leading-[1.2] tracking-[-0.04em]">
+                  <p className="text-[0.875rem] text-black leading-[1.2] tracking-[-0.04em]">
                     {card.description}
                   </p>
                 </div>
@@ -139,8 +139,8 @@ export default function Developed() {
           </div>
 
           {/* Диаграмма */}
-          <div className="bg-white px-4 pt-7 pb-4 rounded-[15px] flex justify-center
-          sm:pt-4 sm:rounded-[20px]">
+          <div className="bg-white px-4 pt-7 pb-4 rounded-[0.9375rem] flex justify-center
+          sm:pt-4 sm:rounded-[1.25rem]">
             <img
               src={diagramMob}
               alt="Diagram"
