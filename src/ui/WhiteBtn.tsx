@@ -8,7 +8,7 @@ type ButtonProps = {
 export default function WhiteBtn({ children, className = "", ...props }: ButtonProps) {
   return (
     <button
-      className={`text-black duration-200 active:scale-95 flex items-center justify-center bg-white hover:scale-102 transition cursor-pointer whitespace-nowrap ${className}`}
+      className={`white-btn text-black duration-200 active:scale-95 flex items-center justify-center bg-white transition cursor-pointer whitespace-nowrap ${className}`}
       {...props}
     >
       <span>{children}</span>

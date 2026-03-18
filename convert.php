@@ -2,7 +2,7 @@
 // Конфигурация
 $directory = './src'; // путь к твоим компонентам
 $rootFontSize = 16;   // базовый размер шрифта для rem
-$mode = 'toRem';      // 'toRem' или 'toPx'
+$mode = 'toPx';      // 'toRem' или 'toPx'
 
 // Рекурсивная функция для обхода файлов
 function scanDirRecursively($dir) {

@@ -10,16 +10,16 @@ export default function WorkflowDetailsHeroCard({ card, font }: Props) {
 
 
   return (
-    <div className="bg-white rounded-[2.5rem] p-10 flex items-center justify-center text-center h-full">
+    <div className="bg-white rounded-[40px] p-10 flex items-center justify-center text-center h-full">
 
-      <div className="flex flex-col gap-[0.625rem]">
+      <div className="flex flex-col gap-[10px]">
 
 
-        <h3 className={`text-[3.4375rem] leading-[1] tracking-[-0.03em] font-${font}`}>
+        <h3 className={`text-[55px] leading-[1] tracking-[-0.05em] font-${font}`}>
           {card.title}
         </h3>
 
-        <p className="text-[1.125rem] leading-[1.3] tracking-[-0.04em] mx-auto">
+        <p className="text-[18px] leading-[1.3] tracking-[-0.04em] mx-auto">
           {formatHeader(card.description)}
         </p>
 

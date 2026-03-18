@@ -11,7 +11,7 @@ export default function autoREM(baseSiteWidth: number, baseFontSize: number) {
         if (screenWidth >= baseSiteWidth) {
             htmlElement.style.fontSize = `${newFontSize}px`;
         } else {
-            htmlElement.style.fontSize = `1rem`;
+            htmlElement.style.fontSize = `16px`;
         }
     }
 

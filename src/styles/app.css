@@ -12,7 +12,7 @@ body {
 
 
 .scrollbar-none::-webkit-scrollbar {
-    inline-size: 0rem;
+    inline-size: 0px;
     background-color: transparent;
 }
 
@@ -51,7 +51,7 @@ body {
 }
 
 /* только для мобилки */
-@media (max-width: 39.9375rem) {
+@media (max-width: 639px) {
 
     .accordion-group {
         position: relative;
@@ -60,15 +60,15 @@ body {
     .accordion-group::after {
         content: "";
         position: absolute;
-        left: 0rem;
-        right: 0rem;
-        bottom: 0rem;
+        left: 0px;
+        right: 0px;
+        bottom: 0px;
 
-        height: 0rem;
+        height: 0px;
         background: white;
         /* 
-    border-bottom-left-radius: 1.25rem;
-    border-bottom-right-radius: 1.25rem; */
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px; */
 
         z-index: 0;
     }
@@ -80,7 +80,7 @@ body {
 }
 
 /* .accordion .accordion-group:last-child .accordion-mobile{
-    @apply pb-[1.5625rem];
+    @apply pb-[25px];
 } */
 
 @layer components {
@@ -88,58 +88,58 @@ body {
     /* Пример кастомного блока */
     .my-container {
         width: 100%;
-        max-inline-size: 120rem;
-        min-inline-size: 20rem;
+        max-inline-size: 1920px;
+        min-inline-size: 320px;
         margin-inline: auto;
-        padding-inline: 0.625rem;
+        padding-inline: 10px;
     }
 
     .nop-container {
         width: 100%;
-        max-inline-size: 120rem;
-        min-inline-size: 20rem;
+        max-inline-size: 1920px;
+        min-inline-size: 320px;
         margin-inline: auto;
         padding-inline: 0;
     }
 
-    @media (min-width: 30rem) {
+    @media (min-width: 480px) {
         .my-container {
-            padding-inline: 0.9375rem;
+            padding-inline: 15px;
         }
 
     }
 
-    @media (min-width: 40rem) {
+    @media (min-width: 640px) {
         .my-container {
-            padding-inline: 1.25rem;
+            padding-inline: 20px;
         }
 
     }
 
-    @media (min-width: 48rem) {
+    @media (min-width: 768px) {
         .my-container {
-            padding-inline: 1.875rem;
+            padding-inline: 30px;
         }
 
     }
 
-    @media (min-width: 64rem) {
+    @media (min-width: 1024px) {
         .my-container {
-            padding-inline: 1.875rem;
+            padding-inline: 30px;
         }
 
     }
 
-    @media (min-width: 80rem) {
+    @media (min-width: 1280px) {
         .my-container {
-            padding-inline: 6.25rem;
+            padding-inline: 100px;
         }
 
     }
 
-    @media (min-width: 96rem) {
+    @media (min-width: 1536px) {
         .my-container {
-            padding-inline: 9.375rem;
+            padding-inline: 150px;
         }
 
         .my-container.my-container--reviews {
@@ -148,13 +148,13 @@ body {
 
     }
 
-    @media (min-width: 117.5rem) {
+    @media (min-width: 1880px) {
         .my-container {
-            padding-inline: 10rem;
+            padding-inline: 160px;
         }
 
         .my-container.my-container--reviews {
-            padding-inline: 10rem;
+            padding-inline: 160px;
         }
 
     }
@@ -167,51 +167,118 @@ Header glass-nav
     .glass {
         position: relative;
 
-        /* основа стекла */
-        background: linear-gradient(360deg,
-                rgba(255, 255, 255, 0.12) 0%,
-                rgba(255, 255, 255, 0.02) 100%);
-
-        border-radius: 2.5rem;
+        border-radius: 40px;
         overflow: hidden;
 
-        /* свет и глубина */
+        backdrop-filter: blur(24px);
+        -webkit-backdrop-filter: blur(24px);
+
+        /* чуть затемнённое стекло */
+        background: rgba(255, 255, 255, 0.095);
+
+        border-top: 1px solid rgba(255, 255, 255, 0.14);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+
         box-shadow:
-            inset 0 0.0625rem 0 rgba(255, 255, 255, 0.15),
-            inset 0 -0.0625rem 0 rgba(255, 255, 255, 0.08),
-            0 0.625rem 1.875rem rgba(0, 0, 0, 0.25);
+            0 10px 40px rgba(0, 0, 0, 0.3),
+            inset 0 1px 0 rgba(255, 255, 255, 0.22),
+            /* ЧЁТКИЙ top */
+            inset 0 -1px 0 rgba(255, 255, 255, 0.12);
+        /* ЧЁТКИЙ bottom */
     }
 
-    .glass::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        pointer-events: none;
-        border-radius: inherit;
 
-        /* верхний блик */
-        background: linear-gradient(360deg,
-                rgba(255, 255, 255, 0.18) 0%,
-                rgba(255, 255, 255, 0.08) 30%,
-                transparent 60%);
-
-        opacity: 0.6;
-    }
-
+    .glass::before,
     .glass::after {
+        content: none;
+        /* убрали размытую фигню */
+    }
+
+    .glass-btn {
+        position: relative;
+
+        border-radius: 40px;
+        overflow: hidden;
+
+        backdrop-filter: blur(24px);
+        -webkit-backdrop-filter: blur(24px);
+
+        /* чуть затемнённое стекло */
+        background: rgba(255, 255, 255, 0.095);
+
+        border-top: 1px solid rgba(255, 255, 255, 0.14);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+
+        box-shadow:
+            0 10px 40px rgba(0, 0, 0, 0.3),
+            inset 0 1px 0 rgba(255, 255, 255, 0.22),
+            /* ЧЁТКИЙ top */
+            inset 0 -1px 0 rgba(255, 255, 255, 0.12);
+        /* ЧЁТКИЙ bottom */
+    }
+
+
+    .glass-btn::before,
+    .glass-btn::after {
+        content: none;
+        /* убрали размытую фигню */
+    }
+
+
+    .glass-g {
+        position: relative;
+        border-radius: 40px;
+        overflow: hidden;
+
+        backdrop-filter: blur(24px);
+        -webkit-backdrop-filter: blur(24px);
+
+        /* чуть темнее серое стекло */
+        background: rgba(255, 255, 255, 0.05);
+
+        /* бордер с градиентом по углам для эффекта “затухания” */
+        border: 1px solid transparent;
+        background-clip: padding-box;
+    }
+
+    .glass-g::before {
         content: "";
         position: absolute;
         inset: 0;
         pointer-events: none;
         border-radius: inherit;
 
-        /* лёгкая глубина */
-        background: radial-gradient(circle at 50% 0%,
-                rgba(255, 255, 255, 0.15),
-                transparent 60%);
+        /* имитация мягкого бордера, чтобы углы выглядели “затушёванными” */
+        border: 1px solid rgba(255, 255, 255, 0.14);
 
-        opacity: 0.4;
+        /* маска, чтобы бордер исчезал на нужных углах */
+        mask-image: radial-gradient(circle at top right, rgba(0, 0, 0, 0) 15%, rgba(0, 0, 0, 1) 40%),
+            radial-gradient(circle at bottom left, rgba(0, 0, 0, 0) 15%, rgba(0, 0, 0, 1) 40%);
+        mask-repeat: no-repeat;
+        mask-position: top right, bottom left;
+        mask-size: cover;
     }
+
+
+
+    .card-3 {
+        background: url("/images/webp/pricing/desk/card-3.webp");
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    .card-long {
+        background: url("/images/webp/pricing/desk/card-long.webp");
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+
+
+
+
 
     .cover-gradient {
         background: linear-gradient(180deg, #111114 0%, #102a2f 150%);
@@ -221,12 +288,12 @@ Header glass-nav
 
     .foo-underline {
         position: relative;
-        padding-bottom: 0.125rem;
+        padding-bottom: 2px;
     }
 
-    @media(min-width:117.5rem) {
+    @media(min-width:1880px) {
         .foo-underline {
-            padding-bottom: 0.3125rem;
+            padding-bottom: 5px;
         }
     }
 
@@ -236,8 +303,8 @@ Header glass-nav
         bottom: 0;
         left: 0;
         right: 0;
-        height: 0.0625rem;
-        border-bottom: 0.0625rem solid rgba(0, 0, 0, 1);
+        height: 1px;
+        border-bottom: 1px solid rgba(0, 0, 0, 1);
         transition: border-color 0.3s ease-in-out;
     }
 
@@ -249,12 +316,12 @@ Header glass-nav
 
     .fow-underline {
         position: relative;
-        padding-bottom: 0.125rem;
+        padding-bottom: 2px;
     }
 
-    @media(min-width:117.5rem) {
+    @media(min-width:1880px) {
         .fow-underline {
-            padding-bottom: 0.3125rem;
+            padding-bottom: 5px;
         }
     }
 
@@ -264,8 +331,8 @@ Header glass-nav
         bottom: 0;
         left: 0;
         right: 0;
-        height: 0.0625rem;
-        border-bottom: 0.0625rem solid rgba(255, 255, 255, 1);
+        height: 1px;
+        border-bottom: 1px solid rgba(255, 255, 255, 1);
         transition: border-color 0.3s ease-in-out;
     }
 
@@ -275,15 +342,54 @@ Header glass-nav
 }
 
 .btn-desk {
-    background-image: url("/images/webp/btn-desk.webp");
+    background: url("/images/webp/btn-desk.webp");
     background-size: 100% 100%;
     background-repeat: no-repeat;
     background-position: center;
 }
 
+.btn-desk:hover {
+    background: white;
+}
+
 .btn-mob {
-    background-image: url("/images/webp/btn-mob.webp");
+    background: url("/images/webp/btn-mob.webp");
     background-size: 100% 100%;
     background-repeat: no-repeat;
     background-position: center;
+}
+
+.acc-roundbg {
+    background: url("/images/webp/acc-round.webp");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.hero-btn:hover {
+    background: white !important;
+    color: black;
+}
+
+.white-btn:hover {
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+
+    /* чуть светлее сверху-слева градиент */
+    background: linear-gradient(135deg,
+            rgba(255, 255, 255, 0.16) 0%,
+            /* верхний левый угол чуть светлее */
+            rgba(255, 255, 255, 0.095) 70%
+            /* основная база */
+        );
+
+    border-top: 1px solid rgba(255, 255, 255, 0.14);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+
+    box-shadow:
+        0 10px 40px rgba(0, 0, 0, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.22),
+        inset 0 -1px 0 rgba(255, 255, 255, 0.12);
+
+    color: white;
 }

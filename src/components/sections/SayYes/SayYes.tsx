@@ -1,6 +1,7 @@
 import { useTranslation } from "react-i18next";
 import BlackBtn from "@/ui/BlackBtn";
 import { usePopup } from "@/сontext/Popup/usePopup";
+import { formatHeader } from "@/utils/formaters";
 
 export default function SayYes() {
     const { t } = useTranslation();
@@ -13,12 +14,19 @@ export default function SayYes() {
     const imageDesk = t("sayyes.imageDesk");
 
     return (
-        <div className="sayyes gsap-up my-container mb-[3.125rem] sm:mb-[6.25rem] xl:mb-[0.625rem] 3xl:mb-[5.625rem]">
-            <section className="bg-white relative w-full min-h-[27.125rem] sm:min-h-[35.3125rem] md:min-h-[33.75rem] lg:aspect-[94/54] xl:aspect-[1300/743] 3xl:aspect-[1600/973] rounded-[1.25rem] sm:rounded-[1.875rem] md:rounded-[3.125rem] overflow-hidden">
+        <div className={`sayyes gsap-up my-container 
+              ${t('lang') === 'ru' ? "mb-[50px] sm:mb-[100px] xl:mb-[10px] 3xl:mb-[100px]" : 
+                "mb-[50px] sm:mb-[100px] xl:mb-[10px] 3xl:mb-[20px]"}
+        `}>
+            <section className={`bg-white relative w-full min-h-[434px] sm:min-h-[565px] md:min-h-[540px]  
+            rounded-[20px] sm:rounded-[30px] md:rounded-[50px] overflow-hidden
+             ${t('lang') === 'ru' ? "lg:aspect-[94/54] xl:aspect-[1300/743] 3xl:aspect-[1600/973]" : 
+                "lg:aspect-[94/54] xl:aspect-[1300/743] 3xl:aspect-[1600/914]"}
+                `}>
 
                 {/* RESPONSIVE IMAGE */}
                 <picture>
-                    <source media="(min-width: 25.9375rem)" srcSet={imageDesk} />
+                    <source media="(min-width: 415px)" srcSet={imageDesk} />
                     <img
                         src={imageMob}
                         alt="Banner"
@@ -26,12 +34,16 @@ export default function SayYes() {
                     />
                 </picture>
 
-                <div className="absolute inset-0 flex flex-col justify-end items-center text-center p-4 md:p-7.5 2xl:p-10 gap-[1.875rem]">
-                    <h2 className="ml-[-0.3125rem] mr-[-0.3125rem] sm:mx-[initial] text-[1.5625rem] 2xl:text-[2.5rem] 3xl:text-[3.4375rem] max-w-[26.25rem] 2xl:max-w-[40.5rem] tracking-[-0.03em] leading-[1] font-normal font-zt text-black">
-                        {title}
+                <div className={`absolute inset-0 flex flex-col justify-end items-center text-center p-[20px] md:p-[30px] 2xl:p-[40px]  3xl:p-[60px] 
+                ${t('lang') === 'ru' ? "gap-[28px]" :"2xl:gap-[28px] 3xl:gap-[38px]"}
+                    `}>
+                    <h2 className={`font-normal text-black                    
+                     ${t('lang') === 'ru' ? "ml-[-5px] mr-[-5px] text-[25px] max-w-[420px] tracking-[-0.05em] leading-[1] sm:mx-[initial] 2xl:text-[40px] 3xl:text-[55px] 2xl:max-w-[648px] font-zt" : 
+                     "ml-[-5px] mr-[-5px] text-[25px] max-w-[420px] tracking-[-0.05em] leading-[0.88] sm:mx-[initial] 2xl:text-[45px] 3xl:text-[55px] 2xl:max-w-[648px] font-libre"}`}>
+                        {formatHeader(title)}
                     </h2>
 
-                    <BlackBtn className="w-full sm:w-[initial] text-[1.125rem] 2xl:text-[1.25rem] h-[3.4375rem] 2xl:h-[4.375rem] px-[2.1875rem] rounded-[2.5rem]"
+                    <BlackBtn className="w-full sm:w-[initial] 2xl:min-w-[313px] text-[18px] 2xl:text-[20px] h-[55px] 2xl:h-[70px] px-[38px] rounded-[40px] tracking-[-0.04em] font-medium"
                         onClick={() => setIsOpenPopup(true)}
                     >
                         {buttonText}
