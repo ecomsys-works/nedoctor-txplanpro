@@ -1,6 +1,7 @@
 import { useTranslation } from "react-i18next";
 import WhiteBtn from "@/ui/WhiteBtn";
 import { usePopup } from "@/сontext/Popup/usePopup";
+import { formatHeader } from "@/utils/formaters";
 
 export type PricingCardType = {
     title: string;
@@ -47,16 +48,38 @@ export default function Pricing() {
     };
 
     return (
-        <section id="#pricing" className="pricing gsap-up my-container pt-[0.3125rem] pb-[3.125rem] 2xl:pb-[3.125rem] 3xl:pb-[5rem] mb-[4.375rem] cover-gradient overflow-visible text-white rounded-[1.25rem] 
-        sm:mb-[6.25rem] sm:rounded-[1.875rem] mdd:mb-[5.9375rem] 2xl:mb-[12.5rem] 2xl:rounded-[5rem] 3xl:rounded-[3.75rem] ">
+        <section id="#pricing" className={`pricing gsap-up my-container cover-gradient overflow-visible text-white  rounded-[1.25rem]
+
+             ${t('lang') === 'ru' ? `
+                pt-[0.3125rem] pb-[3.125rem] mb-[4.375rem] 
+                xs:mb-[6.25rem] xs:rounded-[1.875rem]
+                md:rounded-[3.75rem] md:mb-[6.25rem] 
+                2xl:pb-[3.125rem] 2xl:mb-[12.5rem] 2xl:rounded-[5rem] 
+                3xl:pb-[5rem] 3xl:rounded-[3.75rem]` 
+                : 
+                `pt-[0.3125rem] pb-[3.125rem] mb-[4.375rem]  
+                xs:mb-[6.25rem] xs:rounded-[1.875rem]
+                md:mb-[5.9375rem] 
+                2xl:pb-[3.125rem] 2xl:mb-[12.5rem] 2xl:rounded-[5rem] 
+                3xl:pb-[5rem] 3xl:rounded-[3.75rem]`}         
+        `}>
 
             <h2 className={` text-white tracking-[-0.06em] uppercase text-center                        
-             ${t('lang') === 'ru' ? "pb-[2rem] pt-[2.5rem] leading-[1]  font-bold text-[2.5rem] sm:text-[4.875rem] sm:pb-[1.125rem] 2xl:text-[7.5rem] 2xl:pt-[1.75rem] 2xl:pb-[2.0625rem] 3xl:pt-[3.625rem] 3xl:pb-[2.5rem]" : 
-                "pb-[2rem] pt-[2.5rem] leading-[1] text-[2.5rem] sm:text-[4.875rem] sm:pb-[1.125rem] 2xl:pb-[0.625rem] 2xl:text-[10rem] 3xl:pt-[4.6875rem] 3xl:pb-[0rem] font-semibold font-anek"}
+             ${t('lang') === 'ru' ? `leading-[1] font-semibold pb-[2rem] pt-[2.5rem] text-[2.5rem] 
+                xs:text-[4.875rem] xs:pb-[1.875rem] xs:pt-[1.875rem] 
+                md:font-inter md:text-[4.875rem] md:pt-[1.6875rem] md:pb-[1.6875rem] 
+                2xl:text-[7.5rem] 2xl:pt-[1.75rem] 2xl:pb-[2.0625rem] 2xl:font-bold 
+                3xl:pt-[3.625rem] 3xl:pb-[2.5rem]`
+                 : 
+                `leading-[1] pb-[2rem] pt-[2.5rem] text-[2.5rem] font-semibold font-anek
+                xs:text-[4.875rem] sm:pb-[1.125rem]
+                md:text-[4.875rem] md:pt-[0.9375rem] md:pb-[1.5625rem] 
+                2xl:pb-[0.625rem] 2xl:text-[10rem] 
+                3xl:pt-[4.6875rem] 3xl:pb-[0rem]`}
             `}>{title}</h2>
 
             {/* DESKTOP: Верхние 3 вертикальные карточки */}
-            <div className={`hidden 3xl:grid grid-cols-[523fr_510fr_510fr] gap-x-[1.375rem] mb-[3.75rem] 3xl:mr-[0.625rem] 
+            <div className={`3xl:grid hidden grid-cols-[523fr_510fr_510fr] gap-x-[1.375rem] mb-[3.75rem] 3xl:mr-[0.625rem] 
                   ${t('lang') === 'ru' ? "" : "2xl:-mt-[1.25rem]"}
                 `}>
                 {cards.slice(1, 4).map((card, i) => {
@@ -68,7 +91,7 @@ export default function Pricing() {
                                 <div className="min-h-[7.0625rem] pb-[0.75rem] flex justify-between items-start">
                                     <div className="space-y-1">
                                         {card.title && (<h3 className="text-[2.5rem] font-semibold leading-[1] tracking-[-0.06em]">{card.title}</h3>)}
-                                        {card.description && (<p className="text-[1.125rem] font-normal leading-[1.3] tracking-[-0.04em]">{card.description}</p>)}
+                                        {card.description && (<p className="text-[1.125rem] font-normal leading-[1.3] tracking-[-0.04em]">{formatHeader(card.description)}</p>)}
                                     </div>
                                     <div className="space-y-1 text-right">
                                         {card.price && (<p className="text-[2.5rem] font-semibold leading-[1] tracking-[-0.06em]">{card.price}</p>)}
@@ -186,7 +209,7 @@ export default function Pricing() {
                                     <div className="min-h-[7.1875rem] pb-[0.75rem] flex justify-between items-start">
                                         <div className="space-y-1">
                                             {card.title && (<h3 className="text-[2.5rem] font-semibold leading-[1] tracking-[-0.06em]">{card.title}</h3>)}
-                                            {card.description && (<p className="text-[1.125rem] font-normal leading-[1.3] tracking-[-0.04em]">{card.description}</p>)}
+                                            {card.description && (<p className="text-[1.125rem] font-normal leading-[1.3] tracking-[-0.04em]">{formatHeader(card.description)}</p>)}
                                         </div>
                                         <div className="space-y-1 text-right">
                                             {card.price && (<p className="text-[2.5rem] font-semibold leading-[1] tracking-[-0.06em]">{card.price}</p>)}
@@ -276,17 +299,17 @@ export default function Pricing() {
             </div>
 
             {/* MOBILE / TABLET */}
-            <div className="grid grid-cols-1 mdd:grid-cols-2 gap-y-10 gap-x-5 3xl:hidden">
+            <div className="grid grid-cols-1 mdd:grid-cols-2 gap-y-10 gap-x-5 3xl:hidden pl-[0.3125rem] xs:pl-[0] 2xl:pl-[0.625rem]">
                 {cards.map((card, i) => {
                     const { left, right } = splitIncluded(card);
                     return (
-                        <div key={i} className={`card-3 rounded-[1.125rem] 2xl:rounded-[1.75rem] p-[0.625rem] 2xl:p-[0.9375rem] flex flex-col relative h-full justify-between`}>
+                        <div key={i} className={`glass-g rounded-[1.125rem] 2xl:rounded-[1.75rem] p-[0.625rem] 2xl:p-[0.9375rem] flex flex-col relative h-full justify-between`}>
                             <div className="flex flex-col">
                                 <div className="bg-white text-black rounded-[1.125rem] p-[0.75rem] xl:p-[1.25rem] relative">
-                                    <div className="flex justify-between items-start mdd:min-h-[7.1875rem]">
+                                    <div className="flex justify-between items-start xs:min-h-[2.8125rem] md:min-h-[4.0625rem] 2xl:min-h-[7.1875rem]">
                                         <div className="space-y-1">
                                             {card.title && (<h3 className="text-[1.625rem] 2xl:text-[2.5rem] font-semibold leading-[1] tracking-[-0.06em]">{card.title}</h3>)}
-                                            {card.description && (<p className="max-w-[9.6875rem] sm:max-w-[initial] text-[0.875rem] 2xl:text-[1.125rem] font-normal leading-[1.2] 2xl:leading-[1.3] tracking-[-0.04em]">{card.description}</p>)}
+                                            {card.description && (<p className="max-w-[9.6875rem] sm:max-w-[initial] text-[0.875rem] 2xl:text-[1.125rem] font-normal leading-[1.2] 2xl:leading-[1.3] tracking-[-0.04em]">{formatHeader(card.description)}</p>)}
                                         </div>
                                         <div className="space-y-1 text-right">
                                             {card.price && (<p className="text-[1.625rem] 2xl:text-[2.5rem] font-semibold leading-[1] tracking-[-0.06em]">{card.price}</p>)}
@@ -295,7 +318,7 @@ export default function Pricing() {
                                     </div>
 
                                     {card.monthLimits && (
-                                        <div className="mt-[1.875rem] mdd:mt-[0.5rem]">
+                                        <div className="mt-[1.875rem] xs:mt-[1.375rem] md:mt-[1.875rem] mdd:mt-[0.5rem]">
                                             <h4 className="mb-2.5 text-black text-[0.875rem] 2xl:text-[1.5rem] 2xl:mb-[0.625rem] leading-[1.3] 2xl:leading-[1.1] tracking-[-0.04em] 2xl:tracking-[-0.06em] font-semibold">{card.monthLimitsTitle}</h4>
                                             <ul className="text-[0.8125rem] space-y-[0.1875rem]">
                                                 {card.monthLimits.map((item, idx) => (
@@ -320,10 +343,15 @@ export default function Pricing() {
                                     )}
                                 </div>
 
-                                {card.planPrice && (<p className="sm:mb-[-0.625rem] 2xl:mb-[-0.3125rem] 2xl:pt-[0.9375rem] px-[0.75rem] pt-[0.625rem] text-[0.875rem] 2xl:text-[1.125rem] leading-[1.2] 2xl:leading-[1.3] tracking-[-0.04em] font-normal">{card.planPrice}</p>)}
-                                <div className="grid grid-cols-1 gap-1.5 sm:grid-cols-2 sm:gap-4 md:gap-0 min-h-[7.5rem] mb-[1.875rem]">
+                                {card.planPrice ? (
+                                    <p className="xs:mb-[-0.625rem] md:mb-[-0.625rem] 2xl:mb-[-0.3125rem] 2xl:pt-[0.9375rem] px-[0.75rem] pt-[0.625rem] text-[0.875rem] 2xl:text-[1.125rem] leading-[1.2] 2xl:leading-[1.3] tracking-[-0.04em] font-normal">{card.planPrice}</p>
+                                ): (
+                                    <p className="hidden xs:block 2xl:hidden opacity-0 xs:mb-[-1.125rem] md:mb-[-0.625rem] 2xl:mb-[-0.3125rem] 2xl:pt-[0.9375rem] px-[0.75rem] pt-[0.625rem] text-[0.875rem] 2xl:text-[1.125rem] leading-[1.2] 2xl:leading-[1.3] tracking-[-0.04em] font-normal ">*</p>
+                                )
+                                }
+                                <div className="grid grid-cols-1 gap-1 sm:grid-cols-2 xs:gap-0 xs:min-h-[9.375rem] md:min-h-[7.5rem] xs:mb-[2.1875rem] md:mb-[1.875rem]">
                                     {left.length > 0 && (
-                                        <div className="px-[0.75rem] 2xl:px-[1.25rem] flex flex-col gap-2 pt-[1.875rem] sm:pt-[2.5rem]">
+                                        <div className={`px-[0.75rem] 2xl:px-[1.5625rem] flex flex-col gap-3 xs:gap-2 ${right.length <= 0 && "pb-[1.875rem] xs:pb-0"} pt-[1.875rem] xs:pt-[2.0625rem] xs:pb-[0.4375rem]`}>
                                             <h4 className="text-white text-[0.9375rem] 2xl:text-[1.5rem] 2xl:mb-[0.3125rem] leading-[1.1] tracking-[-0.06em] font-semibold">{card.includedTitle}</h4>
                                             <ul className="space-y-1">
                                                 {left.map((item, idx) => (
@@ -340,13 +368,13 @@ export default function Pricing() {
                                         </div>
                                     )}
                                     {right.length > 0 && (
-                                        <div className="px-[0.75rem] flex flex-col gap-2 sm:pt-[2.5rem]">
+                                        <div className="px-[0.75rem] flex flex-col gap-3 xs:gap-2 pb-[1.875rem] xs:pt-[2.0625rem] xs:pb-[0.4375rem] xs:ml-[-0.625rem] 2xl:ml-[0.625rem]">
                                             {card.limitsTitle ? (
-                                                <h4 className="text-white text-[0.9375rem] 2xl:text-[1.5rem] 2xl:mb-[0.3125rem]  leading-[1.1] tracking-[-0.06em] font-semibold pt-[1.25rem] sm:pt-0">{card.limitsTitle}</h4>
+                                                <h4 className="text-white text-[0.9375rem] 2xl:text-[1.5rem] 2xl:mb-[0.3125rem]  leading-[1.1] tracking-[-0.06em] font-semibold pt-[1.25rem] xs:pt-0">{card.limitsTitle}</h4>
                                             ) : (
                                                 <h4 className="hidden sm:block text-transparent text-[0.9375rem] 2xl:mb-[0.3125rem]  2xl:text-[1.5rem] leading-[1.1] tracking-[-0.06em] font-semibold">*</h4>
                                             )}
-                                            <ul className="space-y-1.5 ">
+                                            <ul className="space-y-1 ">
                                                 {right.map((item, idx) => (
                                                     <li key={idx} className="flex items-start gap-2">
                                                         <span className="mt-[0.1875rem] shrink-0 w-[0.75rem] h-[0.75rem] 2xl:w-[1.0625rem] 2xl:h-[1.0625rem] bg-white rounded-full flex justify-center items-center text-white">

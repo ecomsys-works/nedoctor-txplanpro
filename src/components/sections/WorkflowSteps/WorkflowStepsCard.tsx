@@ -18,19 +18,19 @@ export default function WorkflowCard({ card, index = 0 }: Props) {
   const { t } = useTranslation()
 
   const imageClasses = [
-    "max-w-[75%] 2xl:max-w-[65%] 3xl:max-w-[66.5%]",
-    "max-w-[75%] 2xl:max-w-[65%] 3xl:max-w-[66.5%]",
-    "max-w-[65%] 2xl:max-w-[95%] md:max-w-[100%] xl:max-w-[77%]",
-    "max-w-[65%] 2xl:max-w-[95%] md:max-w-[100%] xl:max-w-[77%]",
-    "max-w-[75%] 2xl:max-w-[65%] 3xl:max-w-[66.5%]",
-    "max-w-[75%] 2xl:max-w-[65%] 3xl:max-w-[66.5%]"
+    "max-w-[70%] xs:max-w-[80%] md:max-w-[75%] xl:max-w-[75%] 2xl:max-w-[65%] 3xl:max-w-[66.5%]",
+    "max-w-[70%] xs:max-w-[80%] md:max-w-[75%] xl:max-w-[75%] 2xl:max-w-[65%] 3xl:max-w-[66.5%]",
+    "max-w-[100%] xs:max-w-[100%] md:max-w-[100%] xl:max-w-[77%] 2xl:max-w-[78%] 3xl:max-w-[78%]",
+    "max-w-[100%] xs:max-w-[100%] md:max-w-[100%] xl:max-w-[77%] 2xl:max-w-[78%] 3xl:max-w-[78%]",
+    "max-w-[70%] xs:max-w-[80%] md:max-w-[75%] xl:max-w-[75%] 2xl:max-w-[65%] 3xl:max-w-[66.5%]",
+    "max-w-[70%] xs:max-w-[80%] md:max-w-[75%] xl:max-w-[75%] 2xl:max-w-[65%] 3xl:max-w-[66.5%]"
   ]
 
 
   return (
     <div className="h-full w-full">
       <div className={`bg-white rounded-[1.25rem] overflow-hidden flex flex-col h-full 2xl:rounded-[2.1875rem] 3xl:rounded-[2.5rem] 
-       ${t('lang') === 'ru' ? "px-[1.25rem] pt-[1.875rem] pb-[1.875rem] md:py-[1.25rem] md:px-[0.9375rem] 2xl:pt-[2.1875rem] 2xl:px-[1.875rem] 3xl:pt-[1.875rem] " : 
+       ${t('lang') === 'ru' ? "px-[1rem] pt-[1.25rem] pb-[1.125rem] xs:py-[1.1875rem] xs:px-[1rem] md:py-[1.25rem] md:px-[0.9375rem] 2xl:pt-[2.1875rem] 2xl:px-[1.875rem] 3xl:px-[1.875rem] 3xl:py-[2rem]" : 
        "px-[1.25rem] pt-[2.0625rem] pb-[1.875rem] 2xl:px-[1.875rem]"}`}>
 
         <div className="flex flex-col flex-1 justify-between">
@@ -39,7 +39,7 @@ export default function WorkflowCard({ card, index = 0 }: Props) {
           <div>
             <div className="flex items-start justify-between gap-[0.3125rem] 2xl:gap-[0rem]">
               <h3 className={`tracking-[-0.06em] leading-[1] md:leading-[1.1]
-              ${t('lang') === 'ru' ? "text-[1.125rem] 2xl:text-[1.5rem] md:mb-[0.5625rem] 2xl:mb-[1.1875rem] " : 
+              ${t('lang') === 'ru' ? "text-[1.125rem] 2xl:text-[1.5rem] mb-[0.625rem] xs:mb-[0.9375rem] md:mb-[0.5625rem] 2xl:mb-[1.1875rem] " : 
                 "text-[1.125rem] 2xl:text-[1.625rem] 3xl:text-[1.875rem] mb-[1.1875rem]"}
                 `}>
                 {formatHeader(card.title)}
@@ -52,7 +52,7 @@ export default function WorkflowCard({ card, index = 0 }: Props) {
               </div>
             </div>
 
-            <p className="text-[0.875rem] md:leading-[1.2] 2xl:text-[1.125rem] tracking-[-0.04em] ">
+            <p className="text-[0.875rem] leading-[1.2] md:leading-[1.3] 2xl:text-[1.125rem] tracking-[-0.04em] ">
               {card.description}
             </p>
           </div>

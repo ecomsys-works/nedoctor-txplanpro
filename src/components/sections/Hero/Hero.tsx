@@ -36,12 +36,12 @@ export default function Hero() {
     return () => window.removeEventListener("resize", updateWindowWidth);
   }, []);
 
-  const mobileOffsets = [
+  const mobileOffsets = [    
+    "translate-y-[13.4%]",
     "translate-y-0",
-    "translate-y-[12%]",
+    "translate-y-[13.4%]",
     "translate-y-0",
-    "translate-y-[12%]",
-    "translate-y-0",
+    "translate-y-[13.4%]",
   ];
 
   /**
@@ -62,7 +62,7 @@ export default function Hero() {
       { x: 0, y: 0, trans: "translate(-2%,2%)" },
       { x: 29.5, y: 25, trans: "translate(-50%,0%)" },
       { x: 50, y: 100, trans: "translate(-50%,100%)" },
-      { x: 70.5, y: 26, trans: "translate(-50%,0%)" },
+      { x: 70.5, y: 26.5, trans: "translate(-50%,0%)" },
       { x: 100, y: 0, trans: "translate(-98%,2%)" },
     ],
 
@@ -82,10 +82,16 @@ export default function Hero() {
     return [];
   }, [windowWidth]);
 
+  const tabletRow1= [cards[0],cards[2]];
+  const tabletRow2= [cards[1],cards[3],cards[4]];
+
+  const swiperCards =[cards[0],cards[1],cards[3],cards[4],cards[2]];
+
   return (
-    <section className={`hero mb-[1.5625rem] pb-[4.0625rem] my-container cover-gradient text-white rounded-b-[1.875rem] relative overflow-hidden
-    sm:mb-[3.125rem] sm:pb-[5rem] md:mb-[3.75rem]
-    mdd:pb-[1.875rem] md:rounded-b-[3.75rem] 
+    <section className={`hero my-container cover-gradient text-white relative overflow-hidden    
+    mb-[1.5625rem] pb-[4.0625rem] rounded-b-[1.875rem] 
+    xs:rounded-b-[2.8125rem] xs:mb-[3.4375rem] xs:pb-[5rem] 
+    md:mb-[3.75rem] md:rounded-b-[3.75rem] mdd:pb-[1.875rem] 
     2xl:pb-[3.25rem] 2xl:rounded-b-[7.5rem] 2xl:mb-[3.125rem]
     3xl:mb-[5.125rem] 3xl:pb-[6.25rem]
       ${t('lang') === "ru" ? "2xl:mb-[5.125rem]" : "2xl:mb-[6.25rem]"}
@@ -93,23 +99,23 @@ export default function Hero() {
 
       {/* Mobile Swiper */}
       {windowWidth < 640 && (
-        <div className="pb-[2.5rem] pt-[0.9375rem]">
+        <div className="pb-[2.5rem] pt-[0.625rem]">
           <Swiper
-            spaceBetween={36}
-            slidesPerView={1.5}
+            spaceBetween={35}
+            slidesPerView={1.470}                        
             breakpoints={{
-              0: { spaceBetween: 35, slidesPerView: 1.5 },
+              0: { spaceBetween: 35, slidesPerView: 1.470 },
               390: { spaceBetween: 35, slidesPerView: 1.6 },
               430: { spaceBetween: 25, slidesPerView: 1.8 },
               480: { spaceBetween: 25, slidesPerView: 2.2 },
               540: { spaceBetween: 25, slidesPerView: 2.5 },
             }}
-            className="!overflow-visible select-none mb-[12%]"
+            className="!overflow-visible select-none mb-[13.4%]"
           >
-            {cards.map((card, i) => (
+            {swiperCards.map((card, i) => (
               <SwiperSlide key={i}>
                 <div
-                  className={`w-[100%] min-h-[16.875rem] aspect-[22/32] glass rounded-[1.25rem] p-[1.25rem] overflow-hidden text-white flex flex-col justify-between ${mobileOffsets[i]}`}
+                  className={`w-[100%] aspect-[22/32] glass rounded-[1.25rem] p-[1.25rem] overflow-hidden text-white flex flex-col justify-between ${mobileOffsets[i]}`}
                 >
                   <div>
                     <h3 className="text-[1.25rem] leading-[1] tracking-[-0.04em] mb-[0.375rem]">
@@ -135,16 +141,14 @@ export default function Hero() {
 
       {/* Tablet Two Rows */}
       {windowWidth >= 640 && windowWidth < 950 && (
-        <div className="flex flex-col gap-[1.25rem] mb-[7.5rem] pt-[3.75rem]">
+        <div className="flex flex-col gap-[1.25rem] mb-[7.5rem] pt-[4.375rem]">
           <div className="flex justify-center gap-[0.75rem]">
-            {cards.slice(0, 2).map((card, i) => (
+            {tabletRow1.map((card, i) => (
               <div
                 key={i}
-                className="
-                select-none transition-all duration-300 ease-out
-  hover:-translate-y-[0.625rem] hover:scale-[1.04] hover:z-10
-  hover:shadow-[0_1.25rem_3.75rem_rgba(0,0,0,0.35)]
-                w-full max-w-[33.33%] aspect-square glass rounded-[1.875rem] p-[0.9375rem] overflow-hidden text-white flex flex-col justify-between"
+                className="select-none transition-all duration-300 ease-out
+  hover:-translate-y-[0.625rem] hover:scale-[1.04] hover:z-10 hover:shadow-[0_1.25rem_3.75rem_rgba(0,0,0,0.35)]
+   w-full max-w-[32%] aspect-square glass rounded-[1.875rem] p-[0.9375rem] overflow-hidden text-white flex flex-col justify-between"
               >
                 <div>
                   <h3 className="text-[1.125rem] leading-[1] tracking-[-0.04em] mb-[0.375rem]">
@@ -165,7 +169,7 @@ export default function Hero() {
           </div>
 
           <div className="flex justify-center gap-[0.75rem]">
-            {cards.slice(2, 5).map((card, i) => (
+            {tabletRow2.map((card, i) => (
               <div
                 key={i}
                 className="
@@ -238,8 +242,9 @@ export default function Hero() {
           </div>
 
           {/* Text Section */}
-          <div className={`text-center flex flex-col items-center mx-auto max-w-[20.0625rem] 2xl:max-w-[40.625rem]
-          ${t('lang') === "ru" ? "-mt-[12.5rem] md:-mt-[12rem] 2xl:-mt-[3.4375rem] 3xl:-mt-[2.5rem]" : "-mt-[12.5rem] 2xl:-mt-[3.125rem] 3xl:-mt-[3.4375rem]"}`}>
+          <div className={`text-center flex flex-col items-center mx-auto max-w-[initial] xs:max-w-[20.0625rem] 2xl:max-w-[40.625rem]
+          ${t('lang') === "ru" ? "-mt-[12.5rem] md:-mt-[12rem] 2xl:-mt-[3.4375rem] 3xl:-mt-[2.5rem]" : 
+          "-mt-[12.5rem] 2xl:-mt-[3.125rem] 3xl:-mt-[3.4375rem] 3xl:max-w-[41.875rem]"}`}>
             <h1
               className={`mb-[1.25rem] leading-[0.85] tracking-[-0.03em] font-${font} 
               ${t('lang') === 'ru' ? "text-[1.875rem] 2xl:text-[3.75rem] mb-[1.25rem]  3xl:mb-[1.5625rem]" : 
@@ -252,12 +257,12 @@ export default function Hero() {
             <p className={`leading-[1.3] text-[0.875rem] tracking-[-0.04em] 2xl:text-[1.125rem] 
             ${t('lang') === "ru" ? "mb-[1.5625rem] md:mb-[1.375rem] 2xl:mb-[1.625rem]  2xl:max-w-[26.4375rem] 3xl:mb-[2.5rem]" : 
             "mb-[1.5625rem] md:max-w-[17.875rem] 2xl:mb-[2.25rem] 2xl:max-w-[23.5rem] 3xl:max-w-[21.875rem] 3xl:mb-[3.125rem]"}`}>
-              {t("hero.subtitle")}
+              {formatHeader(t("hero.subtitle"))}
             </p>
 
             <button className={`hero-btn glass w-full px-[1.875rem] text-[1.125rem] h-[3.4375rem] rounded-[2.5rem] transition duration-300 cursor-pointer
-            sm:w-[initial] md:px-[2.1875rem] 2xl:px-[3.75rem] 2xl:h-[4.375rem] 2xl:min-w-[19.5625rem] tracking-[-0.04em] font-medium
-             ${t('lang') === 'ru' ? "text-[1.125rem]" :"text-[1.125rem] "}
+            xs:w-[initial] md:px-[2.1875rem] 2xl:px-[3.75rem] 2xl:h-[4.375rem] 2xl:min-w-[19.5625rem] tracking-[-0.04em] font-medium
+             ${t('lang') === 'ru' ? "text-[1.125rem] 2xl:text-[1.25rem]" :"text-[1.125rem] "}
             `}
               onClick={() => setIsOpenPopup(true)}
             >
@@ -267,7 +272,7 @@ export default function Hero() {
         </div>
       )}
       {/* Text Section */}
-      <div className="max-w-[20.0625rem] mdd:hidden text-center flex flex-col items-center mx-auto">
+      <div className=" max-w-[initial] xs:max-w-[20.0625rem] mdd:hidden text-center flex flex-col items-center mx-auto">
         <h1
           className={`mb-[1.25rem] text-[1.875rem] leading-[0.85] tracking-[-0.03em] font-${font}`}
         >
@@ -275,14 +280,16 @@ export default function Hero() {
         </h1>
 
         <p className=" mb-[1.875rem] sm:mb-[3.75rem] text-[0.875rem] leading-[1.2] tracking-[-0.04em]">
-          {t("hero.subtitle")}
+          {formatHeader(t("hero.subtitle"))}
         </p>
 
-        <button className="hero-btn glass w-full sm:w-[initial] px-[1.875rem] text-[1.125rem] h-[3.4375rem] rounded-[2.5rem] transition duration-300 cursor-pointer"
-          onClick={() => setIsOpenPopup(true)}
-        >
-          {t("hero.cta")}
-        </button>
+        <button className={`text-[1.125rem] hero-btn glass w-full px-[2.1875rem] text-[1.125rem] h-[3.4375rem] rounded-[2.5rem] transition duration-300 cursor-pointer
+            xs:w-[initial] tracking-[-0.04em] font-medium`}
+             
+              onClick={() => setIsOpenPopup(true)}
+            >
+              {t("hero.cta")}
+            </button>
       </div>
     </section>
   );

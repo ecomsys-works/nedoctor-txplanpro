@@ -20,12 +20,13 @@ export default function BenefitsAccordion() {
     const font = t("benefits.font");
 
     return (
-        <section id="#benefits" className="benefits-accordion gsap-up pt-[2.1875rem] mb-[4.375rem] 
-        sm:pt-[3.125rem] 2xl:pt-[3.125rem] sm:mb-[6.25rem] mdd:mb-[7.8125rem] 2xl:mb-[12.5rem]">
-            <h2 className={`text-[1.5625rem] mb-[1.25rem] tracking-[-0.05em] my-container font-${font}
-               3xl:text-[3.4375rem] 2xl:mb-[2.375rem] text-[1.5625rem] md:tracking-[-0.03em]
-                 ${t('lang') === 'ru' ? "leading-[1]  2xl:text-[2.5rem]" :"leading-[0.88] 2xl:text-[2.8125rem]"}
-                `}>
+        <section id="#benefits" className={`benefits-accordion gsap-up 
+             ${t('lang') === 'ru' ? "pt-[2.1875rem] mb-[4.375rem] xs:pt-[3.125rem] xs:mb-[6.25rem] md:mb-[7.8125rem] 2xl:pt-[3.125rem] 2xl:mb-[12.8125rem] 3xl:mb-[12.5rem]" : 
+                "pt-[2.1875rem] mb-[4.375rem] xs:pt-[3.125rem] xs:mb-[6.25rem] md:mb-[7.8125rem] 2xl:pt-[3.125rem] 2xl:mb-[12.8125rem] 3xl:mb-[12.5rem]"} 
+        `}>
+            <h2 className={`my-container font-${font} 
+                 ${t('lang') === 'ru' ? "leading-[1] tracking-[-0.03em] 2xl:tracking-[-0.05em] text-[1.5625rem] mb-[1.25rem] 3xl:text-[3.4375rem] 2xl:mb-[2.5rem] text-[1.5625rem] 2xl:text-[2.5rem]" :
+                    "leading-[0.88] tracking-[-0.03em] 2xl:tracking-[-0.05em] text-[1.5625rem] mb-[1.25rem] 3xl:text-[3.4375rem] 2xl:mb-[2.375rem] text-[1.5625rem]  2xl:text-[2.8125rem]"}`}>
                 {formatHeader(title)}                
             </h2>
 
@@ -103,7 +104,7 @@ function AccordionContent({
             {/* Заголовок аккордеона */}
             <div
                 className={`flex justify-between items-start cursor-pointer gap-5 
-         ${t('lang') === 'ru' ? "pl-[0.625rem] pr-[1.25rem] pt-[0.625rem] pb-[1.5625rem] sm:items-center sm:pt-[0.9375rem] sm:pb-[1.25rem] md:pl-[0rem]  md:pr-[1.875rem] 2xl:py-[2rem] 2xl:pr-[1.875rem] 2xl:px-0 3xl:py-[2.625rem]" 
+         ${t('lang') === 'ru' ? "pl-[0.625rem] pr-[1.25rem] pt-[0.625rem] pb-[1.5rem] sm:items-center xs:pt-[1rem] xs:pb-[1.0625rem] xs:pl-[0] xs:pr-[2.1875rem] md:pt-[0.9375rem] md:pb-[1.25rem]  md:pl-[0rem] md:pr-[1.875rem] 2xl:py-[2rem] 2xl:pr-[1.875rem] 2xl:px-0 3xl:py-[2.625rem]" 
             : "pl-[0.625rem] pr-[1.25rem] pt-[0.625rem] pb-[1.5625rem] sm:items-center sm:pt-[0.9375rem] sm:pb-[1.25rem] md:pl-[0rem]  md:pr-[1.875rem] 2xl:py-[3.25rem] 3xl:py-[1.875rem] 2xl:pr-[1.875rem] 2xl:px-0 3xl:py-[3.625rem]"}`}
                 onClick={toggle}
             >
@@ -111,14 +112,14 @@ function AccordionContent({
                     className={`tracking-[-0.06em] uppercase ${isOpen
                             ? "2xl:text-[#b2b2b2]"
                             : "text-black group-hover:text-[#b2b2b2]"}  
-                             ${t('lang') === 'ru' ? "font-bold text-[2.1875rem] leading-[1] sm:text-[3.75rem] 2xl:text-[7.5rem]" :
-                                "font-semibold text-[2.1875rem] leading-[0.88] sm:text-[3.75rem] 2xl:text-[10rem] font-anek -mb-[3.5%]"}                          
+                             ${t('lang') === 'ru' ? "font-semibold md:font-bold text-[2.1875rem] leading-[1] xs:text-[3.75rem] 2xl:text-[7.5rem]" :
+                                "font-semibold text-[2.1875rem] leading-[0.88] xs:text-[3.75rem] 2xl:text-[10rem] font-anek -mb-[3.5%]"}                          
                         `}
                 >
                     <span className="block align-top">{header}</span>
                     
                 </h3>
-                <span className=" group-hover:text-white group-hover:border-white/20 border-white/10 rounded-full 2xl:p-5 -mr-[2.1875rem] -mt-[0.9375rem] 2xl:border ">
+                <span className="group-hover:text-white group-hover:border-white/20 border-white/10 rounded-full 2xl:p-5 mt-[0.3125rem] mr-[0.125rem] xs:-mr-[2.1875rem] xs:-mt-[0.9375rem] 2xl:border ">
                     <svg
                         className={`shrink-0 transform transition-transform duration-500 ${isOpen ? "-rotate-90" : "rotate-0"
                             } w-[1.125rem] h-[1.125rem] 2xl:w-[1.875rem] 2xl:h-[1.875rem]`}

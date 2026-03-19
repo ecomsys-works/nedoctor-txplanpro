@@ -39,14 +39,14 @@ export default function Partners() {
 
   return (
     <section className={`partners gsap-up my-container 
-        ${t('lang') === 'ru' ? "mb-[4.375rem] sm:mb-[7.5rem] md:mb-[7.8125rem] 2xl:mb-[13.125rem] 3xl:mb-[16.875rem]" : 
+        ${t('lang') === 'ru' ? "mb-[4.375rem] xs:mb-[7.8125rem] md:mb-[7.8125rem] 2xl:mb-[12.5rem] 3xl:mb-[16.875rem]" : 
           "mb-[4.375rem] sm:mb-[7.5rem] 2xl:mb-[13.125rem] 3xl:mb-[12.5rem]"}
     `}>
       {/* SECTION TITLE */}
 
-      <h2 className={`leading-[1] tracking-[-0.06em] text-center uppercase      
-      ${t('lang') === 'ru' ? "mb-[1.5625rem] xxs:mb-[2.8125rem] mdd:mb-[1.5625rem] 2xl:mb-[5rem] 3xl:mb-[5.375rem] text-[2.1875rem] xxs:text-[3.75rem] 2xl:text-[7.5rem] font-bold" :
-        "mb-[1.5625rem] xxs:mb-[2.8125rem] mdd:mb-[0.9375rem] 2xl:mb-[1.25rem] 3xl:mb-[1.375rem] 3xl:pt-[1.125rem] font-anek text-[2.1875rem] xxs:text-[3.75rem] 2xl:text-[10rem] font-semibold"}
+      <h2 className={`leading-[1] tracking-[-0.06em] md: text-center uppercase      
+      ${t('lang') === 'ru' ? "mb-[1.5625rem] xs:mb-[2.8125rem] md:mb-[1.5625rem] 2xl:mb-[5rem] 3xl:mb-[5.375rem] text-[2.1875rem] xs:text-[3.75rem] 2xl:text-[7.5rem] font-semibold md:font-bold" :
+        "mb-[1.5625rem] xs:mb-[2.8125rem] md:mb-[0.9375rem] 2xl:mb-[1.25rem] 3xl:mb-[1.375rem] 3xl:pt-[1.125rem] font-anek text-[2.1875rem] xs:text-[3.75rem] 2xl:text-[10rem] font-semibold"}
       `}>
         {t("partners.title")}
       </h2>
@@ -67,25 +67,21 @@ export default function Partners() {
 
               <div className="flex flex-col justify-start">
                 <h3
-                  className={`text-[1.5625rem] mb-[0.625rem] tracking-[-0.03em] 2xl:pt-[0.3125rem] 3xl:pt-0 font-${font}                  
+                  className={`text-[1.5625rem] mb-[0.625rem] tracking-[-0.03em] 2xl:tracking-[-0.05em] sm:max-w-[22.8125rem] 2xl:pt-[0.3125rem] 3xl:pt-0 3xl:text-[3.4375rem] font-${font}                  
                  ${t('lang') === 'ru' ? "leading-[1] md:text-[1.5625rem] 2xl:text-[2.5rem] 2xl:mb-[0.9375rem] 3xl:mb-[0.75rem]" 
-                  : "leading-[0.88] md:text-[1.5625rem] 2xl:text-[2.8125rem] 2xl:mb-[1.0625rem] 3xl:mb-[1.125rem]"}
-                    sm:tracking-[-0.05em] sm:max-w-[22.8125rem]                                      
-                    3xl:text-[3.4375rem] 
-                    `}
+                  : "leading-[0.88] md:text-[1.5625rem] 2xl:text-[2.8125rem] 2xl:mb-[1.0625rem] 3xl:mb-[1.125rem]"}`}
                 >
                   {formatHeaderGrey(row.title)}
                 </h3>
 
                 <div className="flex items-end justify-between" >
-                  <p className="max-w-[75%] text-[0.875rem] leading-[1.2] tracking-[-0.04em]
-                  sm:leading-[1.3] sm:max-w-[21.875rem] md:max-w-[21.0625rem]
-                  md:text-[0.875rem] 2xl:text-[1.125rem] 2xl:max-w-[15.9375rem]">                  
+                  <p className="max-w-[75%] text-[0.875rem] leading-[1.2] tracking-[-0.04em] 
+                  xs:max-w-[21.0625rem] md:max-w-[21.0625rem] md:text-[0.875rem] 2xl:text-[1.125rem] 2xl:max-w-[15.9375rem]">                  
                     {row.description}
                   </p>
 
                   {/* NAVIGATION FOR TABLET */}
-                  <div className="hidden sm:flex md:hidden justify-end gap-[0.625rem]">
+                  <div className="hidden sm:flex md:hidden justify-end gap-[0.9375rem] mb-[0.3125rem]">
                     <button ref={(el) => {
                       prevRefs.current[i] = el;
                     }} className="cursor-pointer hover:text-black">
@@ -106,15 +102,15 @@ export default function Partners() {
 
               {/* MOBILE */}
 
-              <div className="flex flex-col gap-[0.1875rem] sm:hidden bg-black rounded-[1.5625rem] p-[0.1875rem]">
+              <div className="flex flex-col gap-[0.1875rem] xs:hidden bg-black rounded-[1.5625rem] p-[0.1875rem]">
                 {row.cards.map((card, j) => (
                   <div
                     key={j}
-                    className="relative bg-white rounded-[1.4375rem] px-[1.25rem] py-[1.25rem] flex flex-col justify-between"
+                    className="relative bg-white rounded-[1.4375rem] px-[1.25rem] py-[1.375rem] flex flex-col justify-between"
                   >
 
 
-                    <div className="flex items-start gap-2">
+                    <div className="flex items-start gap-[0.5rem]">
                       <div className="w-[0.6875rem] h-[0.6875rem]  bg-orange rounded-full shrink-0" />
 
                       <div className="flex flex-col gap-[0.3125rem]">
@@ -133,11 +129,12 @@ export default function Partners() {
 
               {/* TABLET SWIPER */}
 
-              <div className="partners-swiper hidden sm:block md:hidden">
+              <div className="partners-swiper hidden xs:block md:hidden">
                 <Swiper
                   modules={[Navigation]}
+                  className="!overflow-visible"
                   spaceBetween={5}
-                  slidesPerView={2}
+                  slidesPerView={1.94}
                   onInit={(swiper) => {
                     // @ts-expect-error: refs are initialized after render
                     swiper.params.navigation.prevEl = prevRefs.current[i];
@@ -152,15 +149,15 @@ export default function Partners() {
                     <SwiperSlide key={j} className="aspect-[306/301]">
                       <div className="relative bg-white rounded-[2.5rem] px-[1.25rem] py-[1.875rem] h-full flex flex-col justify-between">
                         <div>
-                          <div className="flex items-start gap-2 mb-[0.9375rem]">
+                          <div className="flex items-start gap-[0.625rem] mb-[0.9375rem]">
                             <div className="w-[0.9375rem] h-[0.9375rem] bg-orange rounded-full shrink-0 mt-1" />
 
-                            <h4 className="text-[0.875rem] xl:text-[1.125rem] leading-[1.3] tracking-[-0.04em] font-semibold">
+                            <h4 className="text-[1.125rem] leading-[1.3] tracking-[-0.04em] font-semibold">
                               {card.title}
                             </h4>
                           </div>
 
-                          <p className="text-[1rem] xl:text-[1.125rem] leading-[1.3] tracking-[-0.04em]">
+                          <p className="text-[0.875rem] leading-[1.2] tracking-[-0.04em]">
                             {card.text}
                           </p>
                         </div>
@@ -185,8 +182,8 @@ export default function Partners() {
                   <div
                     key={j}
                     className={`relative bg-white rounded-[2.5rem] px-[1.25rem] flex flex-col justify-between h-full                    
-                      ${t('lang') === 'ru' ? "md:py-[1.625rem] 2xl:py-[1.625rem] md:aspect-[306/391]  mdd:aspect-[306/301] lg:aspect-[293/360] 3xl:aspect-square " : 
-                        "2xl:py-[1.75rem] md:aspect-[306/391] mdd:aspect-[306/301] lg:aspect-[293/360] "}
+                      ${t('lang') === 'ru' ? "md:py-[1.875rem] 2xl:py-[1.625rem] 3xl:py-[1.625rem] md:aspect-[306/391]  mdd:aspect-[306/301] lg:aspect-[293/365] 2xl:aspect-[293/365] 3xl:aspect-square " : 
+                        "md:py-[1.625rem] 2xl:py-[1.75rem] 3xl:py-[1.625rem] md:aspect-[306/391]  mdd:aspect-[306/301] lg:aspect-[293/365] 2xl:aspect-[293/365] 3xl:aspect-square "}
                     lg:rounded-[1.25rem] 3xl:rounded-[2.5rem] `}
                   >
                     <div>

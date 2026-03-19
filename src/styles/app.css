@@ -261,12 +261,14 @@ Header glass-nav
 
 
 
+
     .card-3 {
         background: url("/images/webp/pricing/desk/card-3.webp");
         background-size: 100% 100%;
         background-repeat: no-repeat;
         background-position: center;
     }
+
 
     .card-long {
         background: url("/images/webp/pricing/desk/card-long.webp");

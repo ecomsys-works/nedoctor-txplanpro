@@ -40,7 +40,7 @@ export default function ListForm() {
                         </div>
 
                         {/* BUTTON */}
-                        <BlackBtn className="text-[1.25rem] rounded-[2.5rem] px-[2.375rem] h-[5rem] tracking-[-0.04em] font-medium 2xl:min-w-[15.9375rem] 3xl:min-w-[15.4375rem]">
+                        <BlackBtn className="text-[1.25rem] rounded-[2.5rem] 2xl:px-[1.5625rem] 3xl:px-[2.375rem] h-[5rem] tracking-[-0.04em] font-medium 2xl:min-w-[15.9375rem] 3xl:min-w-[15.4375rem]">
                             {buttonText}
                         </BlackBtn>
 

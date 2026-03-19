@@ -9,9 +9,26 @@ module.exports = {
     "font-sfpro",
     "font-micro",
     "font-libre",
-    "font-anek"
-  ],
+    "font-anek",
 
+    "xs:block",
+    "sm:block",
+    "md:block",
+    "lg:block",
+    "xl:block",
+    "2xl:block",
+    "3xl:block",
+
+    // hidden
+    "xs:hidden",
+    "sm:hidden",
+    "md:hidden",
+    "lg:hidden",
+    "xl:hidden",
+    "2xl:hidden",
+    "3xl:hidden",
+
+  ],
   theme: {
     // container: {
     //   center: true,

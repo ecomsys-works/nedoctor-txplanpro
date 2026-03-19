@@ -12,7 +12,7 @@
 export function formatHeader(title?: string) {
   if (!title) return null;
 
-  const breakpoints = ["sm", "md", "lg", "xl", "2xl"];
+  const breakpoints = ["sm", "xs", "md", "lg","xl", "2xl", "3xl"];
 
   const getNext = (bp: string) => {
     const i = breakpoints.indexOf(bp);

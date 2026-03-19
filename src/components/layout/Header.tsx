@@ -17,7 +17,7 @@ export default function Header() {
 
   useBodyScrollLock(isOpen);
   return (
-    <header className="my-container py-[0.625rem] sm:py-[0.9375rem] w-full bg-black text-white relative mb-[-0.0625rem]">
+    <header className="my-container py-[0.625rem] md:py-[0.9375rem] w-full bg-black text-white relative mb-[-0.0625rem]">
       <div className="flex items-center justify-between">
 
         {/* Logo */}
@@ -29,10 +29,9 @@ export default function Header() {
         </a>
 
         {/* Desktop Menu */}
-        <nav className={`hidden glass rounded-full h-[2.5rem] px-[1.4375rem] items-center gap-[0.9375rem]
-        md:flex xl:h-[3rem] 3xl:xl:px-[3.4375rem] 3xl:gap-[2.0625rem]
-          ${t('lang') === 'ru' ? "md:px-[1.5625rem] md:gap-[0.9375rem] md:ml-[1.25rem] 2xl:ml-[3.125rem] 2xl:px-[2.1875rem] xl:gap-[1.875rem] " : 
-            "md:ml-[1.875rem] xl:px-[3.4375rem] xl:gap-[2.0625rem]"}
+        <nav className={`hidden glass rounded-full px-[1.4375rem] items-center md:flex h-[2.5rem] xl:h-[3rem] 
+          ${t('lang') === 'ru' ? "md:px-[1.5625rem] md:gap-[0.9375rem] md:ml-[1.25rem] xl:gap-[1.875rem] 2xl:ml-[3.25rem] 2xl:px-[2.1875rem] 3xl:px-[3.4375rem] 3xl:gap-[2.0625rem] 3xl:ml-[2.5rem]" : 
+            "md:px-[1.5625rem] md:gap-[0.9375rem] md:ml-[1.875rem] xl:px-[3.4375rem] xl:gap-[2.0625rem] 2xl:ml-[3.25rem] 2xl:px-[2.1875rem] 3xl:ml-[2.5rem] 3xl:xl:px-[3.4375rem] 3xl:gap-[2.0625rem]"}
         `}>
           {menu.map((item, i) => (
             <a

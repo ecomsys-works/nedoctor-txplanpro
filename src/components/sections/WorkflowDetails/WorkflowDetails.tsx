@@ -25,7 +25,7 @@ export default function WorkflowDetails() {
   const font = t("workflow.details.font");
 
   return (
-    <section className="worflow-details gsap-up workflow-details-swiper my-container mb-[2.1875rem] sm:mb-[3.125rem] md:mb-[5.5rem] 2xl:mb-[9.6875rem]">
+    <section className="worflow-details gsap-up workflow-details-swiper my-container mb-[2.1875rem] xs:mb-[3rem] md:mb-[5.5rem] 2xl:mb-[9.375rem]">
 
       {/* MOBILE */}
       <div className="md:hidden">
@@ -74,9 +74,11 @@ export default function WorkflowDetails() {
           breakpoints={{
             375: {
               slidesPerView: 1.01,
+               spaceBetween:5,
             },
             480: {
-              slidesPerView: 1.85,
+              slidesPerView: 1.76,
+              spaceBetween:3,
             }
           }}
         >
@@ -92,9 +94,9 @@ export default function WorkflowDetails() {
       {/* TABLET */}
       <div className="hidden md:block 3xl:hidden">
         {/* Hero title */}
-        <h2 className={`text-[1.5625rem] leading-[1] tracking-[-0.03em] font-${font}
-          2xl:tracking-[-0.05em] 3xl:text-[3.4375rem] 
-           ${t('lang') === 'ru' ? "mb-[0.625rem] 2xl:-mt-[0.625rem] 2xl:text-[2.5rem]" : "mb-[0.9375rem] 2xl:text-[2.8125rem]"}
+        <h2 className={`font-${font}  
+           ${t('lang') === 'ru' ? "text-[1.5625rem] leading-[1] tracking-[-0.03em] 2xl:tracking-[-0.05em] 3xl:text-[3.4375rem] mb-[0.625rem] 2xl:-mt-[0.3125rem] 2xl:text-[2.5rem]" : 
+            "text-[1.5625rem] leading-[1] tracking-[-0.03em] 2xl:tracking-[-0.05em] 3xl:text-[3.4375rem] mb-[0.9375rem] 2xl:-mt-[0rem] 2xl:text-[2.8125rem]"}
           `}>
           {heroCard.title}
         </h2>
@@ -105,7 +107,7 @@ export default function WorkflowDetails() {
           `}>
           {formatHeaderNo(heroCard.description)}</p>
 
-        <div className="grid grid-cols-2 gap-[0.375rem] 2xl:gap-[0.625rem] md:rounded-[2.8125rem] 3xl:rounded-[2.8125rem] bg-black p-[0.375rem] 2xl:p-[0.625rem]">
+        <div className="grid grid-cols-2 gap-[0.375rem] md:gap-[0.3125rem] 2xl:gap-[0.625rem] md:rounded-[2.8125rem] 2xl:rounded-[3.75rem] 3xl:rounded-[2.8125rem] bg-black p-[0.375rem] md:p-[0.3125rem] 2xl:p-[0.625rem]">
 
           <WorkflowDetailsCard card={featureCards[0]} index={0} />
           <WorkflowDetailsCard card={featureCards[1]} index={1} />
