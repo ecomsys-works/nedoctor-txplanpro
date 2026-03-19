@@ -104,7 +104,7 @@ function AccordionContent({
             {/* Заголовок аккордеона */}
             <div
                 className={`flex justify-between items-start cursor-pointer gap-5 
-         ${t('lang') === 'ru' ? "pl-[0.625rem] pr-[1.25rem] pt-[0.625rem] pb-[1.5rem] sm:items-center xs:pt-[1rem] xs:pb-[1.0625rem] xs:pl-[0] xs:pr-[2.1875rem] md:pt-[0.9375rem] md:pb-[1.25rem]  md:pl-[0rem] md:pr-[1.875rem] 2xl:py-[2rem] 2xl:pr-[1.875rem] 2xl:px-0 3xl:py-[2.625rem]" 
+         ${t('lang') === 'ru' ? "pl-[0.625rem] pr-[1.25rem] pt-[0.625rem] pb-[1.5rem] xs:items-center sm:pt-[1rem] sm:pb-[1.0625rem] sm:pl-[0rem] sm:pr-[0rem] md:pt-[0.9375rem] md:pb-[1.25rem] md:pl-[0rem] md:pr-[1.875rem] 2xl:py-[2rem] 2xl:pr-[1.875rem] 2xl:px-0 3xl:py-[2.625rem]" 
             : "pl-[0.625rem] pr-[1.25rem] pt-[0.625rem] pb-[1.5625rem] sm:items-center sm:pt-[0.9375rem] sm:pb-[1.25rem] md:pl-[0rem]  md:pr-[1.875rem] 2xl:py-[3.25rem] 3xl:py-[1.875rem] 2xl:pr-[1.875rem] 2xl:px-0 3xl:py-[3.625rem]"}`}
                 onClick={toggle}
             >
@@ -119,7 +119,7 @@ function AccordionContent({
                     <span className="block align-top">{header}</span>
                     
                 </h3>
-                <span className="group-hover:text-white group-hover:border-white/20 border-white/10 rounded-full 2xl:p-5 mt-[0.3125rem] mr-[0.125rem] xs:-mr-[2.1875rem] xs:-mt-[0.9375rem] 2xl:border ">
+                <span className="group-hover:text-white group-hover:border-white/20 border-white/10 rounded-full 2xl:p-5 mt-[0.3125rem] mr-[0.125rem] md:-mr-[2.1875rem] xs:-mt-[0.9375rem] 2xl:border ">
                     <svg
                         className={`shrink-0 transform transition-transform duration-500 ${isOpen ? "-rotate-90" : "rotate-0"
                             } w-[1.125rem] h-[1.125rem] 2xl:w-[1.875rem] 2xl:h-[1.875rem]`}
