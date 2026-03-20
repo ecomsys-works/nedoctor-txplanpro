@@ -30,8 +30,9 @@
   },
   "hero": {
     "font": "libre",
-    "title": "Spend less chair time explaining and increase case acceptance",
-    "subtitle": "Create clear, visual treatment plans in minutes — so patients understand, trust, and commit",
+    "title": "Spend less chair time explaining and boost case acceptance",
+    "titleDesk": "Spend less chair time explaining and increase case acceptance",
+    "subtitle": "Create clear, visual treatment plans in [br-3xl] minutes [br-3xl-down] — so patients understand, trust, and commit",
     "cta": "Join the waitlist",
     "cards": [
       {
@@ -76,8 +77,8 @@
     "title": "Our partners",
     "rows": [
       {
-        "title": "For individual [br] dentists ",
-        "description": "Is paperwork stealing your time while patients leave confused?",
+        "title": "For individual [br-2xl] dentists ",
+        "description": "Is paperwork stealing your time [br-xs] while patients leave confused?",
         "cards": [
           {
             "title": "Wasted time",
@@ -98,11 +99,11 @@
       },
       {
         "title": "For dental clinics [grey] [br] Small to large [grey]",
-        "description": "When your team works from one clear plan, the entire clinic runs smoother.",
+        "description": "When your team works from one clear [br-xs] plan, the entire clinic runs smoother.",
         "cards": [
           {
             "title": "No standard",
-            "text": "Unclear plans slow consultations, lower case acceptance, and make revenue harder to predict.",
+            "text": "Unclear plans slow consultations, cut case acceptance making revenue less predictable.",
             "icon": "our-4"
           },
           {
@@ -124,8 +125,8 @@
     "cards": [
       {
         "type": "title",
-        "title": "Ever wish your patients [br] truly understood and [br] agreed instantly? ",
-        "description": "When your team works from one clear plan, the entire clinic runs smoother."
+        "title": "Ever wish your patients [br-xs-down] truly [br-xs_md] understood and [br-xs-down] agreed instantly? ",
+        "description": "When your team works from [br-xs-down] one clear [br-md_2xl] plan, the [br-xs_md] entire [br-xs-down] clinic runs smoother."
       },
       {
         "type": "error",
@@ -231,7 +232,7 @@
     "title": "One tool: [br] Benefits for everyone",
     "accordions": [
       {
-        "headerMob": "Doctors",
+        "headerMob": "For doctors",
         "headerDesk": "For doctors",
         "rows": [
           {
@@ -249,7 +250,7 @@
         ]
       },
       {
-        "headerMob": "Patients",
+        "headerMob": "For patients",
         "headerDesk": "For patients",
         "rows": [
           {
@@ -267,7 +268,7 @@
         ]
       },
       {
-        "headerMob": "Owners",
+        "headerMob": "For owners",
         "headerDesk": "For owners",
         "rows": [
           {
@@ -338,8 +339,8 @@
   "developed": {
     "font": "libre",
     "top": {
-      "title": "Developed [br] by clinicians",
-      "description": "Built by practicing dentists who know how treatment planning actually works in real clinics under real time pressure, with real patients and real teams."
+      "title": "Developed [br-2xl] by [br-md_2xl] clinicians",
+      "description": "Built by practicing dentists who know how treatment planning actually [br-xs_2xl] works in real clinics under real time pressure, with real patients and real teams."
     },
     "diagramMob": "/images/webp/developed/mob/diagram.webp",
     "diagramDesk": "/images/webp/developed/desk/diagram.webp",
@@ -360,7 +361,7 @@
   },
   "reviews": {
     "title": "Reviews",
-    "titleLong": "What our clients say",    
+    "titleDesk": "What our clients say",    
     "cards": [
       {
         "avatar": "/images/webp/reviews/avatar.webp",
@@ -404,7 +405,7 @@
     "cards": [
       {
         "title": "Starter Plan",
-        "description": "Try TxPlan Pro with real patients",
+        "description": "Try TxPlan Pro with real [br-xs-down] patients",
         "price": "Free",
         "priceDescription": "",
         "blackLabel": "",
@@ -455,7 +456,7 @@
       },
       {
         "title": "Practice Plan",
-        "description": "Best for small clinics & dental teams",
+        "description": "For small clinics & dental teams",
         "price": "€149",
         "priceDescription": "per month",
         "blackLabel": "Most popular",
@@ -510,10 +511,10 @@
   },
   "footer": {
     "logo": "TX Plan Pro",
-    "privacy": "Privacy Policy",
+    "privacy": "Privacy policy",
     "dev": "Website design",
     "rights": "All rights reserved.",
     "copyright": "© 2026 TX Plan Pro",
-    "menu": ["How it works", "Features", "How to start", "Pricing"]
+    "menu": ["How it works", "Benefits", "How to start", "Pricing"]
   }
 }

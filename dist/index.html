@@ -7,7 +7,38 @@
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1.0, viewport-fit=cover"
-    />
+    />    
+
+    <script>
+      window.addEventListener("DOMContentLoaded", () => {
+        (function forceDesktopLayout() {
+          const BREAKPOINT = 1536;
+          const DESIGN_WIDTH = 1920;
+
+          const screenWidth = window.screen.width;
+          const dpr = window.devicePixelRatio || 1;
+          const realWidth = screenWidth / dpr;
+
+          const meta = document.querySelector('meta[name="viewport"]');
+          if (!meta) return;
+
+          if (realWidth < BREAKPOINT) {
+            meta.setAttribute("content", "width=device-width, initial-scale=1");
+            console.log("adaptive mode:", realWidth);
+            return;
+          }
+
+          const scale = realWidth / DESIGN_WIDTH;
+
+          meta.setAttribute(
+            "content",
+            `width=${DESIGN_WIDTH}, initial-scale=${scale}, maximum-scale=${scale}, user-scalable=no`,
+          );
+
+          console.log("forced 1920 mode:", { realWidth, scale });
+        })();
+      });
+    </script>
 
     <!-- ОСНОВНОЙ SEO -->
     <title>TX Plan Pro</title>
@@ -15,7 +46,6 @@
     <meta name="keywords" content="Ключевые слова" />
     <meta name="author" content="Автор" />
     <meta name="robots" content="index, follow" />
-    
 
     <!-- THEME COLOR -->
     <meta name="theme-color" content="#EEEEEE" />
@@ -60,8 +90,8 @@
     <!--
     <link rel="preload" href="/fonts/main.woff2" as="font" type="font/woff2" crossorigin>
     -->
-    <script type="module" crossorigin src="/assets/index-D_anFqGp.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-DHwFXbC2.css">
+    <script type="module" crossorigin src="/assets/index-CrUNvORt.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-C2LI3mIy.css">
   </head>
 
   <body style="background-color: #eeeeee">

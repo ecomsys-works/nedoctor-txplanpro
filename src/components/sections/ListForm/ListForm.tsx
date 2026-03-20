@@ -15,11 +15,16 @@ export default function ListForm() {
     };
 
     return (
-        <section className="list-form gsap-up my-container hidden xl:block w-full lg:mb-[4.625rem] 3xl:mb-[2.6875rem]">
+        <section className="list-form gsap-up my-container  hidden xl:block w-full         
+        lg:mb-[4.625rem] 
+        3xl:mb-[2.6875rem]"
+        >
             <div className="flex flex-col gap-[0.625rem] bg-black rounded-t-[2.8125rem] rounded-b-[4.0625rem] p-[0.625rem]">
 
                 {/* WHITE PANEL */}
-                <div className="bg-white rounded-[2.5rem] flex items-end 2xl:p-[0.625rem] 3xl:p-[1.875rem] min-h-[19.0625rem]">
+                <div className="bg-white rounded-[2.5rem] flex items-end min-h-[19.0625rem]
+                2xl:p-[0.625rem] 
+                3xl:py-[1.875rem] 3xl:pl-[1.875rem] 3xl:pr-[1.25rem]">
 
                     {/* FORM */}
                     <div className="flex w-full gap-[0.3125rem]">
@@ -40,7 +45,9 @@ export default function ListForm() {
                         </div>
 
                         {/* BUTTON */}
-                        <BlackBtn className="text-[1.25rem] rounded-[2.5rem] 2xl:px-[1.5625rem] 3xl:px-[2.375rem] h-[5rem] tracking-[-0.04em] font-medium 2xl:min-w-[15.9375rem] 3xl:min-w-[15.4375rem]">
+                        <BlackBtn className="text-[1.25rem] rounded-[2.5rem] h-[5rem] tracking-[-0.04em] font-medium 
+                        2xl:px-[1.5625rem] 2xl:min-w-[15.9375rem] 
+                        3xl:px-[2.375rem] 3xl:min-w-[15.4375rem]">
                             {buttonText}
                         </BlackBtn>
 

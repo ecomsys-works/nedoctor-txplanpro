@@ -1,6 +1,7 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import { useTranslation } from "react-i18next";
+import { Autoplay } from "swiper/modules";
 
 export type ReviewCardType = {
   avatar: string;
@@ -14,32 +15,52 @@ export default function Reviews() {
   const { t } = useTranslation();
 
   const title = t("reviews.title");
+  const titleDesk = t("reviews.titleDesk");
   const reviews = t("reviews.cards", { returnObjects: true }) as ReviewCardType[];
 
   return (
     <section className={`reviews gsap-up reviews-swiper my-container my-container--reviews 
-      ${t('lang') === 'ru' ? `mb-[4.375rem] sm:mb-[6.25rem] md:mb-[6.25rem] 2xl:mb-[12.8125rem]` : 
-        `mb-[4.375rem] sm:mb-[6.25rem] md:mb-[6.25rem] 2xl:mb-[12.8125rem]`}
+      ${t('lang') === 'ru' ?
+        `mb-[4.375rem] 
+        xs:mb-[6.25rem] 
+        md:mb-[6.25rem] 
+        2xl:mb-[12.8125rem]`
+        :
+        `mb-[4.1875rem] 
+        xs:mb-[6.25rem] 
+        md:mb-[6.25rem] 
+        2xl:mb-[12.5rem]
+        3xl:mb-[12.8125rem]`}
     `}>
 
       {/* Заголовок */}
       <h2 className={`tracking-[-0.06em] text-center uppercase         
 
-       ${t('lang') === 'ru' ? `font-semibold leading-[1] text-[2.375rem] mb-[1.5625rem] 
+       ${t('lang') === 'ru' ?
+          `font-semibold leading-[1] text-[2.375rem] mb-[1.5625rem] 
         xs:font-bold xs:text-[3.75rem] xs:mb-[2.5rem]         
         2xl:-mt-[0.625rem] 2xl:mb-[5rem] 2xl:text-[7.5rem] 
-        3xl:mb-[3.125rem]` 
-        : 
-        `font-semibold text-[2.5rem] mb-[1.5625rem] leading-[1] font-anek 
-        xs:text-[3.75rem] xs:mb-[2.5rem] 
-        2xl:mb-[0.9375rem] 2xl:text-[10rem] 2xl:pt-[1.125rem]  
-        3xl:mb-[0rem]`}
+        3xl:mb-[3.125rem]`
+          :
+          `font-semibold text-[2.5rem] mb-[1.25rem] leading-[1] font-anek 
+        xs:text-[4.875rem] xs:mb-[0.625rem] 
+        md:mb-[0.9375rem]
+        2xl:mb-[1.5625rem] 2xl:text-[10rem] 2xl:pt-[1.125rem]  
+        3xl:mb-[-0.625rem]`}
       `}>
-        {title}
+        <span className="md:hidden">{title}</span>
+        <span className="hidden md:block">{titleDesk}</span>
       </h2>
 
       {/* Слайдер */}
       <Swiper
+        modules={[Autoplay]} // вот это важно
+        autoplay={{
+          delay: 3000, // 5 секунд
+          disableOnInteraction: false, // не останавливается после свайпа
+          pauseOnMouseEnter: true, // (опционально) пауза при наведении
+        }}
+        loop={true} // чтобы крутился бесконечно
         autoHeight={false}
         spaceBetween={4}
         slidesPerView={1.08}
@@ -57,7 +78,8 @@ export default function Reviews() {
 
             {/* Карточка */}
             <div className="bg-white rounded-[0.9375rem] flex flex-col w-full 
-            p-[0.9375rem] 2xl:px-[1.875rem] 2xl:pt-[0.5625rem] 2xl:pb-[1.5625rem] 2xl:rounded-[1.25rem]">
+            p-[0.9375rem] 
+            2xl:px-[1.875rem] 2xl:pt-[0.5625rem] 2xl:pb-[1.5625rem] 2xl:rounded-[1.25rem]">
 
               {/* Header */}
               <div className="flex items-center 
@@ -71,19 +93,24 @@ export default function Reviews() {
                   <img
                     src={card.avatar}
                     alt="Avatar"
-                    className="w-[2.375rem] h-[2.375rem] 2xl:w-[3.375rem] 2xl:h-[3.375rem] rounded-full"
+                    className="w-[2.375rem] h-[2.375rem] rounded-full
+                    2xl:w-[3.375rem] 2xl:h-[3.375rem] "
                   />
                 )}
 
                 <div>
                   {card.name && (
-                    <p className="text-[0.875rem] 2xl:text-[1.125rem] leading-[1.3] tracking-[-0.04em] font-semibold">
+                    <p className="text-[0.875rem] leading-[1.3] tracking-[-0.04em] font-semibold
+                    2xl:text-[1.125rem] 
+                    ">
                       {card.name}
                     </p>
                   )}
 
                   {card.specialty && (
-                    <p className="text-[0.875rem] 2xl:text-[1.125rem] leading-[1] 2xl:leading-[1.3] tracking-[-0.04em] font-light">
+                    <p className="text-[0.875rem] leading-[1] tracking-[-0.04em] font-light
+                    2xl:text-[1.125rem] 2xl:leading-[1.3] 
+                    ">
                       {card.specialty}
                     </p>
                   )}
@@ -93,7 +120,9 @@ export default function Reviews() {
                   <img
                     src={card.clinicLogo}
                     alt="Clinic"
-                    className="ml-auto h-[1.9375rem] 2xl:h-[3.375rem] w-auto"
+                    className="ml-auto h-[1.9375rem] w-auto
+                    2xl:h-[3.375rem] 
+                    "
                   />
                 ) : (
                   <span
@@ -108,7 +137,8 @@ export default function Reviews() {
               </div>
 
               {/* Text */}
-              <p className="text-black text-[0.875rem] leading-[1.2] tracking-[-0.04em] 2xl:text-[1.125rem]  2xl:leading-[1.3]">
+              <p className="text-black text-[0.875rem] leading-[1.2] tracking-[-0.04em] 
+              2xl:text-[1.125rem] 2xl:leading-[1.3]">
                 {card.text}
               </p>
 

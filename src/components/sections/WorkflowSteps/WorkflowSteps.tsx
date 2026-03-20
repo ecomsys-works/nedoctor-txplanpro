@@ -10,18 +10,45 @@ export default function WorkflowSteps() {
   }) as WorkflowStepsCardType[]
 
   return (
-    <section id="#how-it-works" className="workflow-steps gsap-up my-container pt-[2.1875rem] xs:pt-[3.125rem] md:pt-[3.125rem] 2xl:pt-[2.5rem] 3xl:pt-[3.125rem] mb-[4.375rem] sm:mb-[6.25rem] sm:mb-[6.25rem] md:mb-[8.75rem]  2xl:mb-[15.3125rem] 3xl:mb-[14.375rem]">
+    <section id="#how-it-works" className={`workflow-steps gsap-up my-container 
+       ${t('lang') === 'ru' ? 
+        `pt-[2.1875rem] mb-[4.375rem]     
+        xs:pt-[3.125rem] 
+        sm:mb-[6.25rem] sm:mb-[6.25rem] 
+        md:pt-[3.125rem] md:mb-[8.75rem] 
+        2xl:pt-[2.5rem] 2xl:mb-[15.3125rem] 
+        3xl:pt-[3.125rem] 3xl:mb-[14.375rem]`
+        :
+        ` pt-[2.1875rem] mb-[4.375rem]     
+        xs:pt-[3.125rem] 
+        sm:mb-[6.25rem] sm:mb-[6.25rem] 
+        md:pt-[3.125rem] md:mb-[8.4375rem] 
+        2xl:pt-[2.5rem] 2xl:mb-[15rem] 
+        3xl:pt-[3.125rem] 3xl:mb-[14.875rem]`}   
+    `}>
 
       <div className="2xl:px-[0rem] 3xl:px-[3.125rem]">
         <h2 className={` leading-[1] tracking-[-0.06em] text-center uppercase        
-        ${t('lang') === 'ru' ? "font-semibold mb-[1.5625rem] text-[2.1875rem] xs:text-[3.75rem] xs:mb-[2.5rem] 2xl:font-bold 2xl:text-[7.5rem] 2xl:mb-[3.75rem] 3xl:mb-[5rem] " :
-          "text-[2.1875rem] mb-[1.875rem] font-anek font-semibold xxs:text-[2.8125rem] xxs:mb-[2.5rem] 2xl:pt-[1.1875rem] 2xl:text-[10rem] 2xl:mb-[1.25rem] 3xl:mb-[1.25rem]"}
+        ${t('lang') === 'ru' ? 
+          `font-semibold mb-[1.5625rem] text-[2.1875rem] 
+          xs:text-[3.75rem] xs:mb-[2.5rem] 
+          2xl:font-bold 2xl:text-[7.5rem] 2xl:mb-[3.75rem] 
+          3xl:mb-[5rem] ` 
+          :
+          `text-[2.5rem] mb-[0.875rem] font-anek font-semibold 
+          xs:text-[4.875rem] xs:mb-[0.75rem]  
+          2xl:pt-[1.1875rem] 2xl:text-[10rem] 2xl:mb-[1.25rem] 
+          3xl:mb-[1.25rem]`}
         `}>
           {t("workflow.steps.title")}
         </h2>
 
-        <div className={`grid xxs:grid-cols-2 mdd:grid-cols-3 gap-[1.25rem] xxs:gap-[0.625rem] 2xl:gap-[1.5625rem] 3xl:gap-[1.875rem]
-        ${t('lang') === 'ru' ? "" :"pl-[0.3125rem]"}
+        <div className={`grid gap-[1.25rem]
+        xxs:grid-cols-2 xxs:gap-[0.625rem]
+        mdd:grid-cols-3 
+        2xl:gap-[1.5625rem] 
+        3xl:gap-[1.875rem]
+        ${t('lang') === 'ru' ? "" : "2xl:pl-[0.3125rem]"}
           `}>
 
           {cards.map((card, i) => {
@@ -36,7 +63,13 @@ export default function WorkflowSteps() {
             return (
               <div
                 key={i}
-                className={`${offset} ${marginBottom} aspect-[340/436] xs:aspect-[295/469] md:aspect-[295/420] mdd:aspect-[306/437] 2xl:aspect-[416/564] 3xl:aspect-[479/605]`}
+                className={`${offset} ${marginBottom} 
+                aspect-[340/436] 
+                xs:aspect-[295/469] 
+                md:aspect-[295/420] 
+                mdd:aspect-[306/437] 
+                2xl:aspect-[416/564] 
+                3xl:aspect-[479/605]`}
               >
                 <WorkflowStepsCard card={card} index={Number(i)} />
               </div>

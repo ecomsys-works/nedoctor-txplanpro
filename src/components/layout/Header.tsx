@@ -17,21 +17,32 @@ export default function Header() {
 
   useBodyScrollLock(isOpen);
   return (
-    <header className="my-container py-[0.625rem] md:py-[0.9375rem] w-full bg-black text-white relative mb-[-0.0625rem]">
-      <div className="flex items-center justify-between">
+    <header className="my-container w-full bg-black text-white relative
+    py-[0.625rem] mb-[-0.0625rem] md:py-[0.9375rem]  ">
 
+      <div className="flex items-center justify-between">
         {/* Logo */}
         <a
           href="#hero"
-          className="text-[1rem] xl:text-[1.25rem] font-bold text-white font-micro transition"
+          className="text-[1rem] font-bold text-white font-micro xl:text-[1.25rem] "
         >
           {logo}
         </a>
 
         {/* Desktop Menu */}
-        <nav className={`hidden glass rounded-full px-[1.4375rem] items-center md:flex h-[2.5rem] xl:h-[3rem] 
-          ${t('lang') === 'ru' ? "md:px-[1.5625rem] md:gap-[0.9375rem] md:ml-[1.25rem] xl:gap-[1.875rem] 2xl:ml-[3.25rem] 2xl:px-[2.1875rem] 3xl:px-[3.4375rem] 3xl:gap-[2.0625rem] 3xl:ml-[2.5rem]" : 
-            "md:px-[1.5625rem] md:gap-[0.9375rem] md:ml-[1.875rem] xl:px-[3.4375rem] xl:gap-[2.0625rem] 2xl:ml-[3.25rem] 2xl:px-[2.1875rem] 3xl:ml-[2.5rem] 3xl:xl:px-[3.4375rem] 3xl:gap-[2.0625rem]"}
+        <nav className={`hidden md:flex glass rounded-full items-center  
+          ${t('lang') === 'ru' ? `
+            px-[1.4375rem] h-[2.5rem]
+            md:px-[1.5625rem] md:gap-[0.9375rem] md:ml-[1.25rem] 
+            xl:gap-[1.875rem] xl:h-[3rem]
+            2xl:ml-[3.25rem] 2xl:px-[2.1875rem] 
+            3xl:gap-[2.0625rem] 3xl:ml-[2.5rem] 3xl:px-[3.4375rem] ` 
+            :`
+            px-[1.4375rem] h-[2.5rem]
+            md:px-[2.5rem] md:gap-[1.25rem] md:ml-[0.9375rem] 
+            xl:px-[3.4375rem] xl:gap-[2.0625rem] xl:h-[3rem]
+            2xl:ml-[2rem] 2xl:px-[3.4375rem] 
+            3xl:ml-[2.375rem] 3xl:xl:px-[3.5rem] 3xl:gap-[2.125rem]`}
         `}>
           {menu.map((item, i) => (
             <a
@@ -70,8 +81,9 @@ export default function Header() {
 
       {/* Mobile Canvas Menu */}
       <div
-        className={`cover-gradient px-[0.625rem] sm:px-[1.25rem] pt-5 pb-[4.375rem] sm:pb-[3.125rem] fixed top-0 left-0 h-full w-full z-50
-  transition-all duration-300 ${isOpen ? "opacity-100 scale-100" : "opacity-0 scale-95 pointer-events-none"} md:hidden flex flex-col`}>
+        className={`flex flex-col cover-gradient fixed top-0 left-0 h-full w-full z-50 transition-all duration-300 ${isOpen ? "opacity-100 scale-100" : "opacity-0 scale-95 pointer-events-none"}
+        px-[0.625rem] pt-5 pb-[4.375rem] 
+        sm:px-[1.25rem] sm:pb-[3.125rem] md:hidden `}>
         {/* Header inside canvas */}
         <div className="flex items-center justify-between">
           {/* Logo */}
@@ -91,7 +103,8 @@ export default function Header() {
         </div>
 
         {/* Menu items */}
-        <nav className="overflow-y-auto scrollbar-none flex flex-col items-center justify-start pt-[5rem] sm:pt-[9.375rem] pb-[6.25rem] gap-[1.875rem] flex-1">
+        <nav className="overflow-y-auto scrollbar-none flex flex-col flex-1 items-center justify-start 
+          pt-[5rem] pb-[6.25rem] gap-[1.875rem] sm:pt-[9.375rem] ">
           {menu.map((item, i) => (
             <a
               key={i}

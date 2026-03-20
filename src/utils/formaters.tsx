@@ -8,24 +8,43 @@
 // [br-lg_xl] → диапазон
 // [br-2xl] → 2xl+
 // ...
-
 export function formatHeader(title?: string) {
   if (!title) return null;
 
-  const breakpoints = ["sm", "xs", "md", "lg","xl", "2xl", "3xl"];
+  const breakpoints = ["sm", "xs", "md", "lg", "xl", "2xl", "3xl"];
 
   const getNext = (bp: string) => {
     const i = breakpoints.indexOf(bp);
     return breakpoints[i + 1];
   };
 
-  const parts = title.split(/(\[br[^\]]*\]|\n)/i);
+  // добавили [grey] в сплит
+  const parts = title.split(/(\[grey\]|\[br[^\]]*\]|\n)/i);
+
+  let isGrey = false;
 
   return parts.map((part, i) => {
+    if (!part) return null;
+
+    // --- GREY TOGGLE
+    if (/^\[grey\]$/i.test(part)) {
+      isGrey = !isGrey;
+      return null;
+    }
+
+    // --- NEW LINE
     if (part === "\n") return <br key={i} />;
 
-const match = part.match(/^\[br(?:-([a-z0-9_-]+))?\]$/i);
-    if (!match) return <span key={i}>{part}</span>;
+    const match = part.match(/^\[br(?:-([a-z0-9_-]+))?\]$/i);
+
+    // --- TEXT
+    if (!match) {
+      return (
+        <span key={i} className={isGrey ? "text-[#A0A0A0]" : undefined}>
+          {part}
+        </span>
+      );
+    }
 
     const rule = match[1];
 
@@ -41,10 +60,7 @@ const match = part.match(/^\[br(?:-([a-z0-9_-]+))?\]$/i);
       }
 
       return (
-        <br
-          key={i}
-          className={`hidden ${from}:block ${to}:hidden`}
-        />
+        <br key={i} className={`hidden ${from}:block ${to}:hidden`} />
       );
     }
 
@@ -55,10 +71,7 @@ const match = part.match(/^\[br(?:-([a-z0-9_-]+))?\]$/i);
       if (!breakpoints.includes(bp)) return null;
 
       return (
-        <br
-          key={i}
-          className={`block ${bp}:hidden`}
-        />
+        <br key={i} className={`block ${bp}:hidden`} />
       );
     }
 
@@ -77,28 +90,18 @@ const match = part.match(/^\[br(?:-([a-z0-9_-]+))?\]$/i);
       );
     }
 
-    // --- UP (alias): [br-md-up]
+    // --- UP: [br-md-up]
     if (rule.endsWith("up")) {
       const bp = rule.replace("-up", "");
 
       if (!breakpoints.includes(bp)) return null;
 
-      return (
-        <br
-          key={i}
-          className={`hidden ${bp}:block`}
-        />
-      );
+      return <br key={i} className={`hidden ${bp}:block`} />;
     }
 
     // --- DEFAULT: [br-md]
     if (breakpoints.includes(rule)) {
-      return (
-        <br
-          key={i}
-          className={`hidden ${rule}:block`}
-        />
-      );
+      return <br key={i} className={`hidden ${rule}:block`} />;
     }
 
     return null;

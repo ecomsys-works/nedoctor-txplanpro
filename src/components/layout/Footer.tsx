@@ -6,11 +6,13 @@ export default function Footer() {
     const menu = t("footer.menu", { returnObjects: true }) as string[]
 
     return (
-        <footer>        
+        <footer>
 
 
             {/* ================= MOBILE ================= */}
-            <div className="nop-container lg:hidden cover-gradient text-white rounded-t-[1.875rem] xs:rounded-t-[1.875rem] md:rounded-t-[1.875rem] pb-[0.625rem] ">
+            <div className="nop-container lg:hidden cover-gradient text-white rounded-t-[1.875rem] pb-[0.625rem] 
+            xs:rounded-t-[1.875rem] 
+            md:rounded-t-[1.875rem]">
 
                 {/* LOGO */}
                 <div className="text-center font-bold text-[1rem] font-micro 
@@ -22,7 +24,9 @@ export default function Footer() {
                 </div>
 
                 {/* devider */}
-                <div className="hidden sm:block sm:px-[1.25rem] md:px-[1.875rem] sm:mb-[0.125rem]">
+                <div className="hidden sm:block 
+                sm:px-[1.25rem] sm:mb-[0.125rem] 
+                md:px-[1.875rem]">
                     <div className="block sm:border-t border-white/10"></div>
                 </div>
 
@@ -32,7 +36,8 @@ export default function Footer() {
                 md:pt-[1.25rem] md:px-[1.875rem]">
 
                     {/* LEFT COLUMN */}
-                    <div className="flex flex-col gap-[2.25rem] justify-between md:gap-[2.9375rem] ">
+                    <div className="flex flex-col gap-[2.25rem] justify-between 
+                    md:gap-[3.4375rem] ">
 
                         {/* MENU */}
                         <ul className="flex flex-col gap-0">
@@ -43,16 +48,34 @@ export default function Footer() {
                             ))}
                         </ul>
 
-                        {/* PRIVACY */}
-                        <div className="flex flex-col gap-[0.9375rem]">
-                            <a href="#" className="max-w-[11.25rem] text-[0.875rem] leading-[1.2] tracking-[-0.04em] font-normal text-white/50 hover:underline hover:text-white transition">
-                                {t("footer.privacy")}
-                            </a>
 
-                            <div className="text-[0.875rem] leading-[1.2] tracking-[-0.04em] font-normal text-white/50">
-                                {t("footer.copyright")}
+
+                        {/* PRIVACY */}
+                        {t('lang') === 'ru' ? (
+                            <div className="flex flex-col gap-[0.9375rem]">
+                                <a href="#" className="max-w-[11.25rem] text-[0.875rem] leading-[1.2] tracking-[-0.04em] font-normal text-white/50 hover:underline hover:text-white transition">
+                                    {t("footer.privacy")}
+                                </a>
+
+                                <div className="text-[0.875rem] leading-[1.2] tracking-[-0.04em] font-normal text-white/50">
+                                    {t("footer.copyright")}
+                                </div>
                             </div>
-                        </div>
+
+                        ) : (
+                            <div className="flex flex-col gap-[1.5625rem] mt-[0.3125rem]  xs:mt-0 ">
+                                <a href="#" className="self-start inline-block fow-underline text-white transition hover:opacity-75 text-[0.875rem] leading-[1.1] tracking-[-0.08em] font-normal 
+                                xs:pt-[0.125rem] 
+                                md:pt-[0rem] md:translate-y-[-0.3125rem] "
+                                >
+                                    {t("footer.dev")}
+                                </a>
+
+                                <div className="text-[0.875rem] leading-[1.2] tracking-[-0.04em] font-normal text-white/50">
+                                    {t("footer.copyright")}
+                                </div>
+                            </div>
+                        )}
 
                     </div>
 
@@ -61,13 +84,22 @@ export default function Footer() {
                     <div className="flex flex-col items-end justify-between">
 
                         {/* DEV */}
-                        <a href="#" className="inline-block fow-underline text-white transition hover:opacity-75 text-[0.875rem] leading-[1.1] tracking-[-0.08em] font-normal 
-                        xs:pt-[0.125rem] md:pt-[0rem] md:translate-y-[-0.3125rem] ">
-                            {t("footer.dev")}
-                        </a>
+                        {t('lang') === 'ru' ? (
+                            <a href="#" className="inline-block fow-underline text-white transition hover:opacity-75 text-[0.875rem] leading-[1.1] tracking-[-0.08em] font-normal 
+                        xs:pt-[0.125rem] 
+                        md:pt-[0rem] md:translate-y-[-0.3125rem] "
+                            >
+                                {t("footer.dev")}
+                            </a>
+                        ) : (
+                            <a href="#" className="mt-[0.1875rem] max-w-[11.25rem] text-[0.875rem] leading-[1.2] tracking-[-0.04em] font-normal text-white/50 hover:underline hover:text-white transition">
+                                {t("footer.privacy")}
+                            </a>
+                        )}
 
                         {/* SOCIAL */}
-                        <div className="flex flex-col gap-[0.9375rem] md:gap-[0.9375rem]">
+                        <div className="flex flex-col gap-[0.9375rem] 
+                        md:gap-[0.9375rem]">
                             <div className="flex justify-end gap-[0.25rem]">
 
                                 <a href="#" className="w-10 h-10 bg-white hover:bg-white/75 transition text-black rounded-full flex items-center justify-center text-xs">
@@ -102,8 +134,10 @@ export default function Footer() {
             </div>
 
 
-              {/* ================= DESKTOP ================= */}
-            <div className="my-container lg:py-[0.375rem] 3xl:py-[2.5rem]">
+            {/* ================= DESKTOP ================= */}
+            <div className="my-container 
+            lg:py-[0.375rem] 
+            3xl:py-[2.5rem]">
                 <div className="hidden lg:block relative">
 
                     {/* LEFT */}

@@ -39,7 +39,8 @@ export default function Popup() {
 
       {/* Modal wrapper */}
       <div
-        className={`max-w-[21.25rem] bg-black w-full rounded-[1.5625rem] p-[0.1875rem] 
+        className={`bg-black w-full 
+         max-w-[21.25rem] rounded-[1.5625rem] p-[0.1875rem] 
          ssm:max-w-[39.375rem] ssm:rounded-[2.8125rem] ssm:p-[0.3125rem] 
          mdd:max-w-[51.0625rem] mdd:rounded-[1.875rem]
          2xl:max-w-[81.25rem] 2xl:p-0 2xl:bg-transparent 
@@ -49,18 +50,21 @@ export default function Popup() {
       >
         {/* Modal content */}
         <div
-          className={`relative w-full flex flex-col gap-[1.5625rem] bg-white rounded-[1.375rem] 
+          className={`relative w-full flex flex-col bg-white 
+            gap-[1.5625rem] rounded-[1.375rem] 
             ssm:gap-[3.125rem] ssm:rounded-[2.8125rem] 
             mdd:gap-[2.5rem] mdd:rounded-[1.625rem] 
             2xl:flex-row 2xl:gap-[0.5625rem] 2xl:bg-black 2xl:rounded-[2.875rem] 2xl:p-[0.5625rem]`}
             >
           {/* Left card */}
-          <div className="flex-[1_1_50%] flex items-center justify-center pt-[3.4375rem] bg-white rounded-t-[2.5rem]
+          <div className="flex-[1_1_50%] flex items-center justify-center bg-white
+          pt-[3.4375rem] rounded-t-[2.5rem]
           ssm:pt-[5rem] 
           2xl:pt-0 2xl:aspect-[787/652] 2xl:rounded-[2.5rem]"
           >
             <h2
-              className={`text-[0.875rem] max-w-[20.8125rem] px-[0.625rem]  mx-auto text-center font-${font} text-black leading-[1] tracking-[-0.05em]
+              className={`text-[0.875rem] mx-auto text-center font-${font} text-black leading-[1] tracking-[-0.05em]
+                max-w-[20.8125rem] px-[0.625rem] 
                 ssm:text-[1.125rem] 
                 2xl:text-[2.5rem] 2xl:max-w-[29.4375rem] 
                 3xl:text-[3.4375rem] 3xl:max-w-[38.875rem] 3xl:mb-[1.875rem] 3xl:leading-[0.88]`}
@@ -70,7 +74,8 @@ export default function Popup() {
           </div>
 
           {/* Right card */}
-          <div className="flex-[1_1_50%] w-full bg-white rounded-[2.8125rem] pb-[0.625rem] px-[0.625rem] 
+          <div className="flex-[1_1_50%] w-full bg-white 
+            pb-[0.625rem] px-[0.625rem] rounded-[2.8125rem] 
             ssm:pb-[1.5625rem] ssm:px-[1.5625rem]
             mdd:rounded-[1.875rem] mdd:pb-[1.875rem] md:px-[1.875rem] 
             2xl:rounded-[2.5rem] 2xl:py-[1.875rem] 2xl:aspect-[787/652]">

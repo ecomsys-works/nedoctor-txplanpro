@@ -25,19 +25,44 @@ export default function WorkflowDetails() {
   const font = t("workflow.details.font");
 
   return (
-    <section className="worflow-details gsap-up workflow-details-swiper my-container mb-[2.1875rem] xs:mb-[3rem] md:mb-[5.5rem] 2xl:mb-[9.375rem]">
+    <section className={`worflow-details gsap-up workflow-details-swiper my-container 
+      ${t('lang') === 'ru' ? 
+      `mb-[2.1875rem] 
+      xs:mb-[3rem] 
+      md:mb-[5.5rem] 
+      2xl:mb-[9.375rem]`
+      :
+      `mb-[2.1875rem] 
+      xs:mb-[3rem] 
+      md:mb-[3.4375rem] 
+      2xl:mb-[9.6875rem]
+      3xl:mb-[9.0625rem]`}
+      `}>
 
       {/* MOBILE */}
       <div className="md:hidden">
 
         {/* Hero title */}
-        <h2 className={`text-[1.5625rem] leading-[1] tracking-[-0.03em] font-${font}
-          2xl:text-[2.5rem] 3xl:text-[3.4375rem] mb-[0.625rem] 2xl:mb-[1.875rem] 3xl:mb-[2.5rem]  3xl:leading-[0.88]  3xl:tracking-[-0.05em]`}>
+        <h2 className={`font-${font}
+           ${t('lang') === 'ru' ?
+            `text-[1.5625rem] leading-[1] tracking-[-0.03em] mb-[0.625rem]`
+            :
+            `text-[1.875rem] leading-[1] tracking-[-0.03em] mb-[0.6875rem]`
+          }
+        `}>
           {heroCard.title}
         </h2>
 
         {/* Description + arrows in one container */}
-        <div className="flex justify-between items-end mb-[1.25rem]">
+        <div className={`flex justify-between items-end mb-[1.25rem]
+        ${t('lang') === 'ru' ?
+            `mb-[1.25rem]`
+            :
+            `mb-[1.5625rem]
+             xs:mb-[1.25rem] 
+
+            `}
+          `}>
           <p className="text-[0.875rem] leading-[1.2] tracking-[-0.04em] text-black
           2xl:text-[1.125rem]">
             {formatHeader(heroCard.description)}</p>
@@ -74,11 +99,11 @@ export default function WorkflowDetails() {
           breakpoints={{
             375: {
               slidesPerView: 1.01,
-               spaceBetween:5,
+              spaceBetween: 5,
             },
             480: {
               slidesPerView: 1.76,
-              spaceBetween:3,
+              spaceBetween: 3,
             }
           }}
         >
@@ -95,19 +120,29 @@ export default function WorkflowDetails() {
       <div className="hidden md:block 3xl:hidden">
         {/* Hero title */}
         <h2 className={`font-${font}  
-           ${t('lang') === 'ru' ? "text-[1.5625rem] leading-[1] tracking-[-0.03em] 2xl:tracking-[-0.05em] 3xl:text-[3.4375rem] mb-[0.625rem] 2xl:-mt-[0.3125rem] 2xl:text-[2.5rem]" : 
-            "text-[1.5625rem] leading-[1] tracking-[-0.03em] 2xl:tracking-[-0.05em] 3xl:text-[3.4375rem] mb-[0.9375rem] 2xl:-mt-[0rem] 2xl:text-[2.8125rem]"}
+           ${t('lang') === 'ru' ?
+            `text-[1.5625rem] leading-[1] tracking-[-0.03em] mb-[0.625rem] 
+            2xl:tracking-[-0.05em] 2xl:-mt-[0.3125rem] 2xl:text-[2.5rem]
+            3xl:text-[3.4375rem]`
+            :
+            `text-[1.5625rem] leading-[1] tracking-[-0.03em] mb-[0.9375rem] 
+             md:text-[1.875rem] md:mb-[0.625rem]
+             2xl:tracking-[-0.05em] 2xl:-mt-[0rem] 2xl:text-[2.8125rem] 2xl:mb-[1.0625rem]
+             3xl:text-[3.4375rem]`}
           `}>
           {heroCard.title}
         </h2>
 
         {/* Description */}
-        <p className={`text-[0.875rem] leading-[1.2] tracking-[-0.04em] text-black mb-[1.25rem] 2xl:text-[1.125rem] 
- ${t('lang') === 'ru' ? "2xl:mb-[1.875rem]" : "2xl:mb-[2.5rem]"}
+        <p className={`text-[0.875rem] leading-[1.2] tracking-[-0.04em] text-black mb-[1.25rem] 
+        2xl:text-[1.125rem] ${t('lang') === 'ru' ? "2xl:mb-[1.875rem]" : "2xl:mb-[2.5rem]"}
           `}>
           {formatHeaderNo(heroCard.description)}</p>
 
-        <div className="grid grid-cols-2 gap-[0.375rem] md:gap-[0.3125rem] 2xl:gap-[0.625rem] md:rounded-[2.8125rem] 2xl:rounded-[3.75rem] 3xl:rounded-[2.8125rem] bg-black p-[0.375rem] md:p-[0.3125rem] 2xl:p-[0.625rem]">
+        <div className="grid grid-cols-2 gap-[0.375rem] bg-black p-[0.375rem]
+        md:gap-[0.3125rem] md:rounded-[2.8125rem] md:p-[0.3125rem]
+        2xl:gap-[0.625rem] 2xl:rounded-[3.75rem] 2xl:p-[0.625rem]
+        3xl:rounded-[2.8125rem]">
 
           <WorkflowDetailsCard card={featureCards[0]} index={0} />
           <WorkflowDetailsCard card={featureCards[1]} index={1} />
@@ -119,7 +154,7 @@ export default function WorkflowDetails() {
 
 
       {/* DESKTOP */}
-      <div className="hidden 3xl:grid grid-cols-3 gap-[0.5625rem] rounded-[2.8125rem] bg-black p-[0.625rem]">
+      <div className="hidden 3xl:grid grid-cols-3 gap-[0.5625rem] p-[0.625rem] rounded-[2.8125rem] bg-black">
 
         <div className="col-span-2">
           <WorkflowDetailsHeroCard card={heroCard} font={font} />

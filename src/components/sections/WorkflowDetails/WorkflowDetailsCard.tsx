@@ -22,7 +22,7 @@ export default function WorkflowDetailsCard({ card, index }: Props) {
   ]
 
   return (
-    <div className="relative flex flex-col h-full bg-white
+    <div className="relative flex flex-col h-full bg-white    
     rounded-[1.25rem] aspect-[338/280] pb-[0.9375rem] px-[0.9375rem] pt-[1.25rem]
       xs:rounded-[1.25rem] xs:aspect-[338/280] xs:pb-[0.9375rem] xs:px-[0.9375rem] xs:pt-[1.25rem]
       md:rounded-[2.5rem] md:aspect-[46/43] md:pb-[1.25rem] md:px-[1.5625rem] md:pt-[1.875rem]      
@@ -35,7 +35,7 @@ export default function WorkflowDetailsCard({ card, index }: Props) {
       xs:text-[0.75rem] xs:h-[1.375rem] xs:px-[0.625rem] xs:top-[0.875rem] xs:right-[0.875rem]
       md:text-[0.875rem] md:h-[1.5625rem] md:px-[0.9375rem] md:top-[1.5625rem] md:right-[1.5625rem]
       xl:text-[1.125rem] xl:h-[2.1875rem] 
-      2xl:top-[1.875rem] 2xl:right-[1.875rem] 
+      2xl:top-[2.1875rem] 2xl:right-[2.1875rem] 
       3xl:top-[1.5625rem] 3xl:right-[1.5625rem]        
        ">
         {card.label}
@@ -52,13 +52,20 @@ export default function WorkflowDetailsCard({ card, index }: Props) {
 
       {/* bottom text */}
       <div className="flex-shrink-0">
-        <h4 className="text-[1.125rem] leading-[1] tracking-[-0.04em] mb-[0.5rem]
-        xs:mb-[0.5rem] md:tracking-[-0.06em] md:mb-[0.75rem] xl:text-[1.625rem]
-        2xl:mb-[0.625rem] 3xl:mb-[0.9375rem] 3xl:text-[1.875rem] ">
+        <h4 className="
+        text-[1.125rem] leading-[1] tracking-[-0.04em] mb-[0.5rem]
+        xs:mb-[0.5rem] 
+        md:tracking-[-0.06em] md:mb-[0.75rem] 
+        xl:text-[1.625rem]
+        2xl:mb-[0.625rem] 
+        3xl:mb-[0.9375rem] 3xl:text-[1.875rem] ">
           {card.title}
         </h4>
 
-        <p className="text-[0.875rem] leading-[1.2] 3xl:leading-[1.3] tracking-[-0.04em] xl:text-[1.125rem]">
+        <p className="text-[0.875rem] leading-[1.2] tracking-[-0.04em] 
+        xl:text-[1.125rem]
+        3xl:leading-[1.3] 
+        ">
           {formatHeader(card.description)}
         </p>
       </div>
