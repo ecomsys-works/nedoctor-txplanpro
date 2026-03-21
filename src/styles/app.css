@@ -340,13 +340,6 @@ Header glass-nav
     background-position: center;
 }
 
-.acc-roundbg {
-    background: url("/images/webp/acc-round.webp");
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-    background-position: center;
-}
-
 .hero-btn:hover {
     background: white !important;
     color: black;
@@ -373,4 +366,12 @@ Header glass-nav
         inset 0 -0.0625rem 0 rgba(255, 255, 255, 0.12);
 
     color: white;
+}
+
+
+.langtoggle-btn{
+    background: url("/images/source/ru-en.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
 }

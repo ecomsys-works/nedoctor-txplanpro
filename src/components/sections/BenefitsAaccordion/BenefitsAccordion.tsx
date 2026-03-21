@@ -50,13 +50,13 @@ export default function BenefitsAccordion() {
 
             <div className="mx-[0.625rem] flex-col rounded-[1.25rem] bg-white 
             xs:mx-[0.9375rem] 
-            sm:mx-0 flex sm:bg-transparent sm:rounded-0">
+            xxs:mx-0 flex xxs:bg-transparent xxs:rounded-0">
                 {accordions.map((accordion, index) => {
                     const isOpen = index === openIndex;
                     return (
                         <div key={index} className="w-full transition-colors duration-500 relative">
                             {/* Мобильная версия <40rem */}
-                            <div className="sm:hidden">
+                            <div className="xxs:hidden">
                                 <div className={`rounded-t-[1.25rem] bg-white text-black transition-colors duration-500 overflow-hidden border-t border-grey-200 ${index === accordions.length - 1 ? "rounded-b-[1.25rem]" : ""}`}>
                                     <AccordionContent
                                         header={accordion.headerMob}
@@ -68,7 +68,7 @@ export default function BenefitsAccordion() {
                             </div>
 
                             {/* sm+ версия 40rem–79.9375rem */}
-                            <div className="hidden sm:block xl:hidden">
+                            <div className="hidden xxs:block xl:hidden">
                                 <div className="border-t border-b border-grey-200 bg-white text-black transition-colors duration-500 overflow-hidden">
                                     <div className="my-container">
                                         <AccordionContent
@@ -126,13 +126,13 @@ function AccordionContent({
                 className={`flex justify-between items-start cursor-pointer gap-5 
          ${t('lang') === 'ru' ?
                         `pl-[0.625rem] pr-[1.25rem] pt-[0.625rem] pb-[1.5rem] 
-            xs:items-center xs:pt-[1rem] xs:pb-[1.0625rem] xs:pl-[0rem] xs:pr-[0rem] 
+            xxs:items-center xxs:pt-[1rem] xxs:pb-[1.0625rem] xxs:pl-[0rem] xxs:pr-[0rem] 
             md:pt-[0.9375rem] md:pb-[1.25rem] md:pl-[0rem] md:pr-[1.875rem] 
             2xl:py-[2rem] 2xl:pr-[1.875rem] 2xl:px-0 
             3xl:py-[2.625rem]`
                         :
                         `pl-[0.625rem] pr-[1.25rem] pt-[1rem] pb-[1.8125rem] 
-            xs:items-center xs:pt-[1.9375rem] xs:pb-[1.25rem] xs:pl-[0rem] xs:pr-[0rem] 
+            xxs:items-center xxs:pt-[1.9375rem] xxs:pb-[1.25rem] xxs:pl-[0rem] xxs:pr-[0rem] 
             md:pl-[0rem] md:pr-[2.5rem] md:pt-[1.875rem] md:pb-[2rem]
             2xl:pt-[3.4375rem] 2xl:pb-[3rem] 2xl:pr-[1.875rem] 2xl:pl-0   
             3xl:pt-[3.625rem] 3xl:pb-[3.5rem]  3xl:pr-[1.875rem] 3xl:pl-0 `}`}
@@ -144,12 +144,12 @@ function AccordionContent({
                         : "text-black group-hover:text-[#b2b2b2]"}  
                              ${t('lang') === 'ru' ?
                             `font-semibold text-[2.1875rem] leading-[1] 
-                                xs:text-[3.75rem]
+                                xxs:text-[3.75rem]
                                 md:font-bold 
                                 2xl:text-[7.5rem]`
                             :
                             `font-semibold text-[2.5rem] leading-[0.88] font-anek -mb-[3.5%]
-                                xs:text-[5.1875rem] ml-[-0.3125rem] 
+                                xxs:text-[5.1875rem] xxs:ml-[-0.3125rem] 
                                 2xl:text-[10rem] 2xl:ml-[-0.625rem]
                                 3xl:text-[10rem] 3xl:ml-[0rem]`}                          
                         `}
@@ -157,19 +157,19 @@ function AccordionContent({
                     <span className="block align-top">{header}</span>
 
                 </h3>
-                <span className={`group-hover:text-white group-hover:border-white/20 border-white/10 rounded-full 
+                <span className={`shrink-0 group-hover:text-white group-hover:border-white/20 border-white/10 rounded-full 
                   ${t('lang') === 'ru' ?
                         `mt-[0.3125rem]
                         mr-[0.125rem] 
-                        xs:-mt-[0.9375rem] 
+                        xxs:-mt-[0.9375rem] 
                         md:-mr-[2.1875rem] 
                         2xl:p-[1.25rem] 2xl:border`
                         :
                         `mt-[0rem]
                         mr-[0.125rem] 
-                        xs:-mt-[0.9375rem] 
+                        xxs:-mt-[0.9375rem] 
                         md:-mr-[2.1875rem] 
-                        2xl:pr-[1.5625rem] 2xl:border
+                        2xl:p-[1.25rem] 2xl:border
                     `}
                `}>
                     <svg
@@ -186,29 +186,55 @@ function AccordionContent({
                 className={`transition-[max-height] duration-500 ease-in-out overflow-hidden ${isOpen ? "max-h-[62.5rem]" : "max-h-0"
                     }`}
             >
-                <div className="flex flex-col pb-[1.25rem]
-                sm:pb-10 xl:flex-row xl:gap-4">
+                <div className="flex flex-col 
+                pb-[1.25rem]
+                xs:pb-10 
+                xl:flex-row xl:gap-4">
                     {/* Пустой блок для отступа на десктопе */}
-                    <div className="hidden xl:block flex-[0_0_50%]"></div>
+                    <div className="hidden xl:block flex-[0_0_47%]"></div>
 
                     <div className="flex-1 flex flex-col gap-5 sm:gap-10">
                         {accordion.rows.map((row, i) => (
                             <div
                                 key={i}
                                 className={`border-grey-200 flex flex-col 
-                                            px-[0.625rem] pt-[1.25rem] gap-2 border-t
-                                            sm:pt-[2.5rem] sm:gap-10 sm:grid sm:grid-cols-2 sm:gap-25 
-                                            md:gap-35
-                                            xl:items-start
-                                            2xl:gap-25 
+                                            px-[0.625rem] pt-[1.25rem] gap-[0.625rem] border-t
+                                            xs:pt-[2.5rem] xs:grid xs:grid-cols-[48%_52%] xs:gap-[1.5625rem]
+                                            mdd:gap-[2.5rem]                                             
+                                            2xl:gap-[4.0625rem]
+                                            3xl:gap-[5rem]                                           
                                             ${i === accordion.rows.length - 1 ? "border-b pb-[2.5rem]" : ""}
                                         `}>
-                                <h4 className="text-[0.875rem] leading-[1.3] tracking-[-0.04em] font-semibold
-                                sm:leading-[1] sm:text-[1.125rem]  
-                                2xl:text-[1.5rem] 2xl:leading-[1.1] 2xl:text-[#b2b2b2]">{row.title}</h4>
+                                <h4 className={`${t('lang') === 'ru' ? 
+                                `text-[0.875rem] leading-[1.3] tracking-[-0.04em] font-semibold max-w-[11.6875rem]
+                                xs:leading-[1] xs:text-[1.125rem] xs:font-normal
+                                md:max-w-[17.125rem]
+                                xl:max-w-[initial]
+                                2xl:text-[1.625rem] 2xl:leading-[1.1] 2xl:text-[#b2b2b2] 2xl:tracking-[-0.06em] 
+                                3xl:text-[1.5rem] 3xl:text-[1.5rem] 3xl:max-w-[23.125rem]`
+                                :
+                                `text-[0.875rem] leading-[1.3] tracking-[-0.04em] font-semibold max-w-[11.6875rem]
+                                xs:leading-[1] xs:text-[1.125rem] xs:font-normal                                
+                                md:max-w-[16.25rem]
+                                xl:max-w-[initial]
+                                2xl:text-[1.625rem] 2xl:leading-[1.1] 2xl:text-[#b2b2b2] 2xl:tracking-[-0.06em]
+                                3xl:text-[1.5rem] 3xl:max-w-[23.125rem]`}
+                                `}
+                                >{row.title}</h4>
 
-                                <p className="text-[0.875rem] leading-[1.2] tracking-[-0.04em] font-semibold
-                                2xl:text-[1.125rem] 2xl:leading-[1.3] 2xl:text-[#b2b2b2]">{row.description}</p>
+                                <p className={`${t('lang') === 'ru' ? 
+                                `text-[0.875rem] leading-[1.2] tracking-[-0.04em] max-w-[75%]                                 
+                                 md:max-w-[17.125rem] md:pt-0
+                                 xl:max-w-[initial]
+                                2xl:text-[1.125rem] 2xl:leading-[1.3] 2xl:text-[#b2b2b2]
+                                3xl:max-w-[20.625rem]`
+                                :
+                                `text-[0.875rem] leading-[1.2] tracking-[-0.04em] max-w-[75%]                                
+                                md:max-w-[16.875rem] md:pr-0
+                                xl:max-w-[initial]
+                                2xl:text-[1.125rem] 2xl:leading-[1.3] 2xl:text-[#b2b2b2] 
+                                3xl:max-w-[20.625rem] `}                                
+                                `}>{row.description}</p>
                             </div>
                         ))}
                     </div>

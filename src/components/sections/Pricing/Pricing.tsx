@@ -415,7 +415,8 @@ export default function Pricing() {
                                 }
 
                                 {/* русская средина моб версия */}
-                                 {t('lang') === 'ru' ? (<div className={`grid grid-cols-1 gap-1 
+                                 {t('lang') === 'ru' ? (<div className={`grid grid-cols-1 xs:grid-cols-2 gap-1 
+                                min-h-[8.4375rem] mb-[0rem]
                                 xs:gap-0 xs:min-h-[9.375rem] xs:mb-[2.1875rem] 
                                 sm:grid-cols-2 
                                 md:min-h-[10.125rem] md:mb-[1.5625rem]`}
@@ -459,7 +460,7 @@ export default function Pricing() {
                                                 pt-[1.25rem] xs:pt-0
                                                 2xl:text-[1.5rem] 2xl:mb-[0.3125rem]">{card.limitsTitle}</h4>
                                             ) : (
-                                                <h4 className="hidden sm:block text-transparent text-[0.9375rem] leading-[1.1] tracking-[-0.06em] font-semibold
+                                                <h4 className="hidden xs:block text-transparent text-[0.9375rem] leading-[1.1] tracking-[-0.06em] font-semibold
                                                 2xl:mb-[0.3125rem] 2xl:text-[1.5rem]"
                                                 >*</h4>
                                             )}
@@ -484,11 +485,10 @@ export default function Pricing() {
                                 </div>
 
                                 // английская средина моб версия
-                            ) : (<div className={`grid ${card.limitsTitle ? "" : "grid-cols-[45%_55%]"} mb-[0.8125rem]
-                                xs:gap-0 xs:min-h-[9.6875rem] xs:mb-[2.1875rem] 
-                                md:min-h-[9.375rem] md:mb-[1.5625rem] 
-                                sm:grid-cols-2 
-                                md:min-h-[9.8125rem] md:mb-[1.5625rem]`}
+                            ) : (<div className={`grid ${card.limitsTitle ? "" : "grid-cols-[45%_55%]" } 
+                               min-h-[8.4375rem] mb-[0.9375rem]
+                               xs:gap-0 xs:min-h-[9.6875rem] xs:mb-[2.1875rem] xs:grid-cols-2
+                               md:min-h-[9.8125rem] md:mb-[1.5625rem]`}
                                 >
                                     {left.length > 0 && (
                                         <div className={`pl-[0.75rem] pr-[0rem] pt-[1.875rem] flex flex-col gap-3 

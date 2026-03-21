@@ -53,9 +53,10 @@ module.exports = {
       'mdd': "950px",
       'lg': '1024px',
       'xl': '1280px',
-      '2xl': '1536px',
+      '2xl': '1536px',      
       '2xxl': '1680px',
       '3xl': '1880px',
+      'lang-desk-visible': '1620px',      
     },
 
     extend: {

@@ -23,7 +23,7 @@ export default function Popup() {
   };
 
   return (
-    <section 
+    <section
       className={`
         popup fixed inset-0 z-50 flex items-center justify-center p-[0.625rem]
         transition-all duration-300 
@@ -41,8 +41,8 @@ export default function Popup() {
       <div
         className={`bg-black w-full 
          max-w-[21.25rem] rounded-[1.5625rem] p-[0.1875rem] 
-         ssm:max-w-[39.375rem] ssm:rounded-[2.8125rem] ssm:p-[0.3125rem] 
-         mdd:max-w-[51.0625rem] mdd:rounded-[1.875rem]
+         xs:max-w-[39.375rem] xs:rounded-[2.8125rem] xs:p-[0.3125rem] 
+         md:max-w-[51.0625rem] 
          2xl:max-w-[81.25rem] 2xl:p-0 2xl:bg-transparent 
          3xl:max-w-[100rem]          
          transform transition-all duration-300 ${isOpen ? "translate-y-0 scale-100" : "translate-y-6 scale-95"}
@@ -51,24 +51,36 @@ export default function Popup() {
         {/* Modal content */}
         <div
           className={`relative w-full flex flex-col bg-white 
-            gap-[1.5625rem] rounded-[1.375rem] 
-            ssm:gap-[3.125rem] ssm:rounded-[2.8125rem] 
-            mdd:gap-[2.5rem] mdd:rounded-[1.625rem] 
-            2xl:flex-row 2xl:gap-[0.5625rem] 2xl:bg-black 2xl:rounded-[2.875rem] 2xl:p-[0.5625rem]`}
-            >
+            gap-[1.875rem] rounded-[1.375rem] 
+            xs:gap-[3.75rem] xs:rounded-[2.8125rem] 
+            md:gap-[3.125rem] 
+            2xl:flex-row 2xl:gap-[0.5625rem] 2xl:bg-black 2xl:p-[0.5625rem]`}
+        >
           {/* Left card */}
-          <div className="flex-[1_1_50%] flex items-center justify-center bg-white
-          pt-[3.4375rem] rounded-t-[2.5rem]
-          ssm:pt-[5rem] 
-          2xl:pt-0 2xl:aspect-[787/652] 2xl:rounded-[2.5rem]"
+          <div className={`flex-[1_1_50%] flex items-center justify-center bg-white rounded-t-[2.5rem]
+           xs:pt-[5rem] 
+           md:rounded-[2.5rem] 
+           2xl:pt-0 2xl:aspect-[787/652] ${t('lang') === 'ru' ? `pt-[3.125rem]` : `pt-[2.8125rem]`}`}
           >
             <h2
-              className={`text-[0.875rem] mx-auto text-center font-${font} text-black leading-[1] tracking-[-0.05em]
-                max-w-[20.8125rem] px-[0.625rem] 
-                ssm:text-[1.125rem] 
-                2xl:text-[2.5rem] 2xl:max-w-[29.4375rem] 
-                3xl:text-[3.4375rem] 3xl:max-w-[38.875rem] 3xl:mb-[1.875rem] 3xl:leading-[0.88]`}
-                >
+              className={`mx-auto text-center text-black font-${font}         
+                ${t('lang') === 'ru' ?
+                  `max-w-[16.625rem] px-[0.625rem] text-[0.875rem] leading-[1.2] tracking-[-0.04em]
+                 xs:max-w-[21rem] xs:leading-[1.2] xs:text-[1.125rem] 
+                 md:max-w-[20.8125rem] 
+                 lg:max-w-[23.8125rem] lg:text-[1.875rem] 
+                 2xl:max-w-[27.5625rem] 2xl:text-[2.5rem] 2xl:leading-[1] 2xl:tracking-[-0.05em]
+                 3xl:max-w-[38.875rem] 3xl:text-[3.4375rem] 3xl:mb-[1.875rem] 3xl:leading-[1]
+                `
+                  :
+                  `max-w-[11.5625rem] px-[0.625rem] text-[0.875rem] leading-[1.2] tracking-[-0.04em]
+                 xs:max-w-[15.75rem] xs:leading-[1] xs:text-[1.125rem]  
+                 md:max-w-[16.375rem]
+                 lg:max-w-[23.1875rem] lg:text-[1.875rem] 
+                 2xl:max-w-[21.25rem] 2xl:text-[2.8125rem] 2xl:leading-[0.9] 2xl:tracking-[-0.05em]
+                 3xl:max-w-[26.1875rem] 3xl:text-[3.4375rem] 3xl:leading-[0.95]`}
+                `}
+            >
               {title}
             </h2>
           </div>
@@ -76,13 +88,13 @@ export default function Popup() {
           {/* Right card */}
           <div className="flex-[1_1_50%] w-full bg-white 
             pb-[0.625rem] px-[0.625rem] rounded-[2.8125rem] 
-            ssm:pb-[1.5625rem] ssm:px-[1.5625rem]
-            mdd:rounded-[1.875rem] mdd:pb-[1.875rem] md:px-[1.875rem] 
-            2xl:rounded-[2.5rem] 2xl:py-[1.875rem] 2xl:aspect-[787/652]">
+            xs:pb-[1.875rem] xs:px-[1.5625rem] xs:rounded-[2.5rem]
+            md:px-[1.875rem] 
+            2xl:py-[1.875rem] 2xl:aspect-[787/652]">
             <div className="h-full flex flex-col ssm:flex-row 2xl:flex-col justify-center items-center gap-[0.625rem] ssm:gap-[0.1875rem] 2xl:gap-5 2xl:max-w-[31.875rem] mx-auto">
               {/* Input field */}
               <div className="flex items-center gap-[0.625rem] h-[3.4375rem] rounded-[2.5rem] px-6 border border-grey w-full 
-                ssm:w-[initial] mdd:w-full
+                xs:w-[initial] xs:w-full
                 2xl:gap-[1.5625rem] 2xl:h-[4.375rem] ">
                 <div className="w-[0.625rem] h-[0.625rem] 2xl:w-4 2xl:h-4 rounded-full bg-orange" />
                 <input
@@ -95,9 +107,17 @@ export default function Popup() {
               </div>
 
               {/* Submit button */}
-              <BlackBtn className="w-[100%] text-[1.125rem] h-[3.4375rem]  px-[1.25rem] rounded-[2.5rem]
-                ssm:w-[50%] mdd:w-[initial] 
-                2xl:w-full 2xl:text-[1.25rem] 2xl:h-[4.375rem]">
+              <BlackBtn className={`h-[3.4375rem] text-[1.125rem] px-[1.25rem] rounded-[2.5rem]                 
+              2xl:w-full 2xl:text-[1.25rem] 2xl:h-[4.375rem]
+                ${t('lang') === 'ru' ?
+                  `w-full self-stretch 
+                  xs:w-[initial] xs:min-w-[18.0625rem]
+                  `
+                  :
+                  `w-full self-stretch 
+                  xs:w-[initial] xs:min-w-[13.625rem]
+                  `}
+                `}>
                 {buttonText}
               </BlackBtn>
             </div>
@@ -106,7 +126,7 @@ export default function Popup() {
           {/* Close button */}
           <button
             className="absolute right-6 top-5 text-[#a0a0a0] hover:text-black transition cursor-pointer
-              ssm:right-9 ssm:top-7.5 mdd:right-10 
+              xs:right-9 xs:top-7.5 md:right-10 
               2xl:right-11 2xl:top-11"
             onClick={() => setIsOpen(false)}
           >

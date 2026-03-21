@@ -3,6 +3,8 @@ import { useTranslation } from "react-i18next";
 import { usePopup } from "@/сontext/Popup/usePopup";
 import { useBodyScrollLock } from "@/hooks/useBodyScrollLock";
 
+import LanguageToggle from "@/ui/LanguageToggle";
+
 export default function Header() {
   const { t } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
@@ -20,7 +22,7 @@ export default function Header() {
     <header className="my-container w-full bg-black text-white relative
     py-[0.625rem] mb-[-0.0625rem] md:py-[0.9375rem]  ">
 
-      <div className="flex items-center justify-between">
+      <div className="relative flex items-center justify-between">
         {/* Logo */}
         <a
           href="#hero"
@@ -30,14 +32,15 @@ export default function Header() {
         </a>
 
         {/* Desktop Menu */}
-        <nav className={`hidden md:flex glass rounded-full items-center  
+
+        <nav className={`realtive hidden md:flex glass rounded-full items-center  
           ${t('lang') === 'ru' ? `
             px-[1.4375rem] h-[2.5rem]
             md:px-[1.5625rem] md:gap-[0.9375rem] md:ml-[1.25rem] 
             xl:gap-[1.875rem] xl:h-[3rem]
             2xl:ml-[3.25rem] 2xl:px-[2.1875rem] 
-            3xl:gap-[2.0625rem] 3xl:ml-[2.5rem] 3xl:px-[3.4375rem] ` 
-            :`
+            3xl:gap-[2.0625rem] 3xl:ml-[2.5rem] 3xl:px-[3.4375rem] `
+            : `
             px-[1.4375rem] h-[2.5rem]
             md:px-[2.5rem] md:gap-[1.25rem] md:ml-[0.9375rem] 
             xl:px-[3.4375rem] xl:gap-[2.0625rem] xl:h-[3rem]
@@ -48,7 +51,7 @@ export default function Header() {
             <a
               key={i}
               href={`#${item.anchor}`}
-              className="text-[0.875rem] leading-[1.2] tracking-[-0.04em] font-normal font-inter text-white/90 hover:opacity-75 transition
+              className="text-[0.875rem] leading-[1.2] tracking-[-0.04em] font-normal font-inter text-white/90 hover:scale-105 hover:text-white transition
               xl:text-[1.125rem] xl:leading-[1.3] 
               "
             >
@@ -57,26 +60,37 @@ export default function Header() {
           ))}
         </nav>
 
+        <LanguageToggle className="hidden sm:block lang-desk-visible:hidden left-[0rem] top-[3.125rem] z-10" />
+
         {/* Desktop Login */}
-        <button
-          style={{ boxShadow: "inset 0 0.0625rem 0 rgba(255,255,255,0.1), inset 0 -0.0625rem 0 rgba(255,255,255,0.1)" }}
-          className="btn-desk hidden items-center cursor-pointer h-[2.5rem] px-[2.5rem] rounded-[6.25rem] text-[1.125rem] font-medium tracking-[-0.04em] 
+        <div className="relative hidden md:inline-flex">
+          <button
+            style={{ boxShadow: "inset 0 0.0625rem 0 rgba(255,255,255,0.1), inset 0 -0.0625rem 0 rgba(255,255,255,0.1)" }}
+            className="btn-desk items-center hidden cursor-pointer h-[2.5rem] px-[2.5rem] rounded-[6.25rem] text-[1.125rem] font-medium tracking-[-0.04em] 
            transition duration-300 hover:bg-white hover:text-black active:scale-95 md:inline-flex 
-           xl:h-[3rem] xl:px-[3.75rem] xl:text-[1.25rem]"
-          onClick={() => setIsOpenPopup(true)}
-        >
-          {login}
-        </button>
+           xl:h-[3rem] xl:px-[3.75rem] xl:text-[1.25rem] xl:min-w-[10.9375rem] "
+            onClick={() => setIsOpenPopup(true)}
+          >
+            {login}
+          </button>
+
+          <LanguageToggle className="hidden lang-desk-visible:block right-[9.375rem] xl:right-[12.1875rem]" />
+        </div>
+
+
 
         {/* Mobile Burger in circle */}
-        <button
-          className="btn-mob md:hidden flex items-center justify-center w-[2.625rem] h-[2.625rem] cursor-pointer rounded-full text-white"
-          onClick={() => setIsOpen(true)}
-        >
-          <svg className="w-[1.5rem] h-[1.5rem]">
-            <use href="/icons/sprite/sprite.svg#burger" />
-          </svg>
-        </button>
+        <div className="relative md:hidden flex">
+          <LanguageToggle className="sm:hidden right-[3.125rem]" />
+          <button
+            className="btn-mob md:hidden flex items-center justify-center w-[2.625rem] h-[2.625rem] cursor-pointer rounded-full text-white"
+            onClick={() => setIsOpen(true)}
+          >
+            <svg className="w-[1.5rem] h-[1.5rem]">
+              <use href="/icons/sprite/sprite.svg#burger" />
+            </svg>
+          </button>
+        </div>
       </div>
 
       {/* Mobile Canvas Menu */}
