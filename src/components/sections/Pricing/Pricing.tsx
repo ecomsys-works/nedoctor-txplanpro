@@ -247,7 +247,7 @@ export default function Pricing() {
                                         <ul className="space-y-1">
                                             {left.map((item, idx) => (
                                                 <li key={idx} className="flex items-start gap-[0.5625rem]">
-                                                    <span className="mt-[0.1875rem] w-[1.0625rem] h-[1.0625rem] bg-white rounded-full flex justify-center items-center text-white">
+                                                    <span className="shrink-0 mt-[0.1875rem] w-[1.0625rem] h-[1.0625rem] bg-white rounded-full flex justify-center items-center text-white">
                                                         <svg className="w-[0.5625rem] h-[0.4375rem] text-black">
                                                             <use href="./icons/sprite/sprite.svg#check"></use>
                                                         </svg>
@@ -270,7 +270,7 @@ export default function Pricing() {
                                         <ul className="space-y-1">
                                             {right.map((item, idx) => (
                                                 <li key={idx} className="flex items-start gap-[0.3125rem]">
-                                                    <span className="mt-[0.1875rem] w-[1.0625rem] h-[1.0625rem] bg-white rounded-full flex justify-center items-center text-white">
+                                                    <span className="shrink-0 mt-[0.1875rem] w-[1.0625rem] h-[1.0625rem] bg-white rounded-full flex justify-center items-center text-white">
                                                         <svg className="w-[0.5625rem] h-[0.4375rem] text-black">
                                                             <use href="./icons/sprite/sprite.svg#check"></use>
                                                         </svg>
@@ -433,7 +433,7 @@ export default function Pricing() {
 
                                             <ul className="space-y-1">
                                                 {left.map((item, idx) => (
-                                                    <li key={idx} className="flex items-start gap-[0.3125rem]">
+                                                    <li key={idx} className="flex items-start gap-[0.3125rem] shrink-0">
                                                         <span className="mt-[0.1875rem] shrink-0 w-[0.75rem] h-[0.75rem] bg-white rounded-full flex justify-center items-center text-white
                                                         2xl:w-[1.0625rem] 2xl:h-[1.0625rem]"
                                                         >
@@ -466,7 +466,7 @@ export default function Pricing() {
                                             )}
                                             <ul className="space-y-1 ">
                                                 {right.map((item, idx) => (
-                                                    <li key={idx} className="flex items-start gap-2">
+                                                    <li key={idx} className="flex items-start gap-2 shrink-0">
                                                         <span className="mt-[0.1875rem] shrink-0 w-[0.75rem] h-[0.75rem] bg-white rounded-full flex justify-center items-center text-white
                                                         2xl:w-[1.0625rem] 2xl:h-[1.0625rem] "
                                                         >

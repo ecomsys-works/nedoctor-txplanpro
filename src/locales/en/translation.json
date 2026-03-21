@@ -28,6 +28,16 @@
     ],
     "login": "Log in"
   },
+   "heroPrivacy": {
+    "font": "libre",
+    "title": "Privacy policy",
+    "backBtn" : " Back to the main page"
+   },
+   "privacy": {
+    "font": "libre",
+    "title" : "Privacy policy",
+    "content" : "Content"
+   },
   "hero": {
     "font": "libre",
     "title": "Spend less chair time explaining and boost case acceptance",
@@ -74,7 +84,7 @@
   },
   "partners": {
     "font": "libre",
-    "title": "Our partners",
+    "title": "For who",
     "rows": [
       {
         "title": "For individual [br-2xl] dentists ",
@@ -198,24 +208,24 @@
       "cards": [
         {
           "title": "How it looks & feels",
-          "description": "Designed to reduce friction [br] for you and your patients."
+          "description": "Designed to reduce friction [br-md] for you and your patients."
         },
         {
           "label": "No installation",
           "title": "Start instantly",
-          "description": "Open the app and begin creating plans [br] right away. No installation, no IT headaches.",
+          "description": "Open the app and begin creating plans [br-md] right away. No installation, no IT headaches.",
           "image": "/images/webp/workflow-details/en/pic-1.webp"
         },
         {
           "label": "Adapts to workflow",
           "title": "Matches how you think",
-          "description": "A clear, step-by-step structure that [br] follows how you actually think and explain.",
+          "description": "A clear, step-by-step structure that [br-md] follows how you actually think and explain.",
           "image": "/images/webp/workflow-details/en/pic-2.webp"
         },
         {
           "label": "No distraction",
           "title": "Clean & focused design",
-          "description": "Modern layout that keeps attention [br] on the case, not on the tool.",
+          "description": "Modern layout that keeps attention [br-md] on the case, not on the tool.",
           "image": "/images/webp/workflow-details/en/pic-3.webp"
         },
         {
@@ -413,7 +423,7 @@
         "monthLimitsTitle": "Monthly limits:",
         "monthLimits": [
           "2 Comprehensive treatment plans",
-          "5 Focused treatment plans",
+          "5 Local treatment plans",
           "Unlimited simple estimates"
         ],
         "planPrice": "",
@@ -431,17 +441,17 @@
       {
         "title": "Solo Plan",
         "description": "Best for individual dentists",
-        "price": "€59",
+        "price": "$59",
         "priceDescription": "per month",
         "blackLabel": "",
         "whiteLabel": "",
         "monthLimitsTitle": "Monthly limits:",
         "monthLimits": [
           "10 Comprehensive plans",
-          "25 Focused plans",
+          "25 Local plans",
           "Unlimited simple estimates"
         ],
-        "planPrice": "≈ €5.9 per comprehensive plan",
+        "planPrice": "≈ $5.9 per comprehensive plan",
         "includedTitle": "Includes",
         "included": [
           "Patient database",
@@ -457,17 +467,17 @@
       {
         "title": "Practice Plan",
         "description": "For small clinics & dental teams",
-        "price": "€149",
+        "price": "$149",
         "priceDescription": "per month",
         "blackLabel": "Most popular",
         "whiteLabel": "",
         "monthLimitsTitle": "Monthly limits:",
         "monthLimits": [
           "40 Comprehensive plans",
-          "100 Focused plans",
+          "100 Local plans",
           "Unlimited simple estimates"
         ],
-        "planPrice": "≈ €3.7 per comprehensive plan",
+        "planPrice": "≈ $3.7 per comprehensive plan",
         "includedTitle": "Includes",
         "included": [
           "Clinic branding",
@@ -482,17 +492,17 @@
       {
         "title": "Clinic Plan",
         "description": "Best for growing clinics",
-        "price": "€300",
+        "price": "$300",
         "priceDescription": "per month",
         "blackLabel": "",
         "whiteLabel": "Free plan",
         "monthLimitsTitle": "Monthly limits:",
         "monthLimits": [
           "100 Comprehensive plans",
-          "250 Focused plans",
+          "250 Local plans",
           "Unlimited simple estimates"
         ],
-        "planPrice": "≈ €3 per comprehensive plan",
+        "planPrice": "≈ $3 per comprehensive plan",
         "includedTitle": "Includes",
         "included": ["Custom template", "Priority support", "Up to 10 users"],
         "buttonText": "Start Clinic"

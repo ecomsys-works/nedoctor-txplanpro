@@ -19,10 +19,10 @@ import { PopupProvider } from "@/сontext/Popup/PopupProvider";
 
 import { EmailProvider } from "@/сontext/Email/EmailProvider";
 
-// import { useScrollAnimations } from "@/hooks/useScrollAnimation";
+import { useScrollAnimations } from "@/hooks/useScrollAnimation";
 
 export function Home() {
-  // useScrollAnimations("html");
+  useScrollAnimations("html");
   return (
     <EmailProvider>
       <PopupProvider>

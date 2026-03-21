@@ -22,7 +22,7 @@ export default function ListForm() {
             <div className="flex flex-col gap-[0.625rem] bg-black rounded-t-[2.8125rem] rounded-b-[4.0625rem] p-[0.625rem]">
 
                 {/* WHITE PANEL */}
-                <div className="bg-white rounded-[2.5rem] flex items-end min-h-[19.0625rem]
+                <div className="bg-white rounded-[2.5rem] flex items-end min-h-[19.0625rem] p-[0.625rem]
                 2xl:p-[0.625rem] 
                 3xl:py-[1.875rem] 3xl:pl-[1.875rem] 3xl:pr-[1.25rem]">
 
@@ -45,7 +45,7 @@ export default function ListForm() {
                         </div>
 
                         {/* BUTTON */}
-                        <BlackBtn className="text-[1.25rem] rounded-[2.5rem] h-[5rem] tracking-[-0.04em] font-medium 
+                        <BlackBtn className="text-[1.25rem] rounded-[2.5rem] h-[5rem] tracking-[-0.04em] font-medium px-[1.5625rem]
                         2xl:px-[1.5625rem] 2xl:min-w-[15.9375rem] 
                         3xl:px-[2.375rem] 3xl:min-w-[15.4375rem]">
                             {buttonText}

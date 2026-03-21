@@ -16,7 +16,7 @@ export default function WorkflowDetailsCard({ card, index }: Props) {
   // массив для управления размерами картинок каждой карточки
   const imageClasses = [
     "max-h-[82%] xs:max-h-[82%] xs:mb-[0rem] md:max-h-[65%] md:mb-[2.1875rem] 2xl:max-h-[65%] 3xl:max-h-[72%] 2xl:mb-[0.625rem]",
-    "max-h-[82%] xs:max-h-[82%] xs:mb-[0rem] md:max-h-[65%] md:mb-[2.1875rem] 2xl:max-h-[78%] 2xl:mb-[0.625rem] 3xl:max-h-[84%] 3xl:mb-[0.3125rem]",
+    "max-h-[82%] xs:max-h-[82%] xs:mb-[0rem] md:max-h-[65%] md:mb-[2.1875rem] 2xl:max-h-[78%] 2xl:mb-[0.625rem] 3xl:max-h-[74%] 3xl:mb-[0.3125rem]",
     "max-h-[80%] xs:max-h-[82%] xs:mb-[0rem] md:max-h-[70%] md:mb-[2.1875rem] 2xl:max-h-[79%] 2xl:mb-[1.25rem] 3xl:max-h-[87%] 3xl:-mb-[0.9375rem]",
     "max-h-[80%] xs:max-h-[82%] xs:mb-[0rem] md:max-h-[65%] md:mb-[0.9375rem] 2xl:max-h-[78%] 2xl:mb-[0.625rem] 3xl:max-h-[86%] 3xl:-mb-[1.25rem]",
   ]

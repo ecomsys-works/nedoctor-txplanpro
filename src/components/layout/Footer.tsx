@@ -1,14 +1,11 @@
 import { useTranslation } from "react-i18next"
+import { Link } from "react-router-dom"
 
 export default function Footer() {
     const { t } = useTranslation()
-
     const menu = t("footer.menu", { returnObjects: true }) as string[]
-
     return (
         <footer>
-
-
             {/* ================= MOBILE ================= */}
             <div className="nop-container lg:hidden cover-gradient text-white rounded-t-[1.875rem] pb-[0.625rem] 
             xs:rounded-t-[1.875rem] 
@@ -53,9 +50,9 @@ export default function Footer() {
                         {/* PRIVACY */}
                         {t('lang') === 'ru' ? (
                             <div className="flex flex-col gap-[0.9375rem]">
-                                <a href="#" className="max-w-[11.25rem] text-[0.875rem] leading-[1.2] tracking-[-0.04em] font-normal text-white/50 hover:underline hover:text-white transition">
+                                <Link to="privacy" className="max-w-[11.25rem] text-[0.875rem] leading-[1.2] tracking-[-0.04em] font-normal text-white/50 hover:underline hover:text-white transition">
                                     {t("footer.privacy")}
-                                </a>
+                                </Link>
 
                                 <div className="text-[0.875rem] leading-[1.2] tracking-[-0.04em] font-normal text-white/50">
                                     {t("footer.copyright")}
@@ -92,9 +89,9 @@ export default function Footer() {
                                 {t("footer.dev")}
                             </a>
                         ) : (
-                            <a href="#" className="mt-[0.1875rem] max-w-[11.25rem] text-[0.875rem] leading-[1.2] tracking-[-0.04em] font-normal text-white/50 hover:underline hover:text-white transition">
+                            <Link to="privacy" className="mt-[0.1875rem] max-w-[11.25rem] text-[0.875rem] leading-[1.2] tracking-[-0.04em] font-normal text-white/50 hover:underline hover:text-white transition">
                                 {t("footer.privacy")}
-                            </a>
+                            </Link>
                         )}
 
                         {/* SOCIAL */}
@@ -142,15 +139,15 @@ export default function Footer() {
 
                     {/* LEFT */}
                     <div className="absolute left-0 bottom-0">
-                        <a href="#" className="text-black transition hover:opacity-75 text-[1.125rem] leading-[1.3] tracking-[-0.04em] font-normal ">
+                        <Link to="privacy" className="text-black transition hover:opacity-75 text-[1.125rem] leading-[1.3] tracking-[-0.04em] font-normal ">
                             {t("footer.privacy")}
-                        </a>
+                        </Link>
                     </div>
 
                     {/* CENTER LOGO */}
-                    <div className="flex justify-center">
+                    <Link to="/" className="flex justify-center">
                         <span className="font-bold text-[1.25rem] font-micro ml-[0.625rem]">{t("footer.logo")}</span>
-                    </div>
+                    </Link>
 
                     {/* RIGHT */}
                     <div className="absolute right-0 bottom-0 text-right">

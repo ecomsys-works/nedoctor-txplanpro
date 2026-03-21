@@ -108,6 +108,7 @@ They might well be outsourced to an external stylesheet of course.
  .svg-acc-arrow-dims { width: 30px; height: 30px; }
  .svg-arrow-left-dims { width: 21px; height: 16px; }
  .svg-arrow-right-dims { width: 21px; height: 16px; }
+ .svg-back-btn-dims { width: 18px; height: 14px; }
  .svg-burger-dims { width: 24px; height: 24px; }
  .svg-caret-dims { width: 14px; height: 8px; }
  .svg-chart-dims { width: 24px; height: 24px; }
@@ -154,6 +155,7 @@ for further details on how to create this embeddable sprite variant.
      <symbol fill="none" viewBox="0 0 30 30" id="acc-arrow" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M29.898 28.149a1.75 1.75 0 0 1-1.75 1.749H8.35a1.75 1.75 0 1 1 0-3.498h15.575L.513 2.988A1.75 1.75 0 1 1 2.987.513L26.4 23.925V8.35a1.75 1.75 0 1 1 3.498 0v19.799Z" fill="currentColor"/></symbol>
      <symbol fill="none" viewBox="0 0 21 16" id="arrow-left" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M.263 8.626a.88.88 0 0 1 0-1.252l7.2-7.092A.9.9 0 0 1 8.106 0a.912.912 0 0 1 .652.26.885.885 0 0 1 .264.642.875.875 0 0 1-.286.633L3.07 7.114H20.1c.239 0 .468.093.636.26a.88.88 0 0 1 0 1.253.907.907 0 0 1-.636.26H3.071l5.665 5.578a.888.888 0 0 1 .286.633.875.875 0 0 1-.264.642.903.903 0 0 1-.652.26.913.913 0 0 1-.643-.282l-7.2-7.092Z" fill="currentColor"/></symbol>
      <symbol fill="none" viewBox="0 0 21 16" id="arrow-right" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M20.737 7.374a.88.88 0 0 1 0 1.252l-7.2 7.092a.9.9 0 0 1-.643.282.912.912 0 0 1-.652-.26.886.886 0 0 1-.264-.642.876.876 0 0 1 .287-.633l5.664-5.579H.9a.907.907 0 0 1-.636-.26.88.88 0 0 1 0-1.253.907.907 0 0 1 .636-.26h17.029l-5.664-5.578a.886.886 0 0 1-.287-.633.875.875 0 0 1 .264-.642.902.902 0 0 1 .652-.26.911.911 0 0 1 .643.282l7.2 7.092Z" fill="currentColor"/></symbol>
+     <symbol fill="none" viewBox="0 0 18 14" id="back-btn" xmlns="http://www.w3.org/2000/svg"><path d="M16.75 6.75h-16m0 0 6-6m-6 6 6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
      <symbol fill="none" viewBox="0 0 24 24" id="burger" xmlns="http://www.w3.org/2000/svg"><path d="M4 18a.965.965 0 0 1-.712-.288A.972.972 0 0 1 3 17c0-.283.095-.52.288-.712A.97.97 0 0 1 4 16h16c.283 0 .521.096.713.288.192.192.288.43.287.712 0 .283-.097.52-.288.713A.957.957 0 0 1 20 18H4Zm0-5a.965.965 0 0 1-.712-.288A.972.972 0 0 1 3 12c0-.283.095-.52.288-.712A.97.97 0 0 1 4 11h16c.283 0 .521.096.713.288.192.192.288.43.287.712 0 .283-.097.52-.288.713A.957.957 0 0 1 20 13H4Zm0-5a.965.965 0 0 1-.712-.288A.972.972 0 0 1 3 7c0-.283.095-.52.288-.712A.97.97 0 0 1 4 6h16c.283 0 .521.096.713.288.192.192.288.43.287.712 0 .283-.097.52-.288.713A.957.957 0 0 1 20 8H4Z" fill="currentColor"/></symbol>
      <symbol fill="none" viewBox="0 0 14 8" id="caret" xmlns="http://www.w3.org/2000/svg"><path d="M13.71.296a1 1 0 0 0-1.42 0l-4.58 4.58a1 1 0 0 1-1.42 0L1.71.296a1 1 0 1 0-1.42 1.41l4.59 4.59a3 3 0 0 0 4.24 0l4.59-4.59a1 1 0 0 0 0-1.41Z" fill="currentColor"/></symbol>
      <symbol fill="none" viewBox="0 0 24 24" id="chart" xmlns="http://www.w3.org/2000/svg"><path d="m5.493 17.71 4.413-5.25 2.707 3.22c.341.406.891.386 1.207-.04l5.971-7.994c.292-.386.275-.98-.033-1.357a.836.836 0 0 0-.28-.219.716.716 0 0 0-.658.022.86.86 0 0 0-.27.237l-5.32 7.112-2.74-3.259a.835.835 0 0 0-.27-.214.716.716 0 0 0-.636 0 .836.836 0 0 0-.269.214l-5.071 6.042c-.078.092-.139.2-.18.32a1.151 1.151 0 0 0 0 .757c.041.12.102.229.18.32l.074.09c.325.386.858.386 1.175 0Z" fill="currentColor"/></symbol>
@@ -225,6 +227,14 @@ embedded above. They may be styled via CSS.
                         </svg>
                     </div>
                     <h2>arrow-right, </h2>
+                </li>
+             <li title="back-btn">
+                    <div class="icon-box">
+                        <svg class="svg-back-btn-dims">
+                            <use xlink:href="#back-btn"></use>
+                        </svg>
+                    </div>
+                    <h2>back-btn, </h2>
                 </li>
              <li title="burger">
                     <div class="icon-box">
@@ -445,6 +455,14 @@ SVG sprite. They may be styled via CSS.
                     </div>
                     <h2>arrow-right</h2>
                 </li>
+             <li title="back-btn">
+                    <div class="icon-box">
+                        <svg class="svg-back-btn-dims">
+                            <use xlink:href="sprite.svg#back-btn"></use>
+                        </svg>
+                    </div>
+                    <h2>back-btn</h2>
+                </li>
              <li title="burger">
                     <div class="icon-box">
                         <svg class="svg-burger-dims">
@@ -629,7 +647,7 @@ SVG sprite. They may be styled via CSS.
 
         </section>
         <footer>
-            <p>Generated at Sat, 14 Mar 2026 13:48:52 GMT by <a href="https://github.com/svg-sprite/svg-sprite" target="_blank" rel="noopener noreferrer">svg-sprite</a>.</p>
+            <p>Generated at Sat, 21 Mar 2026 13:02:32 GMT by <a href="https://github.com/svg-sprite/svg-sprite" target="_blank" rel="noopener noreferrer">svg-sprite</a>.</p>
         </footer>
     </body>
 </html>

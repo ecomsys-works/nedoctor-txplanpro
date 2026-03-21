@@ -40,7 +40,7 @@ export default function LanguageToggle({ className = "" }) {
               !isRu ? "text-black" : "text-white"
             }`}
           >
-            Eu
+            En
           </span>
         </div>
         <div className="w-1/2 flex items-center justify-center">

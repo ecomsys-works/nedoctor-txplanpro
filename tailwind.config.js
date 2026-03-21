@@ -28,6 +28,9 @@ module.exports = {
     "2xl:hidden",
     "3xl:hidden",
 
+    "left-[0px]",
+    "right-[0px]",
+
   ],
   theme: {
     // container: {

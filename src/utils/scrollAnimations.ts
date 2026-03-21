@@ -17,7 +17,7 @@ export class ScrollAnimations {
     // ==================== ВЫСОТА СНИЗУ ====================
     static revealUp(scroller?: string | HTMLElement) {
         gsap.utils.toArray<HTMLElement>(".gsap-up").forEach(el => {
-            const offset = el.dataset.offset ?? "100";
+            const offset = el.dataset.offset ?? "50";
             gsap.fromTo(el,
                 { y: 100, opacity: 0 },
                 {
@@ -41,7 +41,7 @@ export class ScrollAnimations {
     // ==================== ВЫСОТА СВЕРХУ ====================
     static revealDown(scroller?: string | HTMLElement) {
         gsap.utils.toArray<HTMLElement>(".gsap-down").forEach(el => {
-            const offset = el.dataset.offset ?? "100";
+            const offset = el.dataset.offset ?? "50";
             const delay = parseFloat(el.dataset.delay ?? "0");
             gsap.fromTo(el,
                 { y: -100, opacity: 0 },
@@ -67,13 +67,13 @@ export class ScrollAnimations {
     // ==================== СЛЕВА ====================
     static revealLeft(scroller?: string | HTMLElement) {
         gsap.utils.toArray<HTMLElement>(".gsap-left").forEach(el => {
-            const offset = el.dataset.offset ?? "100";
+            const offset = el.dataset.offset ?? "50";
             gsap.fromTo(el,
                 { x: -100, opacity: 0 },
                 {
                     x: 0,
                     opacity: 1,
-                    duration: 2.0,
+                duration: 1.0,
                     ease: "expo.out",
                     scrollTrigger: {
                         trigger: el,
@@ -91,13 +91,13 @@ export class ScrollAnimations {
     // ==================== СПРАВА ====================
     static revealRight(scroller?: string | HTMLElement) {
         gsap.utils.toArray<HTMLElement>(".gsap-right").forEach(el => {
-            const offset = el.dataset.offset ?? "100";
+            const offset = el.dataset.offset ?? "50";
             gsap.fromTo(el,
                 { x: 100, opacity: 0 },
                 {
                     x: 0,
                     opacity: 1,
-                    duration: 2.0,
+                duration: 1.0,
                     ease: "expo.out",
                     scrollTrigger: {
                         trigger: el,
@@ -115,12 +115,12 @@ export class ScrollAnimations {
     // ==================== FADE IN ====================
     static fadeIn(scroller?: string | HTMLElement) {
         gsap.utils.toArray<HTMLElement>(".gsap-fadein").forEach(el => {
-            const offset = el.dataset.offset ?? "100";
+            const offset = el.dataset.offset ?? "50";
             gsap.fromTo(el,
                 { opacity: 0 },
                 {
                     opacity: 1,
-                    duration: 2.0,
+                duration: 1.0,
                     ease: "expo.out",
                     scrollTrigger: {
                         trigger: el,
@@ -138,13 +138,13 @@ export class ScrollAnimations {
     // ==================== ZOOM IN ====================
     static zoomIn(scroller?: string | HTMLElement) {
         gsap.utils.toArray<HTMLElement>(".gsap-zoomin").forEach(el => {
-            const offset = el.dataset.offset ?? "100";
+            const offset = el.dataset.offset ?? "50";
             gsap.fromTo(el,
                 { scale: 0.85, opacity: 0 },
                 {
                     scale: 1,
                     opacity: 1,
-                    duration: 2.0,
+                duration: 1.0,
                     ease: "expo.out",
                     scrollTrigger: {
                         trigger: el,
@@ -162,13 +162,13 @@ export class ScrollAnimations {
     // ==================== RISE ====================
     static rise(scroller?: string | HTMLElement) {
         gsap.utils.toArray<HTMLElement>(".gsap-rise").forEach(el => {
-            const offset = el.dataset.offset ?? "100";
+            const offset = el.dataset.offset ?? "50";
             gsap.fromTo(el,
                 { y: 90, opacity: 0 },
                 {
                     y: 0,
                     opacity: 1,
-                    duration: 2.0,
+                    duration: 1.0,
                     ease: "expo.out",
                     scrollTrigger: {
                         trigger: el,

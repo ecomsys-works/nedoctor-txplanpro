@@ -82,10 +82,11 @@ export default function SayYes() {
                         2xl:tracking-[-0.05em] 2xl:text-[2.5rem] 
                         3xl:text-[3.4375rem] 2xl:max-w-[40.5rem]` 
                         : 
-                     `ml-[-0.3125rem] mr-[-0.3125rem] font-libre text-[1.875rem] max-w-[26.25rem] tracking-[-0.03em] leading-[1]
-                     sm:mx-[initial]                      
-                     2xl:tracking-[-0.05em] 2xl:text-[2.8125rem] 2xl:max-w-[40.5rem]
-                     3xl:text-[3.4375rem] 3xl:leading-[0.88]`}`}
+                     ` max-w-[19.5625rem] ml-[-0.3125rem] mr-[-0.3125rem] font-libre text-[1.875rem] tracking-[-0.03em] leading-[1]
+                     xs:max-w-[26.25rem]
+                     md:max-w-[26.25rem] sm:mx-[initial]                      
+                     2xl:max-w-[39.375rem] 2xl:tracking-[-0.05em] 2xl:text-[2.8125rem] 
+                     3xl:max-w-[40.25rem] 3xl:text-[3.4375rem] 3xl:leading-[0.88]`}`}
                      >
                         {formatHeader(title)}
                     </h2>

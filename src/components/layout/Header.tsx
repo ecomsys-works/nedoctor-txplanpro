@@ -2,13 +2,17 @@ import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { usePopup } from "@/сontext/Popup/usePopup";
 import { useBodyScrollLock } from "@/hooks/useBodyScrollLock";
+import { Link } from "react-router-dom";
+import { useLocation } from 'react-router-dom';
 
 import LanguageToggle from "@/ui/LanguageToggle";
 
 export default function Header() {
   const { t } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
-  const { setIsOpen: setIsOpenPopup } = usePopup();
+  const { setIsOpen: setIsOpenPopup } = usePopup();  
+  const location = useLocation();
+
 
   const logo = t("header.logo");
   const menu = t("header.menu", { returnObjects: true }) as {
@@ -18,18 +22,20 @@ export default function Header() {
   const login = t("header.login");
 
   useBodyScrollLock(isOpen);
+  
+  const side = location.pathname === '/' ? "left" : "right";
+
   return (
     <header className="my-container w-full bg-black text-white relative
     py-[0.625rem] mb-[-0.0625rem] md:py-[0.9375rem]  ">
 
       <div className="relative flex items-center justify-between">
         {/* Logo */}
-        <a
-          href="#hero"
+        <Link to="/"
           className="text-[1rem] font-bold text-white font-micro xl:text-[1.25rem] "
         >
           {logo}
-        </a>
+        </Link>
 
         {/* Desktop Menu */}
 
@@ -60,7 +66,7 @@ export default function Header() {
           ))}
         </nav>
 
-        <LanguageToggle className="hidden sm:block lang-desk-visible:hidden left-[0rem] top-[3.125rem] z-10" />
+        <LanguageToggle className={`hidden md:block lang-desk-visible:hidden ${side}-[0rem] top-[3.25rem] z-10`} />
 
         {/* Desktop Login */}
         <div className="relative hidden md:inline-flex">
@@ -81,7 +87,7 @@ export default function Header() {
 
         {/* Mobile Burger in circle */}
         <div className="relative md:hidden flex">
-          <LanguageToggle className="sm:hidden right-[3.125rem]" />
+          <LanguageToggle className="md:hidden right-[3.125rem]" />
           <button
             className="btn-mob md:hidden flex items-center justify-center w-[2.625rem] h-[2.625rem] cursor-pointer rounded-full text-white"
             onClick={() => setIsOpen(true)}
