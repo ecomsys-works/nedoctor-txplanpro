@@ -17,7 +17,9 @@ export default function Footer() {
                 xs:pt-[1.5rem] xs:pb-[0.5rem] 
                 md:pt-[2.8125rem] md:pb-[0.625rem]
                 ">
-                    <span>{t("footer.logo")}</span>
+                    <svg className="w-[7.0625rem] h-[0.6875rem] 2xl:w-[8.8125rem] 2xl:h-[0.8125rem]">
+                        <use href="/icons/sprite/sprite.svg#tx-logo" />
+                    </svg>
                 </div>
 
                 {/* devider */}
@@ -145,8 +147,10 @@ export default function Footer() {
                     </div>
 
                     {/* CENTER LOGO */}
-                    <Link to="/" className="flex justify-center">
-                        <span className="font-bold text-[1.25rem] font-micro ml-[0.625rem]">{t("footer.logo")}</span>
+                    <Link to="/" className="flex justify-center text-black">
+                        <svg className="w-[7.0625rem] h-[0.6875rem] 2xl:w-[8.8125rem] 2xl:h-[0.8125rem]">
+                            <use href="/icons/sprite/sprite.svg#tx-logo" />
+                        </svg>
                     </Link>
 
                     {/* RIGHT */}

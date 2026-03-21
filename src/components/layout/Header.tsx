@@ -34,7 +34,9 @@ export default function Header() {
         <Link to="/"
           className="text-[1rem] font-bold text-white font-micro xl:text-[1.25rem] "
         >
-          {logo}
+           <svg className="w-[7.0625rem] h-[0.6875rem] 2xl:w-[8.8125rem] 2xl:h-[0.8125rem]">
+              <use href="/icons/sprite/sprite.svg#tx-logo" />
+            </svg>
         </Link>
 
         {/* Desktop Menu */}
