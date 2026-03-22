@@ -12,10 +12,10 @@ export default function Footer() {
             md:rounded-t-[1.875rem]">
 
                 {/* LOGO */}
-                <div className="text-center font-bold text-[1rem] font-micro 
-                px-[0.625rem] pt-[1.5rem] pb-[0.5rem]  
-                xs:pt-[1.5rem] xs:pb-[0.5rem] 
-                md:pt-[2.8125rem] md:pb-[0.625rem]
+                <div className="flex justify-center font-bold text-[1rem] font-micro 
+                px-[0.625rem] pt-[1.5rem] pb-[0.75rem]  
+                xs:pt-[1.5rem] xs:pb-[0.75rem] 
+                md:pt-[2.8125rem] md:pb-[1rem]
                 ">
                     <svg className="w-[7.0625rem] h-[0.6875rem] 2xl:w-[8.8125rem] 2xl:h-[0.8125rem]">
                         <use href="/icons/sprite/sprite.svg#tx-logo" />
@@ -23,10 +23,10 @@ export default function Footer() {
                 </div>
 
                 {/* devider */}
-                <div className="hidden sm:block 
+                <div className="hidden xs:block 
                 sm:px-[1.25rem] sm:mb-[0.125rem] 
                 md:px-[1.875rem]">
-                    <div className="block sm:border-t border-white/10"></div>
+                    <div className="block xs:border-t border-white/10"></div>
                 </div>
 
                 <div className="grid grid-cols-2 border-t border-white/10
