@@ -41,7 +41,7 @@ export default function FeatureGrid() {
       <img
         src={imageMob}
         alt=""
-        className="w-full h-full object-contain object-bottom"
+        className="w-full h-full object-cover object-bottom"
         style={{
           transform: scale ? `scale(${scale / 100})` : undefined
         }}
