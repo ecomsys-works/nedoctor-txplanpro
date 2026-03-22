@@ -135,7 +135,7 @@ export default function Footer() {
 
             {/* ================= DESKTOP ================= */}
             <div className="my-container 
-            lg:py-[0.375rem] 
+            lg:pt-[0.375rem] lg:pb-[1.25rem] 
             3xl:py-[2.5rem]">
                 <div className="hidden lg:block relative">
 
