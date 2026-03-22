@@ -16,7 +16,7 @@ type CardPosition = {
 export default function Hero() {
   const { t } = useTranslation();
   const [windowWidth, setWindowWidth] = useState(0);
-  const { setIsOpen: setIsOpenPopup } = usePopup();
+  const { setIsOpen: setIsOpenPopup, setTariff } = usePopup();
 
   const cards = t("hero.cards", { returnObjects: true }) as {
     title: string;
@@ -43,7 +43,7 @@ export default function Hero() {
     "translate-y-0",
     "translate-y-[13.4%]",
     "translate-y-0",
-    "translate-y-[13.4%]",    
+    "translate-y-[13.4%]",
   ];
 
   /**
@@ -87,7 +87,7 @@ export default function Hero() {
   const tabletRow1 = [cards[0], cards[2]];
   const tabletRow2 = [cards[1], cards[3], cards[4]];
 
-  const swiperCards = [cards[3],cards[0], cards[1], cards[3], cards[4], cards[2]];
+  const swiperCards = [cards[3], cards[0], cards[1], cards[3], cards[4], cards[2]];
 
   return (
     <section className={`hero my-container cover-gradient text-white relative overflow-hidden        
@@ -111,12 +111,12 @@ export default function Hero() {
         <div className="pb-[2.5rem] pt-[0.625rem]">
           <Swiper
             modules={[Autoplay]} // вот это важно
-        autoplay={{
-          delay: 3000, // 5 секунд
-          disableOnInteraction: false, // не останавливается после свайпа
-          pauseOnMouseEnter: true, // (опционально) пауза при наведении
-        }}
-        loop={true} // чтобы крутился бесконечно
+            autoplay={{
+              delay: 3000, // 5 секунд
+              disableOnInteraction: false, // не останавливается после свайпа
+              pauseOnMouseEnter: true, // (опционально) пауза при наведении
+            }}
+            loop={true} // чтобы крутился бесконечно
             spaceBetween={35}
             slidesPerView={1.470}
             breakpoints={{
@@ -131,7 +131,7 @@ export default function Hero() {
             {swiperCards.map((card, i) => (
               <SwiperSlide key={i}>
                 <div
-                  className={`w-[100%] aspect-[22/32] glass rounded-[1.25rem] p-[1.25rem] overflow-hidden text-white flex flex-col justify-between transition duration-300 ${mobileOffsets[i]}`}                  
+                  className={`w-[100%] aspect-[22/32] glass rounded-[1.25rem] p-[1.25rem] overflow-hidden text-white flex flex-col justify-between transition duration-300 ${mobileOffsets[i]}`}
                 >
                   <div>
                     <h3 className="text-[1.25rem] leading-[1] tracking-[-0.04em] mb-[0.375rem]">
@@ -260,14 +260,14 @@ export default function Hero() {
               >
                 <div>
                   <h3 className={`leading-[1] font-medium 2xl:tracking-[-0.06em] text-white/90
-                  ${t('lang') === "ru" ? 
-                    `text-[1.125rem] tracking-[-0.04em] mb-[0.3125rem]
-                    2xl:text-[1.375rem] ` 
-                    :
-                    `text-[1.25rem] font-light tracking-[-0.06em] mb-[0.375rem]
+                  ${t('lang') === "ru" ?
+                      `text-[1.125rem] tracking-[-0.04em] mb-[0.3125rem]
+                    2xl:text-[1.375rem] `
+                      :
+                      `text-[1.25rem] font-light tracking-[-0.06em] mb-[0.375rem]
                     2xl:text-[1.5rem]`}
                     `}
-                    >
+                  >
                     {formatHeader(cards[i].title)}</h3>
 
                   <p className={`text-[0.875rem] leading-[1.2] tracking-[-0.04em] 
@@ -334,18 +334,22 @@ export default function Hero() {
             </p>
 
             <button className={`hero-btn glass w-full  font-medium transition duration-300 cursor-pointer            
-             ${t('lang') === 'ru' ? 
-              `px-[1.875rem] h-[3.4375rem] rounded-[2.5rem] text-[1.125rem] tracking-[-0.04em]
+             ${t('lang') === 'ru' ?
+                `px-[1.875rem] h-[3.4375rem] rounded-[2.5rem] text-[1.125rem] tracking-[-0.04em]
               xs:w-[initial] md:px-[2.1875rem] 
               2xl:px-[3.75rem] 2xl:h-[4.375rem] 2xl:min-w-[19.5625rem] 2xl:text-[1.25rem]
-              ` 
-              : 
-              `px-[1.875rem] h-[3.4375rem] rounded-[2.5rem] text-[1.125rem] tracking-[-0.04em]
+              `
+                :
+                `px-[1.875rem] h-[3.4375rem] rounded-[2.5rem] text-[1.125rem] tracking-[-0.04em]
               xs:w-[initial] md:px-[3.75rem] 
               2xl:px-[3.75rem] 2xl:h-[4.375rem] 2xl:min-w-[19.5625rem] 2xl:tracking-[0]
               `}
             `}
-              onClick={() => setIsOpenPopup(true)}
+              onClick={() => {
+                setTariff('Starter')
+                setIsOpenPopup(true)
+              }
+              }
             >
               {t("hero.cta")}
             </button>
@@ -379,7 +383,11 @@ export default function Hero() {
             `w-full text-[1.125rem] px-[2.1875rem] `
             :
             `w-full text-[1.125rem] px-[2.1875rem] xs:px-[4.0625rem]`}`}
-          onClick={() => setIsOpenPopup(true)}
+          onClick={() => {
+            setTariff('Starter')
+            setIsOpenPopup(true)
+          }
+          }
         >
           {t("hero.cta")}
         </button>

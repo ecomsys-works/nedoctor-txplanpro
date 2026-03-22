@@ -1,17 +1,86 @@
 import { useTranslation } from "react-i18next"
 import BlackBtn from "@/ui/BlackBtn";
+import { useState } from "react";
 import { useEmail } from "@/сontext/Email/useEmail";
+
+
+// Время жизни записи в localStorage (миллисекунды)
+const EMAIL_LOCK_DURATION = 3 * 60 * 1000; // 3 минуты
+const EMAIL_LOCK_KEY = "PXsentEmails";
+
+// Проверяем, можно ли отправить e-mail
+const canSendEmail = (email: string) => {
+    const sentData: Record<string, number> = JSON.parse(localStorage.getItem(EMAIL_LOCK_KEY) || "{}");
+    const now = Date.now();
+    if (sentData[email] && now - sentData[email] < EMAIL_LOCK_DURATION) return false;
+    return true;
+};
+
+// Помечаем e-mail как отправленный
+const markEmailSent = (email: string) => {
+    const sentData: Record<string, number> = JSON.parse(localStorage.getItem(EMAIL_LOCK_KEY) || "{}");
+    sentData[email] = Date.now();
+    localStorage.setItem(EMAIL_LOCK_KEY, JSON.stringify(sentData));
+};
+
+// Минимальная валидация e-mail
+const validateEmail = (email: string) => {
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(email.toLowerCase());
+};
+
 
 export default function ListForm() {
     const { t } = useTranslation()
     const { email, setEmail } = useEmail();
 
 
+    const [loading, setLoading] = useState(false);
+    const [success, setSuccess] = useState(false);
+
     const placeholder = t("listForm.placeholder");
     const buttonText = t("listForm.buttonText");
 
+
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setEmail(e.target.value);
+    };
+
+    const handleSubmit = async (plan: string | null = null) => {
+        //  Проверка e-mail
+        if (!email || !validateEmail(email)) {
+            alert(t("popup.emailError") || "Введите корректный e-mail");
+            return;
+        }
+
+        //  Проверка на повторную отправку
+        if (!canSendEmail(email)) {
+            alert(t("popup.alreadySent") || "Вы уже отправляли запрос. Попробуйте позже.");
+            return;
+        }
+
+        try {
+            setLoading(true);
+
+            const formData = new FormData();
+            formData.append("_form_id", import.meta.env.VITE_FORM_ID);
+            formData.append("email", email);
+            if (plan) formData.append("plan", plan);
+
+            await fetch(import.meta.env.VITE_API_URL, {
+                method: "POST",
+                body: formData
+            });
+
+            setSuccess(true);
+            markEmailSent(email); // помечаем как отправленное
+            setEmail("");
+        } catch (err) {
+            console.error(err);
+            alert(t("popup.sendError") || "Ошибка отправки. Попробуйте позже.");
+        } finally {
+            setLoading(false);
+        }
     };
 
     return (
@@ -45,10 +114,16 @@ export default function ListForm() {
                         </div>
 
                         {/* BUTTON */}
-                        <BlackBtn className="text-[1.25rem] rounded-[2.5rem] h-[5rem] tracking-[-0.04em] font-medium px-[1.5625rem]
+                        <BlackBtn
+                            disabled={loading}
+                            onClick={() => handleSubmit('Starter')}
+                            className={`text-[1.25rem] rounded-[2.5rem] h-[5rem] tracking-[-0.04em] font-medium px-[1.5625rem] disabled:opacity-90
                         2xl:px-[1.5625rem] 2xl:min-w-[15.9375rem] 
-                        3xl:px-[2.375rem] 3xl:min-w-[15.4375rem]">
-                            {buttonText}
+                        3xl:px-[2.375rem] 3xl:min-w-[15.4375rem]
+                        ${loading && "hover:!bg-black !text-white"}`
+                            }>
+                            <span className={`${loading && "animate-pulse "}`}>
+                                {loading ? t('form.process') : success ? t('form.ok') : buttonText}</span>
                         </BlackBtn>
 
                     </div>

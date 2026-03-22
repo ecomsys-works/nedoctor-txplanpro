@@ -10,7 +10,7 @@ import LanguageToggle from "@/ui/LanguageToggle";
 export default function Header() {
   const { t } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
-  const { setIsOpen: setIsOpenPopup } = usePopup();  
+  const { setIsOpen: setIsOpenPopup ,setTariff} = usePopup();  
   const location = useLocation();
 
 
@@ -77,7 +77,10 @@ export default function Header() {
             className="btn-desk items-center hidden cursor-pointer h-[2.5rem] px-[2.5rem] rounded-[6.25rem] text-[1.125rem] font-medium tracking-[-0.04em] 
            transition duration-300 hover:bg-white hover:text-black active:scale-95 md:inline-flex 
            xl:h-[3rem] xl:px-[3.75rem] xl:text-[1.25rem] xl:min-w-[10.9375rem] "
-            onClick={() => setIsOpenPopup(true)}
+            onClick={() => {
+              setTariff('Starter');
+              setIsOpenPopup(true)
+            }}
           >
             {login}
           </button>
@@ -143,7 +146,10 @@ export default function Header() {
         <button
           style={{ boxShadow: "inset 0 0.0625rem 0 rgba(255,255,255,0.25), inset 0 -0.0625rem 0 rgba(255,255,255,0.25)" }}
           className="glass w-full cursor-pointer h-[3.4375rem] px-6 rounded-[2.5rem] font-medium tracking-[-0.04em] text-[1.125rem] text-white transition duration-300 active:scale-95 "
-          onClick={() => setIsOpenPopup(true)}
+           onClick={() => {
+              setTariff('Starter');
+              setIsOpenPopup(true)
+            }}
         >
           {login}
         </button>

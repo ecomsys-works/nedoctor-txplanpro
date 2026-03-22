@@ -5,7 +5,7 @@ import { formatHeader } from "@/utils/formaters";
 
 export default function DoubleCardSection() {
     const { t } = useTranslation();
-    const { setIsOpen: setIsOpenPopup } = usePopup();
+    const { setIsOpen: setIsOpenPopup, setTariff } = usePopup();
 
     const cards = t("double.cards", { returnObjects: true }) as {
         imageMob?: string;
@@ -89,7 +89,11 @@ export default function DoubleCardSection() {
                     xs:w-[initial] xs:px-[3.75rem]
                     md:px-[2rem] min-w-[15.9375rem]
                     2xl:text-[1.25rem] 2xl:h-[4.375rem] 2xl:px-[2.1875rem] 2xl:min-w-[19.5625rem] "
-                        onClick={() => setIsOpenPopup(true)}
+                        onClick={() => {
+                            setTariff('Starter')
+                            setIsOpenPopup(true)
+                        }
+                        }
                     >
                         {cards[1].button}
                     </BlackBtn>

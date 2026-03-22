@@ -1,10 +1,17 @@
 {
   "lang": "en",
+  "form": {
+    "ok": "Successfully!",
+    "process": "Sending..."
+  },
   "popup": {
     "font": "libre",
     "title": "Be the first one to get TX Plan Pro at early bird prices.",
     "placeholder": "Enter your email address",
-    "buttonText": "Join the waitlist"
+    "buttonText": "Join the waitlist",
+    "emailError": "Please enter a valid email address",
+    "sendError": "Failed to send",
+    "alreadySent": "You have already submitted a request. Please try again later."
   },
   "header": {
     "logo": "TX Plan Pro",
@@ -28,16 +35,16 @@
     ],
     "login": "Log in"
   },
-   "heroPrivacy": {
+  "heroPrivacy": {
     "font": "libre",
     "title": "Privacy policy",
-    "backBtn" : " Back to the main page"
-   },
-   "privacy": {
+    "backBtn": " Back to the main page"
+  },
+  "privacy": {
     "font": "libre",
-    "title" : "Privacy policy",
-    "content" : "Content"
-   },
+    "title": "Privacy policy",
+    "content": "Content"
+  },
   "hero": {
     "font": "libre",
     "title": "Spend less chair time explaining and boost case acceptance",
@@ -324,7 +331,7 @@
         "description": "If you want, our team will help tailor your templates aligning them with your branding, preferred workflows, and documentation style.",
         "count": "02"
       },
-        {
+      {
         "title": "Constantly [br] getting better",
         "description": "TxPlanPro evolves based on real clinic feedback, with new features carefully tested before release.",
         "count": "06"
@@ -343,7 +350,7 @@
         "title": "Secure & reliable [br] by design",
         "description": "Your data is protected with automatic backups and built-in safeguards that minimize errors.",
         "count": "05"
-      }    
+      }
     ]
   },
   "developed": {
@@ -371,7 +378,7 @@
   },
   "reviews": {
     "title": "Reviews",
-    "titleDesk": "What our clients say",    
+    "titleDesk": "What our clients say",
     "cards": [
       {
         "avatar": "/images/webp/reviews/avatar.webp",

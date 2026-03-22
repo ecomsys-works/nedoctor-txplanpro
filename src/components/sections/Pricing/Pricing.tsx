@@ -3,6 +3,7 @@ import WhiteBtn from "@/ui/WhiteBtn";
 import { usePopup } from "@/сontext/Popup/usePopup";
 import { formatHeader } from "@/utils/formaters";
 
+
 export type PricingCardType = {
     title: string;
     description: string;
@@ -23,7 +24,8 @@ export type PricingCardType = {
 };
 
 export default function Pricing() {
-    const { setIsOpen: setIsOpenPopup } = usePopup();
+    const { setIsOpen: setIsOpenPopup, setTariff } = usePopup();      
+      
     const { t } = useTranslation();
     const title = t("pricing.title");
     const cards = t("pricing.cards", { returnObjects: true }) as PricingCardType[];
@@ -188,7 +190,9 @@ export default function Pricing() {
                                 </div>
 
                                 <WhiteBtn className="font-medium text-[1.25rem] tracking-[-0.04em] h-[4.375rem] w-full rounded-full"
-                                 onClick={() => setIsOpenPopup(true)}
+                                 onClick={() => {
+                                    setTariff(card.title);
+                                    setIsOpenPopup(true)}}
                                 >
                                     {card.buttonText}
                                 </WhiteBtn>
@@ -289,7 +293,9 @@ export default function Pricing() {
                                     )}
 
                                     <WhiteBtn className="font-medium text-[1.25rem] tracking-[-0.04em] h-[4.375rem] w-full rounded-full"
-                                     onClick={() => setIsOpenPopup(true)}
+                                    onClick={() => {
+                                    setTariff(card.title);
+                                    setIsOpenPopup(true)}}
                                     >
                                         {card.buttonText}
                                     </WhiteBtn>
@@ -557,7 +563,9 @@ export default function Pricing() {
 
                             <WhiteBtn className="font-medium text-[1.125rem] h-[2.875rem] lg:h-[4.375rem] w-full rounded-full
                             lg:text-[1.25rem]"
-                             onClick={() => setIsOpenPopup(true)}
+                             onClick={() => {
+                                    setTariff(card.title);
+                                    setIsOpenPopup(true)}}
                             >
                                 {card.buttonText}
                             </WhiteBtn>

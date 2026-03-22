@@ -1,10 +1,17 @@
 {
   "lang": "ru",
+  "form" : {
+    "ok" : "Успешно добавлен !",
+    "process" : "Отправка..."
+  },
   "popup": {
     "font": "zt",
     "title": "Будьте среди первых и получите поступ к TxPlanPro по специальной цене",
     "placeholder": "Введите ваш e-mail",
-    "buttonText": "Попасть в лист ожидания"
+    "buttonText": "Попасть в лист ожидания",
+    "emailError" : "Введите корректный e-mail",
+    "sendError": "Ошибка при отправке",
+    "alreadySent": "Вы уже отправляли запрос. Попробуйте позже."
   },
   "header": {
     "logo": "TX Plan Pro",

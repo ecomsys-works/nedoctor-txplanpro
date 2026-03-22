@@ -376,3 +376,9 @@ Header glass-nav
     background-repeat: no-repeat;
     background-position: center;
 }
+
+
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px white inset; /* фон подсказки */
+  -webkit-text-fill-color: #000000;               /* цвет текста */
+}

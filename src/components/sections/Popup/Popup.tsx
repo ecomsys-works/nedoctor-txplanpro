@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useBodyScrollLock } from "@/hooks/useBodyScrollLock";
 
@@ -6,8 +7,36 @@ import { useEmail } from "@/сontext/Email/useEmail";
 
 import BlackBtn from "@/ui/BlackBtn";
 
+// Время жизни записи в localStorage (миллисекунды)
+const EMAIL_LOCK_DURATION = 3 * 60 * 1000; // 3 минуты
+const EMAIL_LOCK_KEY = "PXsentEmails";
+
+// Проверяем, можно ли отправить e-mail
+const canSendEmail = (email: string) => {
+  const sentData: Record<string, number> = JSON.parse(localStorage.getItem(EMAIL_LOCK_KEY) || "{}");
+  const now = Date.now();
+  if (sentData[email] && now - sentData[email] < EMAIL_LOCK_DURATION) return false;
+  return true;
+};
+
+// Помечаем e-mail как отправленный
+const markEmailSent = (email: string) => {
+  const sentData: Record<string, number> = JSON.parse(localStorage.getItem(EMAIL_LOCK_KEY) || "{}");
+  sentData[email] = Date.now();
+  localStorage.setItem(EMAIL_LOCK_KEY, JSON.stringify(sentData));
+};
+
+// Минимальная валидация e-mail
+const validateEmail = (email: string) => {
+  const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return re.test(email.toLowerCase());
+};
+
 export default function Popup() {
-  const { isOpen, setIsOpen } = usePopup();
+  const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState(false);
+
+  const { isOpen, setIsOpen, tariff, setTariff } = usePopup();
   const { email, setEmail } = useEmail();
   const { t } = useTranslation();
 
@@ -21,6 +50,45 @@ export default function Popup() {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setEmail(e.target.value);
   };
+
+  const handleSubmit = async (plan: string | null = null) => {
+    //  Проверка e-mail
+    if (!email || !validateEmail(email)) {
+      alert(t("popup.emailError") || "Введите корректный e-mail");
+      return;
+    }
+
+    //  Проверка на повторную отправку
+    if (!canSendEmail(email)) {
+      alert(t("popup.alreadySent") || "Вы уже отправляли запрос. Попробуйте позже.");
+      return;
+    }
+
+    try {
+      setLoading(true);
+
+      const formData = new FormData();
+      formData.append("_form_id", import.meta.env.VITE_FORM_ID);
+      formData.append("email", email);
+      if (plan) formData.append("plan", plan);
+
+      await fetch(import.meta.env.VITE_API_URL, {
+        method: "POST",
+        body: formData
+      });
+
+      setSuccess(true);
+      markEmailSent(email); // помечаем как отправленное
+      setEmail("");
+    } catch (err) {
+      console.error(err);
+      alert(t("popup.sendError") || "Ошибка отправки. Попробуйте позже.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  if (!isOpen) return null;
 
   return (
     <section
@@ -107,18 +175,24 @@ export default function Popup() {
               </div>
 
               {/* Submit button */}
-              <BlackBtn className={`h-[3.4375rem] text-[1.125rem] px-[1.25rem] rounded-[2.5rem]                 
+              <BlackBtn
+                disabled={loading}
+                onClick={() => handleSubmit(tariff)}
+                className={`h-[3.4375rem] text-[1.125rem] px-[1.25rem] rounded-[2.5rem]                 
               2xl:w-full 2xl:text-[1.25rem] 2xl:h-[4.375rem]
                 ${t('lang') === 'ru' ?
-                  `w-full self-stretch 
+                    `w-full self-stretch 
                   xs:w-[initial] xs:min-w-[18.0625rem]
+                  ${loading && "hover:!bg-black !text-white"}
                   `
-                  :
-                  `w-full self-stretch 
+                    :
+                    `w-full self-stretch 
                   xs:w-[initial] xs:min-w-[13.625rem]
+                  ${loading && "hover:!bg-black !text-white"}
                   `}
                 `}>
-                {buttonText}
+                <span className={`${loading && "animate-pulse "}`}>
+                  {loading ? t('form.process') : success ? t('form.ok') : buttonText}</span>
               </BlackBtn>
             </div>
           </div>
@@ -128,7 +202,10 @@ export default function Popup() {
             className="absolute right-6 top-5 text-[#a0a0a0] hover:text-black transition cursor-pointer
               xs:right-9 xs:top-7.5 md:right-10 
               2xl:right-11 2xl:top-11"
-            onClick={() => setIsOpen(false)}
+            onClick={() => {
+              setTariff("");
+              setIsOpen(false)
+            }}
           >
             <svg className="w-[1.125rem] h-[1.125rem] 2xl:w-[1.375rem] 2xl:h-[1.375rem]">
               <use href="/icons/sprite/sprite.svg#close" />
