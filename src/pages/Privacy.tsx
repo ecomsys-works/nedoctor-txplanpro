@@ -10,9 +10,12 @@ import ListForm from "@/components/sections/ListForm";
 
 import { EmailProvider } from "@/сontext/Email/EmailProvider";
 import { useScrollAnimations } from "@/hooks/useScrollAnimation";
+import { useScrollToTop } from "@/hooks/useScrollToTop";
+
 
 export function Privacy() {
   useScrollAnimations("html");
+  useScrollToTop();
   return (
     <EmailProvider>
       <PopupProvider>
