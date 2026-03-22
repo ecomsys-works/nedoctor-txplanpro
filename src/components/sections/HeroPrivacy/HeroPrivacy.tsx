@@ -38,8 +38,12 @@ export default function HeroPrivacy() {
 
 
             <h1 className={`font-${font} text-center 
-            pt-[4.75rem] px-[1.25rem] text-[2.5rem] leading-[0.85] tracking-[-0.03em] 
-            xs:pt-[3.1875rem] 
+            ${t('lang') === 'ru' ? 
+            `px-[0rem] text-[2.2rem]`
+            :
+            `px-[1.25rem] text-[2.5rem]`}
+            pt-[4.75rem] leading-[0.85] tracking-[-0.03em] 
+            xs:pt-[3.1875rem] xs:px-[1.25rem] xs:text-[2.5rem]
             md:pt-[2.6875rem] 
             2xl:text-[5rem] 2xl:px-[3.125rem] 2xl:pt-[4.375rem]
             3xl:pt-[7.5rem]

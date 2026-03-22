@@ -29,7 +29,9 @@ module.exports = {
     "3xl:hidden",
 
     "left-[0px]",
-    "right-[0px]",
+    "right-[0px]",    
+    "left-[0rem]",
+    "right-[0rem]",
 
   ],
   theme: {

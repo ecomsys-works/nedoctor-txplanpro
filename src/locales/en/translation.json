@@ -429,7 +429,7 @@
         "whiteLabel": "Free plan",
         "monthLimitsTitle": "Monthly limits:",
         "monthLimits": [
-          "2 Comprehensive treatment plans",
+          "2 Complex treatment plans",
           "5 Local treatment plans",
           "Unlimited simple estimates"
         ],
@@ -454,11 +454,11 @@
         "whiteLabel": "",
         "monthLimitsTitle": "Monthly limits:",
         "monthLimits": [
-          "10 Comprehensive plans",
+          "10 Complex plans",
           "25 Local plans",
           "Unlimited simple estimates"
         ],
-        "planPrice": "≈ $5.9 per comprehensive plan",
+        "planPrice": "≈ $5.9 per complex plan",
         "includedTitle": "Includes",
         "included": [
           "Patient database",
@@ -480,11 +480,11 @@
         "whiteLabel": "",
         "monthLimitsTitle": "Monthly limits:",
         "monthLimits": [
-          "40 Comprehensive plans",
+          "40 Complex plans",
           "100 Local plans",
           "Unlimited simple estimates"
         ],
-        "planPrice": "≈ $3.7 per comprehensive plan",
+        "planPrice": "≈ $3.7 per complex plan",
         "includedTitle": "Includes",
         "included": [
           "Clinic branding",
@@ -505,11 +505,11 @@
         "whiteLabel": "Free plan",
         "monthLimitsTitle": "Monthly limits:",
         "monthLimits": [
-          "100 Comprehensive plans",
+          "100 Complex plans",
           "250 Local plans",
           "Unlimited simple estimates"
         ],
-        "planPrice": "≈ $3 per comprehensive plan",
+        "planPrice": "≈ $3 per complex plan",
         "includedTitle": "Includes",
         "included": ["Custom template", "Priority support", "Up to 10 users"],
         "buttonText": "Start Clinic"
