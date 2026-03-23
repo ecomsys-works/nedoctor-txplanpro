@@ -34,19 +34,7 @@ module.exports = {
     "right-[0rem]",
 
   ],
-  theme: {
-    // container: {
-    //   center: true,
-    //   padding: {
-    //     DEFAULT: "10px",
-    //     sm: "20px",
-    //     md: "30px",
-    //     lg: "50px",
-    //     xl: "100px",
-    //     "2xl": "150px",
-    //     "3xl": "160px",
-    //   },
-    // },
+  theme: {  
 
     screens: {
       'xs': '480px',
