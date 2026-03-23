@@ -33,12 +33,14 @@ nedoctor/
 │   ├── ui               # мелкие компоненты
 │   └── main.tsx         # точка входа
 │
+├── .env                 # переменные проекта (e-mail подписка inputHaven.com и др.)
 ├── .gitignore           # игнор для git
 ├── index.html           # главный файл 
 ├── tailwind.config.js   # настройки tailwind
 ├── package.json         # зависимости
-├── convert.php          # конвертер rem/px
-├── vite.config.ts       # конфиг для vite
+├── convert.php          # конвертер rem/px всех файлов проекта
+├── convert2.php         # конвертер rem/px только стилей в папке src/styles
+├── vite.config.ts       # конфиг для vite  
 └── ...
 ```
 
